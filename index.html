@@ -19,20 +19,26 @@
     --green-tint:#E4F6EE;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
+  html{ scroll-behavior:smooth; }
   body{ font-family:'Inter', sans-serif; color:var(--ink); background:var(--paper); line-height:1.55; -webkit-font-smoothing:antialiased; }
   h1,h2,h3{ font-family:'Space Grotesk', sans-serif; font-weight:600; letter-spacing:-0.01em; color:var(--ink); }
   a{ color:inherit; }
   .wrap{ max-width:1120px; margin:0 auto; padding:0 24px; }
   button{ font-family:inherit; cursor:pointer; border:none; }
 
-  header{ padding:26px 0; }
-  .nav{ display:flex; justify-content:space-between; align-items:center; }
-  .logo{ font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:20px; }
+  header{ padding:18px 0; position:sticky; top:0; z-index:50; background:rgba(246,244,239,0.82); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border-bottom:1px solid transparent; transition:border-color .2s; }
+  header.scrolled{ border-bottom-color:var(--line); }
+  .nav{ display:flex; justify-content:space-between; align-items:center; gap:16px; }
+  .logo{ font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:20px; white-space:nowrap; }
   .logo span{ color:var(--green-deep); }
-  .nav-cta{ background:var(--ink); color:#fff; padding:11px 22px; border-radius:6px; text-decoration:none; font-size:14px; font-weight:500; }
+  .nav-right{ display:flex; align-items:center; gap:14px; }
+  .lang-switch{ display:flex; background:var(--panel); border:1px solid var(--line); border-radius:100px; padding:3px; gap:2px; }
+  .lang-btn{ background:transparent; padding:6px 11px; border-radius:100px; font-size:12.5px; font-weight:600; color:var(--ink-soft); }
+  .lang-btn.active{ background:var(--ink); color:#fff; }
+  .nav-cta{ background:var(--ink); color:#fff; padding:11px 20px; border-radius:6px; text-decoration:none; font-size:14px; font-weight:500; white-space:nowrap; }
 
   /* HERO with calculator */
-  .hero{ padding:40px 0 90px; }
+  .hero{ padding:48px 0 90px; }
   .hero-grid{ display:grid; grid-template-columns:1fr 1fr; gap:52px; align-items:start; }
   .hero h1{ font-size:44px; line-height:1.14; }
   .hero h1 .accent{ color:var(--green-deep); }
@@ -40,7 +46,7 @@
   .badges{ margin-top:28px; display:flex; gap:10px; flex-wrap:wrap; }
   .badge{ font-size:13px; color:var(--ink-soft); background:var(--panel); border:1px solid var(--line); padding:7px 14px; border-radius:100px; }
 
-  .calc-card{ background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:28px; }
+  .calc-card{ background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:28px; box-shadow:0 20px 44px -28px rgba(20,23,26,0.25); }
   .calc-card h3{ font-size:15px; text-transform:none; color:var(--ink-soft); font-weight:500; margin-bottom:20px; font-family:'Inter'; }
   .calc-row{ margin-bottom:20px; }
   .calc-row label{ display:block; font-size:14px; font-weight:500; margin-bottom:8px; }
@@ -51,6 +57,10 @@
   .calc-total .lbl{ font-size:14px; color:var(--ink-soft); }
   .calc-total .val{ font-family:'Space Grotesk', sans-serif; font-size:32px; font-weight:700; color:var(--green-deep); }
   .calc-note{ font-size:12.5px; color:var(--slate); margin-top:6px; }
+  .fx-note{ font-size:12px; color:var(--green-deep); margin-top:4px; display:none; align-items:center; gap:6px; }
+  .fx-note.show{ display:flex; }
+  .fx-dot{ width:6px; height:6px; border-radius:50%; background:var(--green); flex-shrink:0; }
+  .fx-dot.stale{ background:#C9A227; }
   .btn-calc{ width:100%; margin-top:20px; background:var(--green); color:#fff; padding:15px; border-radius:8px; font-size:15px; font-weight:600; text-align:center; display:block; text-decoration:none; }
   .btn-calc:hover{ background:var(--green-deep); }
 
@@ -60,7 +70,6 @@
   .section-head p.kicker{ color:var(--green-deep); font-weight:600; font-size:14px; margin-bottom:8px; }
   .section-head h2{ font-size:30px; }
   .steps{ display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
-  .step-card{ }
   .step-num{ font-family:'Space Grotesk', sans-serif; font-size:14px; color:var(--green-deep); font-weight:700; margin-bottom:10px; }
   .step-card h4{ font-size:16px; margin-bottom:8px; }
   .step-card p{ font-size:14px; color:var(--ink-soft); }
@@ -69,7 +78,7 @@
   .portfolio{ padding:88px 0; }
   .port-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:24px; }
   .port-card{ background:var(--panel); border:1px solid var(--line); border-radius:12px; overflow:hidden; }
-  .port-preview{ height:170px; overflow:hidden; }
+  .port-preview{ height:170px; overflow:hidden; display:block; }
   .port-preview img{ width:100%; height:100%; object-fit:cover; object-position:left top; display:block; transition:transform .3s; }
   .port-card:hover .port-preview img{ transform:scale(1.04); }
   .port-body{ padding:22px; }
@@ -92,6 +101,8 @@
   .price-list li{ padding:10px 0; border-top:1px solid #2C3238; font-size:14.5px; color:#C7CDD3; }
   .price-list li:first-child{ border-top:none; }
   .btn-price{ display:block; text-align:center; background:var(--green); color:#0B1210; padding:15px; border-radius:8px; text-decoration:none; font-weight:700; margin-top:8px; }
+  .fx-note-dark{ font-size:12px; color:#7CE0BB; margin-top:14px; display:none; align-items:center; gap:6px; }
+  .fx-note-dark.show{ display:flex; }
 
   /* Final CTA */
   .cta-final{ padding:90px 0; text-align:center; }
@@ -107,65 +118,74 @@
     .steps{ grid-template-columns:1fr 1fr; }
     .port-grid{ grid-template-columns:1fr; }
     .hero h1{ font-size:34px; }
+    .nav-cta{ display:none; }
   }
 </style>
 </head>
 <body>
 
-<header>
+<header id="site-header">
   <div class="wrap nav">
     <div class="logo">Converta<span>Studio</span></div>
-    <a href="#contato" class="nav-cta">Falar no WhatsApp</a>
+    <div class="nav-right">
+      <div class="lang-switch">
+        <button type="button" class="lang-btn active" data-lang="pt">🇧🇷 PT</button>
+        <button type="button" class="lang-btn" data-lang="en">🇺🇸 EN</button>
+        <button type="button" class="lang-btn" data-lang="es">🇦🇷 ES</button>
+      </div>
+      <a href="#contato" class="nav-cta" data-i18n="nav_cta">Falar no WhatsApp</a>
+    </div>
   </div>
 </header>
 
 <section class="hero">
   <div class="wrap hero-grid">
-    <div>
-      <h1>Sua landing page pronta em <span class="accent">5 dias úteis</span>, com orçamento na hora</h1>
-      <p class="lead">Site que apresenta seu produto ou serviço e transforma visitante em cliente — feito sob medida, sem template genérico.</p>
+    <div >
+      <h1 data-i18n="hero_h1">Sua landing page pronta em <span class="accent">5 dias úteis</span>, com orçamento na hora</h1>
+      <p class="lead" data-i18n="hero_lead">Site que apresenta seu produto ou serviço e transforma visitante em cliente — feito sob medida, sem template genérico.</p>
       <div class="badges">
-        <span class="badge">Entrega em 5 dias úteis</span>
-        <span class="badge">2 revisões incluídas</span>
-        <span class="badge">Orçamento fechado antes de começar</span>
+        <span class="badge" data-i18n="badge1">Entrega em 5 dias úteis</span>
+        <span class="badge" data-i18n="badge2">2 revisões incluídas</span>
+        <span class="badge" data-i18n="badge3">Orçamento fechado antes de começar</span>
       </div>
     </div>
 
     <div class="calc-card">
-      <h3>Monte uma estimativa rápida</h3>
+      <h3 data-i18n="calc_title">Monte uma estimativa rápida</h3>
 
       <div class="calc-row">
-        <label>Quantas seções sua página precisa?</label>
+        <label data-i18n="calc_q1">Quantas seções sua página precisa?</label>
         <div class="opts" data-group="sections">
-          <button type="button" class="opt active" data-value="0">Uma seção (padrão)</button>
-          <button type="button" class="opt" data-value="150">Múltiplas seções</button>
+          <button type="button" class="opt active" data-value="0" data-i18n="calc_opt1a">Uma seção (padrão)</button>
+          <button type="button" class="opt" data-value="150" data-i18n="calc_opt1b">Múltiplas seções</button>
         </div>
       </div>
 
       <div class="calc-row">
-        <label>Precisa de revisões extras (além das 2 inclusas)?</label>
+        <label data-i18n="calc_q2">Precisa de revisões extras (além das 2 inclusas)?</label>
         <div class="opts" data-group="revisions">
-          <button type="button" class="opt active" data-value="0">Não precisa</button>
-          <button type="button" class="opt" data-value="50">+1 revisão</button>
-          <button type="button" class="opt" data-value="100">+2 revisões</button>
+          <button type="button" class="opt active" data-value="0" data-i18n="calc_opt2a">Não precisa</button>
+          <button type="button" class="opt" data-value="50" data-i18n="calc_opt2b">+1 revisão</button>
+          <button type="button" class="opt" data-value="100" data-i18n="calc_opt2c">+2 revisões</button>
         </div>
       </div>
 
       <div class="calc-row">
-        <label>Qual o prazo?</label>
+        <label data-i18n="calc_q3">Qual o prazo?</label>
         <div class="opts" data-group="prazo">
-          <button type="button" class="opt active" data-value="0">Padrão (5 dias úteis)</button>
-          <button type="button" class="opt" data-value="150">Urgente (3 dias úteis)</button>
+          <button type="button" class="opt active" data-value="0" data-i18n="calc_opt3a">Padrão (5 dias úteis)</button>
+          <button type="button" class="opt" data-value="150" data-i18n="calc_opt3b">Urgente (3 dias úteis)</button>
         </div>
       </div>
 
       <div class="calc-total">
-        <span class="lbl">Estimativa inicial</span>
+        <span class="lbl" data-i18n="calc_total_label">Estimativa inicial</span>
         <span class="val" id="calc-value">R$ 497</span>
       </div>
-      <p class="calc-note">Valor aproximado — o orçamento final é confirmado após entender seu projeto.</p>
+      <p class="calc-note" data-i18n="calc_note">Valor aproximado — o orçamento final é confirmado após entender seu projeto.</p>
+      <p class="fx-note" id="fx-note"><span class="fx-dot" id="fx-dot"></span><span id="fx-text"></span></p>
 
-      <a href="#" id="calc-cta" class="btn-calc" target="_blank" rel="noopener">Continuar no WhatsApp</a>
+      <a href="#" id="calc-cta" class="btn-calc" data-i18n="calc_btn" target="_blank" rel="noopener">Continuar no WhatsApp</a>
     </div>
   </div>
 </section>
@@ -173,29 +193,29 @@
 <section class="process">
   <div class="wrap">
     <div class="section-head">
-      <p class="kicker">Como funciona</p>
-      <h2>Do primeiro contato à entrega, sem enrolação</h2>
+      <p class="kicker" data-i18n="process_kicker">Como funciona</p>
+      <h2 data-i18n="process_h2">Do primeiro contato à entrega, sem enrolação</h2>
     </div>
     <div class="steps">
       <div class="step-card">
         <div class="step-num">01</div>
-        <h4>Você conta o que precisa</h4>
-        <p>Pela calculadora acima ou direto no WhatsApp.</p>
+        <h4 data-i18n="step1_h">Você conta o que precisa</h4>
+        <p data-i18n="step1_p">Pela calculadora acima ou direto no WhatsApp.</p>
       </div>
       <div class="step-card">
         <div class="step-num">02</div>
-        <h4>Orçamento e contrato</h4>
-        <p>Você recebe o valor fechado e o contrato para assinatura digital.</p>
+        <h4 data-i18n="step2_h">Orçamento e contrato</h4>
+        <p data-i18n="step2_p">Você recebe o valor fechado e o contrato para assinatura digital.</p>
       </div>
       <div class="step-card">
         <div class="step-num">03</div>
-        <h4>Sinal de 50%</h4>
-        <p>Pagamento via Pix ou link, e o projeto entra em produção.</p>
+        <h4 data-i18n="step3_h">Sinal de 50%</h4>
+        <p data-i18n="step3_p">Pagamento via Pix ou link, e o projeto entra em produção.</p>
       </div>
       <div class="step-card">
         <div class="step-num">04</div>
-        <h4>Entrega em 5 dias úteis</h4>
-        <p>Você aprova, ajusta o que precisar e recebe os arquivos finais.</p>
+        <h4 data-i18n="step4_h">Entrega em 5 dias úteis</h4>
+        <p data-i18n="step4_p">Você aprova, ajusta o que precisar e recebe os arquivos finais.</p>
       </div>
     </div>
   </div>
@@ -204,48 +224,48 @@
 <section class="portfolio" id="portfolio">
   <div class="wrap">
     <div class="section-head">
-      <p class="kicker">Trabalhos</p>
-      <h2>Um pouco do que já foi feito</h2>
+      <p class="kicker" data-i18n="portfolio_kicker">Trabalhos</p>
+      <h2 data-i18n="portfolio_h2">Um pouco do que já foi feito</h2>
     </div>
     <div class="port-grid">
 
       <div class="port-card">
         <a href="https://doceliz-site.vercel.app" target="_blank" rel="noopener" class="port-preview"><img src="img/doceliz.jpg" alt="Site DoceLiz"></a>
         <div class="port-body">
-          <span class="port-tag tag-real">Projeto real</span>
-          <h3>DoceLiz — Confeitaria artesanal</h3>
-          <p>Catálogo digital, carrinho de compras e pedido finalizado direto no WhatsApp.</p>
-          <a href="https://doceliz-site.vercel.app" class="port-link" target="_blank" rel="noopener">Ver projeto ↗</a>
+          <span class="port-tag tag-real" data-i18n="tag_real">Projeto real</span>
+          <h3>DoceLiz — Confeitaria Artesanal</h3>
+          <p data-i18n="doceliz_desc">Catálogo digital, carrinho de compras e pedido finalizado direto no WhatsApp.</p>
+          <a href="https://doceliz-site.vercel.app" class="port-link" target="_blank" rel="noopener" data-i18n="doceliz_link">Ver projeto ↗</a>
         </div>
       </div>
 
       <div class="port-card">
         <a href="https://radiant-caramel-9584bd.netlify.app" target="_blank" rel="noopener" class="port-preview"><img src="img/sorriso.jpg" alt="Site Sorriso Nova"></a>
         <div class="port-body">
-          <span class="port-tag tag-demo">Exemplo de estilo</span>
-          <h3>Clínica odontológica</h3>
-          <p>Visual acolhedor e direto, pensado pra negócios locais que vendem confiança.</p>
-          <a href="https://radiant-caramel-9584bd.netlify.app" class="port-link" target="_blank" rel="noopener">Ver exemplo ↗</a>
+          <span class="port-tag tag-demo" data-i18n="tag_demo">Exemplo de estilo</span>
+          <h3 data-i18n="sorriso_title">Clínica odontológica</h3>
+          <p data-i18n="sorriso_desc">Visual acolhedor e direto, pensado pra negócios locais que vendem confiança.</p>
+          <a href="https://radiant-caramel-9584bd.netlify.app" class="port-link" target="_blank" rel="noopener" data-i18n="sorriso_link">Ver exemplo ↗</a>
         </div>
       </div>
 
       <div class="port-card">
         <a href="https://poetic-beignet-407ffc.netlify.app" target="_blank" rel="noopener" class="port-preview"><img src="img/vantagem.jpg" alt="Site Vantagem Consultoria"></a>
         <div class="port-body">
-          <span class="port-tag tag-demo">Exemplo de estilo</span>
-          <h3>Consultoria jurídica</h3>
-          <p>Tom sério e corporativo, para serviços B2B que precisam transmitir autoridade.</p>
-          <a href="https://poetic-beignet-407ffc.netlify.app" class="port-link" target="_blank" rel="noopener">Ver exemplo ↗</a>
+          <span class="port-tag tag-demo" data-i18n="tag_demo">Exemplo de estilo</span>
+          <h3 data-i18n="vantagem_title">Consultoria jurídica</h3>
+          <p data-i18n="vantagem_desc">Tom sério e corporativo, para serviços B2B que precisam transmitir autoridade.</p>
+          <a href="https://poetic-beignet-407ffc.netlify.app" class="port-link" target="_blank" rel="noopener" data-i18n="vantagem_link">Ver exemplo ↗</a>
         </div>
       </div>
 
       <div class="port-card">
         <a href="https://animated-shortbread-603a4e.netlify.app" target="_blank" rel="noopener" class="port-preview"><img src="img/fluencia.jpg" alt="Site Fluência Rápida"></a>
         <div class="port-body">
-          <span class="port-tag tag-demo">Exemplo de estilo</span>
-          <h3>Curso online</h3>
-          <p>Visual moderno e energético, para infoprodutos e cursos digitais.</p>
-          <a href="https://animated-shortbread-603a4e.netlify.app" class="port-link" target="_blank" rel="noopener">Ver exemplo ↗</a>
+          <span class="port-tag tag-demo" data-i18n="tag_demo">Exemplo de estilo</span>
+          <h3 data-i18n="fluencia_title">Curso online</h3>
+          <p data-i18n="fluencia_desc">Visual moderno e energético, para infoprodutos e cursos digitais.</p>
+          <a href="https://animated-shortbread-603a4e.netlify.app" class="port-link" target="_blank" rel="noopener" data-i18n="fluencia_link">Ver exemplo ↗</a>
         </div>
       </div>
 
@@ -256,28 +276,29 @@
 <section class="pricing">
   <div class="wrap">
     <div class="section-head">
-      <p class="kicker">Investimento</p>
-      <h2>Um valor de lançamento para os primeiros projetos</h2>
+      <p class="kicker" data-i18n="pricing_kicker">Investimento</p>
+      <h2 data-i18n="pricing_h2">Um valor de lançamento para os primeiros projetos</h2>
     </div>
     <div class="price-card">
-      <div class="tag">Landing page — página única</div>
-      <div class="amount">R$ 497 <span>à vista</span></div>
+      <div class="tag" data-i18n="price_tag">Landing page — página única</div>
+      <div class="amount"><span id="price-value">R$ 497</span> <span data-i18n="price_suffix">à vista</span></div>
       <ul class="price-list">
-        <li>Design responsivo (computador e celular)</li>
-        <li>2 rodadas de revisão incluídas</li>
-        <li>Entrega em até 5 dias úteis</li>
-        <li>Sinal de 50% + saldo na entrega</li>
+        <li data-i18n="price_li1">Design responsivo (computador e celular)</li>
+        <li data-i18n="price_li2">2 rodadas de revisão incluídas</li>
+        <li data-i18n="price_li3">Entrega em até 5 dias úteis</li>
+        <li data-i18n="price_li4">Sinal de 50% + saldo na entrega</li>
       </ul>
-      <a href="#contato" class="btn-price">Quero orçar meu projeto</a>
+      <p class="fx-note-dark" id="fx-note-price"><span class="fx-dot" id="fx-dot-price"></span><span id="fx-text-price"></span></p>
+      <a href="#contato" class="btn-price" data-i18n="price_btn">Quero orçar meu projeto</a>
     </div>
   </div>
 </section>
 
 <section class="cta-final" id="contato">
   <div class="wrap">
-    <h2>Vamos conversar sobre a sua página?</h2>
-    <p>Me conta o que você precisa e eu te retorno com um orçamento no mesmo dia.</p>
-    <a href="https://wa.me/5521988761259?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20do%20Converta%20Studio%20e%20quero%20saber%20mais%20sobre%20uma%20landing%20page." class="btn-final" target="_blank" rel="noopener">Falar no WhatsApp</a>
+    <h2 data-i18n="cta_h2">Vamos conversar sobre a sua página?</h2>
+    <p data-i18n="cta_p">Me conta o que você precisa e eu te retorno com um orçamento no mesmo dia.</p>
+    <a href="#" id="cta-final-link" class="btn-final" data-i18n="cta_btn" target="_blank" rel="noopener">Falar no WhatsApp</a>
   </div>
 </section>
 
@@ -289,28 +310,172 @@
 </footer>
 
 <script>
+  // ---------- Translations ----------
+  const T = {
+    nav_cta: { pt:'Falar no WhatsApp', en:'Chat on WhatsApp', es:'Hablar por WhatsApp' },
+    hero_h1: {
+      pt:'Sua landing page pronta em <span class="accent">5 dias úteis</span>, com orçamento na hora',
+      en:'Your landing page ready in <span class="accent">5 business days</span>, with an instant quote',
+      es:'Tu landing page lista en <span class="accent">5 días hábiles</span>, con presupuesto al instante'
+    },
+    hero_lead: {
+      pt:'Site que apresenta seu produto ou serviço e transforma visitante em cliente — feito sob medida, sem template genérico.',
+      en:'A site that presents your product or service and turns visitors into customers — custom-built, never a generic template.',
+      es:'Un sitio que presenta tu producto o servicio y convierte visitantes en clientes — hecho a medida, sin plantillas genéricas.'
+    },
+    badge1:{ pt:'Entrega em 5 dias úteis', en:'Delivered in 5 business days', es:'Entrega en 5 días hábiles' },
+    badge2:{ pt:'2 revisões incluídas', en:'2 revisions included', es:'2 revisiones incluidas' },
+    badge3:{ pt:'Orçamento fechado antes de começar', en:'Fixed quote before we start', es:'Presupuesto cerrado antes de empezar' },
+    calc_title:{ pt:'Monte uma estimativa rápida', en:'Build a quick estimate', es:'Armá una estimación rápida' },
+    calc_q1:{ pt:'Quantas seções sua página precisa?', en:'How many sections does your page need?', es:'¿Cuántas secciones necesita tu página?' },
+    calc_opt1a:{ pt:'Uma seção (padrão)', en:'One section (standard)', es:'Una sección (estándar)' },
+    calc_opt1b:{ pt:'Múltiplas seções', en:'Multiple sections', es:'Varias secciones' },
+    calc_q2:{ pt:'Precisa de revisões extras (além das 2 inclusas)?', en:'Need extra revisions (beyond the 2 included)?', es:'¿Necesitás revisiones extra (además de las 2 incluidas)?' },
+    calc_opt2a:{ pt:'Não precisa', en:'Not needed', es:'No hace falta' },
+    calc_opt2b:{ pt:'+1 revisão', en:'+1 revision', es:'+1 revisión' },
+    calc_opt2c:{ pt:'+2 revisões', en:'+2 revisions', es:'+2 revisiones' },
+    calc_q3:{ pt:'Qual o prazo?', en:"What's the timeline?", es:'¿Cuál es el plazo?' },
+    calc_opt3a:{ pt:'Padrão (5 dias úteis)', en:'Standard (5 business days)', es:'Estándar (5 días hábiles)' },
+    calc_opt3b:{ pt:'Urgente (3 dias úteis)', en:'Rush (3 business days)', es:'Urgente (3 días hábiles)' },
+    calc_total_label:{ pt:'Estimativa inicial', en:'Initial estimate', es:'Estimación inicial' },
+    calc_note:{ pt:'Valor aproximado — o orçamento final é confirmado após entender seu projeto.', en:'Approximate value — the final quote is confirmed once we understand your project.', es:'Valor aproximado — el presupuesto final se confirma después de conocer tu proyecto.' },
+    calc_btn:{ pt:'Continuar no WhatsApp', en:'Continue on WhatsApp', es:'Continuar por WhatsApp' },
+    process_kicker:{ pt:'Como funciona', en:'How it works', es:'Cómo funciona' },
+    process_h2:{ pt:'Do primeiro contato à entrega, sem enrolação', en:'From first contact to delivery, no fuss', es:'Del primer contacto a la entrega, sin vueltas' },
+    step1_h:{ pt:'Você conta o que precisa', en:'You tell us what you need', es:'Nos contás qué necesitás' },
+    step1_p:{ pt:'Pela calculadora acima ou direto no WhatsApp.', en:'Using the calculator above or straight on WhatsApp.', es:'Con la calculadora de arriba o directo por WhatsApp.' },
+    step2_h:{ pt:'Orçamento e contrato', en:'Quote and contract', es:'Presupuesto y contrato' },
+    step2_p:{ pt:'Você recebe o valor fechado e o contrato para assinatura digital.', en:'You get the fixed price and a contract for digital signature.', es:'Recibís el valor cerrado y el contrato para firma digital.' },
+    step3_h:{ pt:'Sinal de 50%', en:'50% deposit', es:'Seña del 50%' },
+    step3_p:{ pt:'Pagamento via Pix ou link, e o projeto entra em produção.', en:'Payment via bank transfer or payment link, and the project goes into production.', es:'Pago por transferencia o link, y el proyecto entra en producción.' },
+    step4_h:{ pt:'Entrega em 5 dias úteis', en:'Delivery in 5 business days', es:'Entrega en 5 días hábiles' },
+    step4_p:{ pt:'Você aprova, ajusta o que precisar e recebe os arquivos finais.', en:'You approve, request any tweaks, and get the final files.', es:'Aprobás, ajustás lo que haga falta y recibís los archivos finales.' },
+    portfolio_kicker:{ pt:'Trabalhos', en:'Work', es:'Trabajos' },
+    portfolio_h2:{ pt:'Um pouco do que já foi feito', en:"A look at what's been done", es:'Un poco de lo que ya se hizo' },
+    tag_real:{ pt:'Projeto real', en:'Real project', es:'Proyecto real' },
+    tag_demo:{ pt:'Exemplo de estilo', en:'Style example', es:'Ejemplo de estilo' },
+    doceliz_desc:{ pt:'Catálogo digital, carrinho de compras e pedido finalizado direto no WhatsApp.', en:'Digital catalog, shopping cart, and orders completed straight through WhatsApp.', es:'Catálogo digital, carrito de compras y pedidos finalizados directo por WhatsApp.' },
+    doceliz_link:{ pt:'Ver projeto ↗', en:'View project ↗', es:'Ver proyecto ↗' },
+    sorriso_title:{ pt:'Clínica odontológica', en:'Dental clinic', es:'Clínica odontológica' },
+    sorriso_desc:{ pt:'Visual acolhedor e direto, pensado pra negócios locais que vendem confiança.', en:'Warm, straightforward visuals, designed for local businesses that sell trust.', es:'Visual cálido y directo, pensado para negocios locales que venden confianza.' },
+    sorriso_link:{ pt:'Ver exemplo ↗', en:'View example ↗', es:'Ver ejemplo ↗' },
+    vantagem_title:{ pt:'Consultoria jurídica', en:'Legal consulting', es:'Consultoría jurídica' },
+    vantagem_desc:{ pt:'Tom sério e corporativo, para serviços B2B que precisam transmitir autoridade.', en:'Serious, corporate tone, for B2B services that need to convey authority.', es:'Tono serio y corporativo, para servicios B2B que necesitan transmitir autoridad.' },
+    vantagem_link:{ pt:'Ver exemplo ↗', en:'View example ↗', es:'Ver ejemplo ↗' },
+    fluencia_title:{ pt:'Curso online', en:'Online course', es:'Curso online' },
+    fluencia_desc:{ pt:'Visual moderno e energético, para infoprodutos e cursos digitais.', en:'Modern, energetic visuals, for digital products and online courses.', es:'Visual moderno y enérgico, para infoproductos y cursos digitales.' },
+    fluencia_link:{ pt:'Ver exemplo ↗', en:'View example ↗', es:'Ver ejemplo ↗' },
+    pricing_kicker:{ pt:'Investimento', en:'Investment', es:'Inversión' },
+    pricing_h2:{ pt:'Um valor de lançamento para os primeiros projetos', en:'A launch price for the first projects', es:'Un valor de lanzamiento para los primeros proyectos' },
+    price_tag:{ pt:'Landing page — página única', en:'Landing page — single page', es:'Landing page — página única' },
+    price_suffix:{ pt:'à vista', en:'one-time', es:'de contado' },
+    price_li1:{ pt:'Design responsivo (computador e celular)', en:'Responsive design (desktop and mobile)', es:'Diseño responsivo (computadora y celular)' },
+    price_li2:{ pt:'2 rodadas de revisão incluídas', en:'2 rounds of revisions included', es:'2 rondas de revisión incluidas' },
+    price_li3:{ pt:'Entrega em até 5 dias úteis', en:'Delivery within 5 business days', es:'Entrega en hasta 5 días hábiles' },
+    price_li4:{ pt:'Sinal de 50% + saldo na entrega', en:'50% deposit + balance on delivery', es:'Seña del 50% + saldo en la entrega' },
+    price_btn:{ pt:'Quero orçar meu projeto', en:'I want a quote', es:'Quiero cotizar mi proyecto' },
+    cta_h2:{ pt:'Vamos conversar sobre a sua página?', en:"Let's talk about your page?", es:'¿Hablamos sobre tu página?' },
+    cta_p:{ pt:'Me conta o que você precisa e eu te retorno com um orçamento no mesmo dia.', en:"Tell me what you need and I'll get back to you with a quote the same day.", es:'Contame qué necesitás y te respondo con un presupuesto el mismo día.' },
+    cta_btn:{ pt:'Falar no WhatsApp', en:'Chat on WhatsApp', es:'Hablar por WhatsApp' }
+  };
+
+  const WA_NUMBER = '5521988761259';
+  const WA_STATIC_MSG = {
+    pt:'Olá! Vim pela página do Converta Studio e quero saber mais sobre uma landing page.',
+    en:"Hi! I came from the Converta Studio page and I'd like to know more about a landing page.",
+    es:'¡Hola! Llegué desde la página de Converta Studio y quiero saber más sobre una landing page.'
+  };
+  const FX_LABEL = {
+    en: (live) => live ? 'Live currency conversion (BRL → USD)' : 'Approximate conversion (offline)',
+    es: (live) => live ? 'Conversión de moneda en vivo (BRL → ARS)' : 'Conversión aproximada (sin conexión)'
+  };
+
+  let lang = 'pt';
+  let rateUSD = 0.19;   // fallback, replaced by live fetch
+  let rateARS = 292;    // fallback, replaced by live fetch
+  let fxLive = false;
+
+  function applyTranslations(){
+    document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if(T[key] && T[key][lang] !== undefined){
+        el.innerHTML = T[key][lang];
+      }
+    });
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+
+    // fx notes
+    const fxNote = document.getElementById('fx-note');
+    const fxNotePrice = document.getElementById('fx-note-price');
+    const fxDot = document.getElementById('fx-dot');
+    const fxDotPrice = document.getElementById('fx-dot-price');
+    if(lang === 'pt'){
+      fxNote.classList.remove('show');
+      fxNotePrice.classList.remove('show');
+    } else {
+      const label = FX_LABEL[lang](fxLive);
+      document.getElementById('fx-text').textContent = label;
+      document.getElementById('fx-text-price').textContent = label;
+      fxDot.classList.toggle('stale', !fxLive);
+      fxDotPrice.classList.toggle('stale', !fxLive);
+      fxNote.classList.add('show');
+      fxNotePrice.classList.add('show');
+    }
+
+    document.getElementById('cta-final-link').href = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(WA_STATIC_MSG[lang]);
+    updateTotal();
+    updatePriceCard();
+  }
+
+  function formatPrice(brlValue){
+    if(lang === 'pt'){
+      return 'R$ ' + Math.round(brlValue).toLocaleString('pt-BR');
+    } else if(lang === 'en'){
+      const usd = brlValue * rateUSD;
+      return 'US$ ' + Math.round(usd).toLocaleString('en-US');
+    } else {
+      const ars = brlValue * rateARS;
+      return '$ ' + Math.round(ars).toLocaleString('es-AR') + ' ARS';
+    }
+  }
+
+  function updatePriceCard(){
+    document.getElementById('price-value').textContent = formatPrice(497);
+  }
+
+  // ---------- Calculator ----------
   const state = { sections: 0, revisions: 0, prazo: 0 };
   const base = 497;
   const valueEl = document.getElementById('calc-value');
   const ctaEl = document.getElementById('calc-cta');
 
-  function formatBRL(n){
-    return 'R$ ' + n.toLocaleString('pt-BR');
-  }
+  const DETAIL_PARTS = {
+    pt: { sections:'múltiplas seções', rev1:'+1 revisão extra', rev2:'+2 revisões extras', rush:'entrega urgente (3 dias úteis)', join:' com ' },
+    en: { sections:'multiple sections', rev1:'+1 extra revision', rev2:'+2 extra revisions', rush:'rush delivery (3 business days)', join:' with ' },
+    es: { sections:'varias secciones', rev1:'+1 revisión extra', rev2:'+2 revisiones extra', rush:'entrega urgente (3 días hábiles)', join:' con ' }
+  };
+  const WA_CALC_TEMPLATE = {
+    pt: (detail, price) => `Olá! Vim pela página do Converta Studio. Fiz uma estimativa: landing page${detail}, valor aproximado de ${price}. Podemos conversar?`,
+    en: (detail, price) => `Hi! I came from the Converta Studio page. I made an estimate: landing page${detail}, approximate value of ${price}. Can we talk?`,
+    es: (detail, price) => `¡Hola! Llegué desde la página de Converta Studio. Hice una estimación: landing page${detail}, valor aproximado de ${price}. ¿Podemos hablar?`
+  };
 
   function updateTotal(){
-    const total = base + state.sections + state.revisions + state.prazo;
-    valueEl.textContent = formatBRL(total);
+    const totalBRL = base + state.sections + state.revisions + state.prazo;
+    const formatted = formatPrice(totalBRL);
+    valueEl.textContent = formatted;
 
+    const d = DETAIL_PARTS[lang];
     const parts = [];
-    if(state.sections > 0) parts.push('múltiplas seções');
-    if(state.revisions === 50) parts.push('+1 revisão extra');
-    if(state.revisions === 100) parts.push('+2 revisões extras');
-    if(state.prazo > 0) parts.push('entrega urgente (3 dias úteis)');
-    const detail = parts.length ? ' com ' + parts.join(', ') : '';
+    if(state.sections > 0) parts.push(d.sections);
+    if(state.revisions === 50) parts.push(d.rev1);
+    if(state.revisions === 100) parts.push(d.rev2);
+    if(state.prazo > 0) parts.push(d.rush);
+    const detail = parts.length ? d.join + parts.join(', ') : '';
 
-    const msg = `Olá! Vim pela página do Converta Studio. Fiz uma estimativa: landing page${detail}, valor aproximado de ${formatBRL(total)}. Podemos conversar?`;
-    ctaEl.href = 'https://wa.me/5521988761259?text=' + encodeURIComponent(msg);
+    const msg = WA_CALC_TEMPLATE[lang](detail, formatted);
+    ctaEl.href = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(msg);
   }
 
   document.querySelectorAll('.opts').forEach(group => {
@@ -325,7 +490,36 @@
     });
   });
 
-  updateTotal();
+  // ---------- Language switcher ----------
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      lang = btn.dataset.lang;
+      applyTranslations();
+    });
+  });
+
+  // ---------- Live FX fetch ----------
+  fetch('https://open.er-api.com/v6/latest/BRL')
+    .then(r => r.json())
+    .then(data => {
+      if(data && data.rates && data.rates.USD && data.rates.ARS){
+        rateUSD = data.rates.USD;
+        rateARS = data.rates.ARS;
+        fxLive = true;
+      }
+    })
+    .catch(() => { fxLive = false; })
+    .finally(() => { applyTranslations(); });
+
+  // ---------- Sticky header shadow ----------
+  const headerEl = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    headerEl.classList.toggle('scrolled', window.scrollY > 8);
+  });
+
+
+  // Initial render (uses fallback rates until fetch resolves)
+  applyTranslations();
 </script>
 
 </body>
