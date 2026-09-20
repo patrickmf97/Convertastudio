@@ -10,202 +10,185 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://convertastudio.vercel.app/">
 <meta property="og:image" content="https://convertastudio.vercel.app/img/yanina.jpg">
-<meta name="theme-color" content="#F6F4EF">
+<meta name="theme-color" content="#061923">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --ink:#14171A;
-    --ink-soft:#3C4248;
-    --slate:#666E77;
-    --paper:#F6F4EF;
-    --panel:#FFFFFF;
-    --line:#E4E1D8;
-    --green:#0FB37D;
-    --green-deep:#0A8F63;
-    --green-tint:#E4F6EE;
-  }
-  *{box-sizing:border-box; margin:0; padding:0;}
-  html{ scroll-behavior:smooth; }
-  body{ font-family:'Inter', sans-serif; color:var(--ink); background:var(--paper); line-height:1.55; -webkit-font-smoothing:antialiased; }
-  h1,h2,h3{ font-family:'Space Grotesk', sans-serif; font-weight:600; letter-spacing:-0.01em; color:var(--ink); }
-  a{ color:inherit; }
-  .wrap{ max-width:1120px; margin:0 auto; padding:0 24px; }
-  button{ font-family:inherit; cursor:pointer; border:none; }
-
-  header{ padding:18px 0; position:sticky; top:0; z-index:50; background:rgba(246,244,239,0.82); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border-bottom:1px solid transparent; transition:border-color .2s; }
-  header.scrolled{ border-bottom-color:var(--line); }
-  .nav{ display:flex; justify-content:space-between; align-items:center; gap:16px; }
-  .logo{ font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:20px; white-space:nowrap; }
-  .logo span{ color:var(--green-deep); }
-  .nav-right{ display:flex; align-items:center; gap:14px; }
-  .nav-links{ display:flex; align-items:center; gap:18px; }
-  .nav-links a{ color:var(--ink-soft); font-size:13.5px; font-weight:500; text-decoration:none; }
-  .nav-links a:hover{ color:var(--green-deep); }
-  .lang-switch{ display:flex; background:var(--panel); border:1px solid var(--line); border-radius:100px; padding:3px; gap:2px; }
-  .lang-btn{ background:transparent; padding:6px 11px; border-radius:100px; font-size:12.5px; font-weight:600; color:var(--ink-soft); }
-  .lang-btn.active{ background:var(--ink); color:#fff; }
-  .nav-cta{ background:var(--ink); color:#fff; padding:11px 20px; border-radius:6px; text-decoration:none; font-size:14px; font-weight:500; white-space:nowrap; }
-
-  /* HERO with calculator */
-  .hero{ padding:48px 0 90px; }
-  .hero-grid{ display:grid; grid-template-columns:1fr 1fr; gap:52px; align-items:start; }
-  .hero h1{ font-size:44px; line-height:1.14; }
-  .hero h1 .accent{ color:var(--green-deep); }
-  .hero p.lead{ margin-top:18px; font-size:17px; color:var(--ink-soft); max-width:46ch; }
-  .badges{ margin-top:28px; display:flex; gap:10px; flex-wrap:wrap; }
-  .badge{ font-size:13px; color:var(--ink-soft); background:var(--panel); border:1px solid var(--line); padding:7px 14px; border-radius:100px; }
-
-  .calc-card{ background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:28px; box-shadow:0 20px 44px -28px rgba(20,23,26,0.25); }
-  .calc-card h3{ font-size:15px; text-transform:none; color:var(--ink-soft); font-weight:500; margin-bottom:20px; font-family:'Inter'; }
-  .calc-row{ margin-bottom:20px; }
-  .calc-row label{ display:block; font-size:14px; font-weight:500; margin-bottom:8px; }
-  .opts{ display:flex; gap:8px; flex-wrap:wrap; }
-  .opt{ border:1px solid var(--line); background:var(--paper); padding:9px 14px; border-radius:8px; font-size:13.5px; color:var(--ink-soft); transition:all .15s; }
-  .opt.active{ background:var(--ink); border-color:var(--ink); color:#fff; }
-  .calc-total{ border-top:1px dashed var(--line); margin-top:22px; padding-top:20px; display:flex; justify-content:space-between; align-items:baseline; }
-  .calc-total .lbl{ font-size:14px; color:var(--ink-soft); }
-  .calc-total .val{ font-family:'Space Grotesk', sans-serif; font-size:32px; font-weight:700; color:var(--green-deep); }
-  .calc-note{ font-size:12.5px; color:var(--slate); margin-top:6px; }
-  .fx-note{ font-size:12px; color:var(--green-deep); margin-top:4px; display:none; align-items:center; gap:6px; }
-  .fx-note.show{ display:flex; }
-  .fx-dot{ width:6px; height:6px; border-radius:50%; background:var(--green); flex-shrink:0; }
-  .fx-dot.stale{ background:#C9A227; }
-  .btn-calc{ width:100%; margin-top:20px; background:var(--green); color:#fff; padding:15px; border-radius:8px; font-size:15px; font-weight:600; text-align:center; display:block; text-decoration:none; }
-  .btn-calc:hover{ background:var(--green-deep); }
-
-  /* Process */
-  .process{ padding:80px 0; background:var(--panel); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
-  .section-head{ max-width:56ch; margin-bottom:44px; }
-  .section-head p.kicker{ color:var(--green-deep); font-weight:600; font-size:14px; margin-bottom:8px; }
-  .section-head h2{ font-size:30px; }
-  .steps{ display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
-  .step-num{ font-family:'Space Grotesk', sans-serif; font-size:14px; color:var(--green-deep); font-weight:700; margin-bottom:10px; }
-  .step-card h4{ font-size:16px; margin-bottom:8px; }
-  .step-card p{ font-size:14px; color:var(--ink-soft); }
-
-  /* Portfolio */
-  .portfolio{ padding:88px 0; }
-  .port-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:24px; }
-  .port-card{ background:var(--panel); border:1px solid var(--line); border-radius:12px; overflow:hidden; }
-  .port-card.featured{ grid-column:1/-1; display:grid; grid-template-columns:1.35fr 1fr; }
-  .port-card.featured .port-preview{ height:100%; min-height:320px; }
-  .port-card.featured .port-body{ padding:36px; display:flex; flex-direction:column; justify-content:center; }
-  .port-preview{ height:170px; overflow:hidden; display:block; }
-  .port-preview img{ width:100%; height:100%; object-fit:cover; object-position:left top; display:block; transition:transform .3s; }
-  .port-card:hover .port-preview img{ transform:scale(1.04); }
-  .port-body{ padding:22px; }
-  .port-tag{ font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:8px; display:inline-block; padding:4px 10px; border-radius:100px; }
-  .tag-real{ background:var(--green-tint); color:var(--green-deep); }
-  .tag-demo{ background:#EFEDE6; color:var(--slate); }
-  .port-card h3{ font-size:18px; margin-bottom:8px; }
-  .port-card p{ font-size:14px; color:var(--ink-soft); margin-bottom:12px; }
-  .port-link{ font-size:13.5px; font-weight:600; color:var(--green-deep); text-decoration:none; }
-  .feature-list{ display:flex; flex-wrap:wrap; gap:7px; margin:4px 0 18px; }
-  .feature-list span{ font-size:11.5px; color:var(--ink-soft); background:var(--paper); border:1px solid var(--line); border-radius:100px; padding:5px 9px; }
-  .examples-head{ margin-top:52px; margin-bottom:20px; display:flex; justify-content:space-between; align-items:end; gap:20px; }
-  .examples-head h3{ font-size:21px; }
-  .examples-head p{ font-size:13.5px; color:var(--slate); max-width:46ch; }
-  .examples-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
-  .example-card{ background:var(--panel); border:1px solid var(--line); border-radius:10px; overflow:hidden; }
-  .example-card img{ width:100%; height:112px; object-fit:cover; object-position:left top; display:block; }
-  .example-card div{ padding:15px; }
-  .example-card strong{ display:block; font-family:'Space Grotesk'; font-size:14px; margin-bottom:4px; }
-  .example-card a{ font-size:12.5px; color:var(--green-deep); font-weight:600; text-decoration:none; }
-
-  /* Custom solutions */
-  .solutions{ padding:78px 0; background:var(--panel); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
-  .solutions-grid{ display:grid; grid-template-columns:1.1fr 1fr; gap:60px; align-items:center; }
-  .solutions h2{ font-size:30px; margin-bottom:14px; }
-  .solutions p{ color:var(--ink-soft); }
-  .solution-items{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
-  .solution-item{ background:var(--paper); border:1px solid var(--line); border-radius:10px; padding:18px; font-size:13.5px; font-weight:600; }
-
-  /* Pricing */
-  .pricing{ padding:88px 0; background:var(--ink); color:#fff; }
-  .pricing .section-head h2{ color:#fff; }
-  .pricing .section-head p.kicker{ color:#7CE0BB; }
-  .price-card{ background:#1D2126; border:1px solid #2C3238; border-radius:14px; padding:36px; max-width:420px; }
-  .price-card .tag{ font-size:13px; color:#7CE0BB; font-weight:600; margin-bottom:14px; }
-  .price-card .amount{ font-family:'Space Grotesk', sans-serif; font-size:44px; font-weight:700; }
-  .price-card .amount span{ font-size:16px; color:#9AA3AC; font-weight:500; }
-  .price-list{ margin:26px 0; list-style:none; }
-  .price-list li{ padding:10px 0; border-top:1px solid #2C3238; font-size:14.5px; color:#C7CDD3; }
-  .price-list li:first-child{ border-top:none; }
-  .price-card .calc-note{ color:#9AA3AC; margin:0 0 12px; }
-  .btn-price{ display:block; text-align:center; background:var(--green); color:#0B1210; padding:15px; border-radius:8px; text-decoration:none; font-weight:700; margin-top:8px; }
-  .fx-note-dark{ font-size:12px; color:#7CE0BB; margin-top:14px; display:none; align-items:center; gap:6px; }
-  .fx-note-dark.show{ display:flex; }
-
-  /* Final CTA */
-  .cta-final{ padding:90px 0; text-align:center; }
-  .cta-final h2{ font-size:32px; max-width:22ch; margin:0 auto 14px; }
-  .cta-final p{ color:var(--ink-soft); margin-bottom:28px; }
-  .btn-final{ display:inline-block; background:var(--green); color:#fff; padding:16px 34px; border-radius:8px; text-decoration:none; font-weight:600; font-size:15.5px; }
-
-  /* FAQ */
-  .faq{ padding:88px 0; background:var(--panel); border-top:1px solid var(--line); }
-  .faq-grid{ display:grid; grid-template-columns:.8fr 1.2fr; gap:70px; }
-  .faq h2{ font-size:30px; }
-  .faq-list{ border-top:1px solid var(--line); }
-  details{ border-bottom:1px solid var(--line); padding:18px 0; }
-  summary{ font-family:'Space Grotesk'; font-weight:600; cursor:pointer; list-style:none; display:flex; justify-content:space-between; gap:20px; }
-  summary::after{ content:'+'; color:var(--green-deep); font-size:20px; line-height:1; }
-  details[open] summary::after{ content:'–'; }
-  details p{ color:var(--ink-soft); font-size:14px; padding-top:12px; max-width:68ch; }
-
-  footer{ padding:34px 0; border-top:1px solid var(--line); }
-  .footer-row{ display:flex; justify-content:space-between; font-size:13.5px; color:var(--slate); flex-wrap:wrap; gap:10px; }
-
-  @media (max-width:860px){
-    .hero-grid{ grid-template-columns:1fr; }
-    .steps{ grid-template-columns:1fr 1fr; }
-    .port-grid{ grid-template-columns:1fr; }
-    .port-card.featured{ grid-column:auto; display:block; }
-    .port-card.featured .port-preview{ height:210px; min-height:0; }
-    .port-card.featured .port-body{ padding:22px; }
-    .examples-grid{ grid-template-columns:1fr; }
-    .example-card{ display:grid; grid-template-columns:130px 1fr; }
-    .example-card img{ height:100%; min-height:100px; }
-    .solutions-grid,.faq-grid{ grid-template-columns:1fr; gap:32px; }
-    .nav-links{ display:none; }
-    .hero h1{ font-size:34px; }
-    .nav-cta{ display:none; }
-  }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
 <header id="site-header">
   <div class="wrap nav">
-    <div class="logo">Converta<span>Studio</span></div>
+    <a class="brand-logo" href="#inicio" aria-label="Converta Studio">
+    <span class="brand-mark" aria-hidden="true"><span class="brand-c">C</span><span class="brand-s">S</span></span>
+    <span class="brand-name">Converta Studio</span>
+  </a>
     <div class="nav-right">
       <nav class="nav-links" aria-label="Navegação da página">
+        <a href="#inicio" class="active" data-i18n="nav_home">Início</a>
         <a href="#portfolio" data-i18n="nav_work">Projetos</a>
-        <a href="#investimento" data-i18n="nav_price">Investimento</a>
+        <a href="#servicos" data-i18n="nav_services">Serviços</a>
+        <a href="#como-funciona" data-i18n="nav_process">Como funciona</a>
+        <a href="#portfolio" data-i18n="nav_testimonials">Depoimentos</a>
+        <a href="#faq" data-i18n="nav_faq">FAQ</a>
       </nav>
       <div class="lang-switch">
         <button type="button" class="lang-btn active" data-lang="pt">🇧🇷 PT</button>
         <button type="button" class="lang-btn" data-lang="en">🇺🇸 EN</button>
         <button type="button" class="lang-btn" data-lang="es">🇦🇷 ES</button>
       </div>
-      <a href="#contato" class="nav-cta" data-i18n="nav_cta">Falar no WhatsApp</a>
+      <a href="#contato" class="nav-cta"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 11H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span data-i18n="nav_site_cta">Quero meu site</span></a>
     </div>
   </div>
 </header>
 
-<section class="hero">
+<section class="hero" id="inicio">
   <div class="wrap hero-grid">
-    <div >
-      <h1 data-i18n="hero_h1">Sua landing page pronta em <span class="accent">5 dias úteis</span>, com estimativa na hora</h1>
-      <p class="lead" data-i18n="hero_lead">Página sob medida, pensada para apresentar seu negócio e transformar visitas em oportunidades — sem template genérico.</p>
-      <div class="badges">
-        <span class="badge" data-i18n="badge1">Entrega em 5 dias úteis</span>
-        <span class="badge" data-i18n="badge2">2 revisões incluídas</span>
-        <span class="badge" data-i18n="badge3">Orçamento fechado antes de começar</span>
+    <div class="hero-copy">
+      <p class="hero-kicker" data-i18n="hero_kicker">SITES QUE CONVERTEM IDEIAS EM RESULTADOS.</p>
+      <h1 data-i18n="hero_h1">Sites que viram <span class="accent">resultados.</span></h1>
+      <p class="lead" data-i18n="hero_lead">Vamos transformar sua ideia em um site profissional, moderno e focado em resultados.</p>
+      <div class="hero-actions">
+        <a href="#investimento" class="btn hero-primary"><span data-i18n="hero_primary">Quero um orçamento</span><span class="btn-arrow">→</span></a>
+        <a href="#portfolio" class="btn hero-secondary" data-i18n="hero_secondary">Ver projetos</a>
+      </div>
+      <div class="trust">
+        <div class="hero-benefit">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4.8 13H11l-1 9L19.2 11H13l0-9Z"/></svg>
+          <span data-i18n="hero_benefit1">Mais<br>visibilidade</span>
+        </div>
+        <div class="hero-benefit">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V13h3v7H4Zm6 0V9h3v11h-3Zm6 0V4h3v16h-3Z"/></svg>
+          <span data-i18n="hero_benefit2">Mais<br>oportunidades</span>
+        </div>
+        <div class="hero-benefit">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span data-i18n="hero_benefit3">Mais<br>clientes</span>
+        </div>
+        <div class="hero-benefit">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4Z"/><path d="M7 6H4v2a4 4 0 0 0 4 4M17 6h3v2a4 4 0 0 1-4 4"/></svg>
+          <span data-i18n="hero_benefit4">Mais<br>resultados</span>
+        </div>
       </div>
     </div>
+    <div class="hero-showcase hero-asset-stage" aria-label="Converta Studio em diferentes dispositivos">
+      <img class="hero-device-asset" src="img/converta-hero-laptop.webp" alt="Notebook exibindo o site da Converta Studio" width="1536" height="1024">
+      <div class="hero-script">Seu site<br>trabalhando<br>por você.</div>
+    </div>
+  </div>
+</section>
+<div class="client-strip" aria-label="Negócios reais que confiam">
+  <div class="wrap">
+    <div class="client-intro" data-i18n="clients_intro">NEGÓCIOS REAIS<br>QUE CONFIAM</div>
 
+    <div class="client-brand client-yanina">
+      <span class="client-icon yanina-icon">Y.</span>
+      <span class="client-copy"><strong>Yanina</strong><small data-i18n="client_yanina_sub">PSICOLOGIA ONLINE</small></span>
+    </div>
+
+    <div class="client-brand client-doceliz">
+      <svg class="client-svg" viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M8 14h16l-2 11H10L8 14Z"/>
+        <path d="M11 14c0-3 2-5 5-5s5 2 5 5"/>
+        <path d="M16 5v4M12 7l2 3M20 7l-2 3"/>
+      </svg>
+      <span class="client-copy"><strong>Doceliz</strong><small data-i18n="client_doceliz_sub">CONFEITARIA ARTESANAL</small></span>
+    </div>
+
+    <div class="client-brand client-barber">
+      <svg class="client-svg scissors" viewBox="0 0 32 32" aria-hidden="true">
+        <circle cx="8" cy="23" r="4"/><circle cx="24" cy="23" r="4"/>
+        <path d="M11 20 24 6M21 20 8 6M14 17l4 0"/>
+      </svg>
+      <span class="client-copy"><strong>Modern Barber</strong><small data-i18n="client_barber_sub">BARBEARIA</small></span>
+    </div>
+
+    <div class="client-brand client-vantagem">
+      <svg class="client-svg" viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M16 5v22M8 27h16M11 9h10M8 12l-4 8h8l-4-8Zm16 0-4 8h8l-4-8Z"/>
+      </svg>
+      <span class="client-copy"><strong>Vantagem</strong><small data-i18n="client_vantagem_sub">CONSULTORIA JURÍDICA</small></span>
+    </div>
+
+    <div class="client-more" data-i18n="clients_more">+ outros...</div>
+  </div>
+</div>
+
+<section class="solutions" id="servicos">
+  <div class="wrap solutions-grid">
+    <div class="services-copy">
+      <p class="kicker" data-i18n="services_kicker">NOSSOS SERVIÇOS</p>
+      <h2 data-i18n="services_h2">Sites<br>Profissionais</h2>
+      <p data-i18n="services_intro">Sites modernos, rápidos e responsivos, feitos para atrair, engajar e converter visitantes em clientes.</p>
+      <ul class="service-checks">
+        <li data-i18n="service_check1">Design exclusivo</li><li data-i18n="service_check2">Otimizado para Google (SEO)</li><li data-i18n="service_check3">Adaptado para celular</li><li data-i18n="service_check4">Integração com WhatsApp</li><li data-i18n="service_check5">Foco em resultados</li>
+      </ul>
+    </div>
+    <div class="solution-items">
+      <div class="solution-item"><span class="benefit-icon">ϟ</span><span class="benefit-title" data-i18n="benefit1_title">Mais visibilidade</span><span class="benefit-desc" data-i18n="benefit1_desc">Seja encontrado por mais pessoas.</span></div>
+      <div class="solution-item"><span class="benefit-icon">♙</span><span class="benefit-title" data-i18n="benefit2_title">Mais clientes</span><span class="benefit-desc" data-i18n="benefit2_desc">Transforme visitantes em oportunidades.</span></div>
+      <div class="solution-item"><span class="benefit-icon">▥</span><span class="benefit-title" data-i18n="benefit3_title">Mais credibilidade</span><span class="benefit-desc" data-i18n="benefit3_desc">Fortaleça a sua marca no digital.</span></div>
+      <div class="solution-item"><span class="benefit-icon">♡</span><span class="benefit-title" data-i18n="benefit4_title">Mais resultados</span><span class="benefit-desc" data-i18n="benefit4_desc">Um site que trabalha por você.</span></div>
+    </div>
+  </div>
+</section>
+<div class="projects-pricing-wrap">
+<section class="portfolio" id="portfolio">
+  <div class="wrap">
+    <div class="section-head portfolio-head">
+      <div><p class="kicker" data-i18n="portfolio_kicker">PROJETOS REAIS</p><h2 data-i18n="portfolio_h2">Sites que viram resultados.</h2></div>
+      <p data-i18n="portfolio_intro">Conheça alguns dos projetos desenvolvidos pela Converta Studio e veja como transformamos ideias em sites modernos, estratégicos e focados em resultados.</p>
+    </div>
+    <div class="port-grid">
+      <article class="port-card featured">
+        <a href="https://yaniterapia.vercel.app" target="_blank" rel="noopener" class="port-preview" data-track="portfolio-yanina"><img src="img/project-yanina.webp" alt="Página inicial do projeto Yanina Psicologia" width="880" height="550"></a>
+        <div class="port-body">
+          <span class="port-tag tag-real" data-i18n="tag_real">Projeto real</span>
+          <h3 data-i18n="yanina_title">Yanina — Psicologia online</h3>
+          <p data-i18n="yanina_desc">Plataforma bilíngue com apresentação profissional, cadastro, agenda, pagamentos e área do paciente.</p>
+          <div class="feature-list"><span>PT + ES</span><span data-i18n="feat_schedule">Agendamento</span><span data-i18n="feat_payment">Pagamentos</span><span data-i18n="feat_dashboard">Painel administrativo</span></div>
+          <a href="https://yaniterapia.vercel.app" class="port-link" target="_blank" rel="noopener" data-i18n="yanina_link" data-track="portfolio-yanina">Conhecer o projeto completo ↗</a>
+        </div>
+      </article>
+
+      <article class="port-card">
+        <a href="https://doceliz-site.vercel.app" target="_blank" rel="noopener" class="port-preview" data-track="portfolio-doceliz"><img src="img/project-doceliz.webp" alt="Página inicial do projeto DoceLiz" width="880" height="550" loading="lazy"></a>
+        <div class="port-body">
+          <span class="port-tag tag-real" data-i18n="tag_real">Projeto real</span>
+          <h3 data-i18n="doceliz_title">DoceLiz — Confeitaria artesanal</h3>
+          <p data-i18n="doceliz_desc">Catálogo digital, carrinho de compras e pedido finalizado direto no WhatsApp.</p>
+          <div class="feature-list"><span data-i18n="feat_catalog">Catálogo</span><span data-i18n="feat_cart">Carrinho</span><span>WhatsApp</span></div>
+          <a href="https://doceliz-site.vercel.app" class="port-link" target="_blank" rel="noopener" data-i18n="doceliz_link" data-track="portfolio-doceliz">Ver projeto ↗</a>
+        </div>
+      </article>
+
+      <article class="port-card">
+        <a href="https://patrickmf97.github.io/modern-barber/" target="_blank" rel="noopener" class="port-preview" data-track="portfolio-barber"><img src="img/modern-barber.jpg" alt="Página inicial do conceito Modern Barber" width="880" height="550" loading="lazy"></a>
+        <div class="port-body">
+          <span class="port-tag tag-demo" data-i18n="tag_concept">Conceito demonstrativo</span>
+          <h3 data-i18n="barber_title">Modern Barber — Barbearia</h3>
+          <p data-i18n="barber_desc">Vitrine de serviços com visual premium e fluxo de pré-agendamento pelo WhatsApp.</p>
+          <div class="feature-list"><span data-i18n="feat_services">Serviços</span><span data-i18n="feat_booking">Pré-agendamento</span><span>WhatsApp</span></div>
+          <a href="https://patrickmf97.github.io/modern-barber/" class="port-link" target="_blank" rel="noopener" data-i18n="barber_link" data-track="portfolio-barber">Ver conceito ↗</a>
+        </div>
+      </article>
+    <article class="port-card">
+  <a href="https://poetic-beignet-407ffc.netlify.app" target="_blank" rel="noopener" class="port-preview" data-track="portfolio-vantagem"><img src="img/project-vantagem.webp" alt="Página inicial do projeto Vantagem Consultoria" width="1536" height="960" loading="lazy"></a>
+  <div class="port-body"><span class="port-tag tag-real">Projeto real</span><h3 data-i18n="vantagem_project_title">Vantagem — Consultoria jurídica</h3><p data-i18n="vantagem_project_desc">Presença institucional premium para consultoria jurídica e tributária, com foco em autoridade, clareza e geração de oportunidades.</p><div class="feature-list"><span data-i18n="feat_institutional">Site institucional</span><span data-i18n="feat_credibility">Credibilidade</span><span data-i18n="feat_conversion">Conversão</span></div><a class="port-link" href="https://poetic-beignet-407ffc.netlify.app" target="_blank" rel="noopener" data-i18n="vantagem_project_link">Ver projeto ↗</a></div>
+</article></div>
+    <div class="portfolio-more">
+      <a href="#contato" class="portfolio-more-btn" data-i18n="portfolio_more">Ver todos os projetos →</a>
+    </div>
+  </div>
+</section>
+<section class="pricing" id="investimento">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker" data-i18n="calc_kicker">CALCULE SEU PROJETO</p>
+      <h2 data-i18n="calc_section_h2">Monte uma estimativa rápida</h2>
+      <p data-i18n="calc_section_intro">Preencha as opções e veja um valor aproximado para o seu site. É simples, rápido e sem compromisso.</p>
+      <div class="calc-trust"><span data-i18n="calc_trust1">Sem compromisso</span><span data-i18n="calc_trust2">Resposta na hora</span><span data-i18n="calc_trust3">Seus dados seguros</span></div>
+    </div>
     <div class="calc-card">
       <h3 data-i18n="calc_title">Monte uma estimativa rápida</h3>
 
@@ -245,12 +228,12 @@
     </div>
   </div>
 </section>
-
-<section class="process">
+</div>
+<section class="process" id="como-funciona">
   <div class="wrap">
-    <div class="section-head">
-      <p class="kicker" data-i18n="process_kicker">Como funciona</p>
-      <h2 data-i18n="process_h2">Do primeiro contato à entrega, sem enrolação</h2>
+    <div class="section-head process-head">
+      <div><p class="kicker" data-i18n="process_kicker">COMO FUNCIONA</p><h2 data-i18n="process_h2">Do primeiro contato à entrega, sem enrolação.</h2></div>
+      <p data-i18n="process_intro">Um processo simples, transparente e focado no que importa: colocar sua página no ar e gerar resultados para o seu negócio.</p>
     </div>
     <div class="steps">
       <div class="step-card">
@@ -276,92 +259,9 @@
     </div>
   </div>
 </section>
-
-<section class="portfolio" id="portfolio">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="kicker" data-i18n="portfolio_kicker">Trabalhos</p>
-      <h2 data-i18n="portfolio_h2">Um pouco do que já foi feito</h2>
-    </div>
-    <div class="port-grid">
-      <article class="port-card featured">
-        <a href="https://yaniterapia.vercel.app" target="_blank" rel="noopener" class="port-preview" data-track="portfolio-yanina"><img src="img/yanina.jpg" alt="Página inicial do projeto Yanina Psicologia" width="880" height="550"></a>
-        <div class="port-body">
-          <span class="port-tag tag-real" data-i18n="tag_real">Projeto real</span>
-          <h3 data-i18n="yanina_title">Yanina — Psicologia online</h3>
-          <p data-i18n="yanina_desc">Plataforma bilíngue com apresentação profissional, cadastro, agenda, pagamentos e área do paciente.</p>
-          <div class="feature-list"><span>PT + ES</span><span data-i18n="feat_schedule">Agendamento</span><span data-i18n="feat_payment">Pagamentos</span><span data-i18n="feat_dashboard">Painel administrativo</span></div>
-          <a href="https://yaniterapia.vercel.app" class="port-link" target="_blank" rel="noopener" data-i18n="yanina_link" data-track="portfolio-yanina">Conhecer o projeto completo ↗</a>
-        </div>
-      </article>
-
-      <article class="port-card">
-        <a href="https://doceliz-site.vercel.app" target="_blank" rel="noopener" class="port-preview" data-track="portfolio-doceliz"><img src="img/doceliz.jpg" alt="Página inicial do projeto DoceLiz" width="880" height="550" loading="lazy"></a>
-        <div class="port-body">
-          <span class="port-tag tag-real" data-i18n="tag_real">Projeto real</span>
-          <h3>DoceLiz — Confeitaria artesanal</h3>
-          <p data-i18n="doceliz_desc">Catálogo digital, carrinho de compras e pedido finalizado direto no WhatsApp.</p>
-          <div class="feature-list"><span data-i18n="feat_catalog">Catálogo</span><span data-i18n="feat_cart">Carrinho</span><span>WhatsApp</span></div>
-          <a href="https://doceliz-site.vercel.app" class="port-link" target="_blank" rel="noopener" data-i18n="doceliz_link" data-track="portfolio-doceliz">Ver projeto ↗</a>
-        </div>
-      </article>
-
-      <article class="port-card">
-        <a href="https://patrickmf97.github.io/modern-barber/" target="_blank" rel="noopener" class="port-preview" data-track="portfolio-barber"><img src="img/modern-barber.jpg" alt="Página inicial do conceito Modern Barber" width="880" height="550" loading="lazy"></a>
-        <div class="port-body">
-          <span class="port-tag tag-demo" data-i18n="tag_concept">Conceito demonstrativo</span>
-          <h3>Modern Barber — Barbearia</h3>
-          <p data-i18n="barber_desc">Vitrine de serviços com visual premium e fluxo de pré-agendamento pelo WhatsApp.</p>
-          <div class="feature-list"><span data-i18n="feat_services">Serviços</span><span data-i18n="feat_booking">Pré-agendamento</span><span>WhatsApp</span></div>
-          <a href="https://patrickmf97.github.io/modern-barber/" class="port-link" target="_blank" rel="noopener" data-i18n="barber_link" data-track="portfolio-barber">Ver conceito ↗</a>
-        </div>
-      </article>
-    </div>
-
-    <div class="examples-head">
-      <div><p class="kicker" data-i18n="examples_kicker">Outros estilos</p><h3 data-i18n="examples_title">Uma identidade para cada tipo de negócio</h3></div>
-      <p data-i18n="examples_desc">Estudos visuais que demonstram diferentes direções de marca e comunicação.</p>
-    </div>
-    <div class="examples-grid">
-      <article class="example-card"><img src="img/sorriso.jpg" alt="Exemplo de site para clínica odontológica" width="880" height="550" loading="lazy"><div><strong data-i18n="sorriso_title">Clínica odontológica</strong><a href="https://radiant-caramel-9584bd.netlify.app" target="_blank" rel="noopener" data-i18n="sorriso_link" data-track="example-dental">Ver exemplo ↗</a></div></article>
-      <article class="example-card"><img src="img/vantagem.jpg" alt="Exemplo de site para consultoria jurídica" width="880" height="550" loading="lazy"><div><strong data-i18n="vantagem_title">Consultoria jurídica</strong><a href="https://poetic-beignet-407ffc.netlify.app" target="_blank" rel="noopener" data-i18n="vantagem_link" data-track="example-legal">Ver exemplo ↗</a></div></article>
-      <article class="example-card"><img src="img/fluencia.jpg" alt="Exemplo de página para curso online" width="880" height="550" loading="lazy"><div><strong data-i18n="fluencia_title">Curso online</strong><a href="https://animated-shortbread-603a4e.netlify.app" target="_blank" rel="noopener" data-i18n="fluencia_link" data-track="example-course">Ver exemplo ↗</a></div></article>
-    </div>
-  </div>
-</section>
-
-<section class="solutions">
-  <div class="wrap solutions-grid">
-    <div><p class="kicker" data-i18n="solutions_kicker">Projetos sob medida</p><h2 data-i18n="solutions_title">Precisa de algo além de uma landing page?</h2><p data-i18n="solutions_desc">Também desenvolvemos experiências completas com recursos específicos para o seu atendimento ou operação. Esses projetos recebem escopo e orçamento personalizados.</p></div>
-    <div class="solution-items"><div class="solution-item" data-i18n="solution_1">Sites institucionais</div><div class="solution-item" data-i18n="solution_2">Catálogos digitais</div><div class="solution-item" data-i18n="solution_3">Agendamento online</div><div class="solution-item" data-i18n="solution_4">Áreas restritas e sistemas</div></div>
-  </div>
-</section>
-
-<section class="pricing" id="investimento">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="kicker" data-i18n="pricing_kicker">Investimento</p>
-      <h2 data-i18n="pricing_h2">Um ponto de partida claro para colocar sua página no ar</h2>
-    </div>
-    <div class="price-card">
-      <div class="tag" data-i18n="price_tag">Plano Essencial — até 5 seções</div>
-      <div class="amount"><span id="price-value">R$ 497</span> <span data-i18n="price_suffix">à vista</span></div>
-      <ul class="price-list">
-        <li data-i18n="price_li1">Até 5 seções com design responsivo</li>
-        <li data-i18n="price_li2">2 rodadas de revisão incluídas</li>
-        <li data-i18n="price_li3">Publicação em até 5 dias úteis*</li>
-        <li data-i18n="price_li4">Sinal de 50% + saldo na entrega</li>
-      </ul>
-      <p class="calc-note" data-i18n="price_note">*Prazo contado após briefing, materiais e pagamento do sinal.</p>
-      <p class="fx-note-dark" id="fx-note-price"><span class="fx-dot" id="fx-dot-price"></span><span id="fx-text-price"></span></p>
-      <a href="#contato" class="btn-price" data-i18n="price_btn">Quero orçar meu projeto</a>
-    </div>
-  </div>
-</section>
-
-<section class="faq">
+<section class="faq" id="faq">
   <div class="wrap faq-grid">
-    <div><p class="kicker" data-i18n="faq_kicker">Dúvidas frequentes</p><h2 data-i18n="faq_title">Antes de começar</h2></div>
+    <div><p class="kicker" data-i18n="faq_kicker">DÚVIDAS FREQUENTES</p><h2 data-i18n="faq_title">Antes de começar</h2><p class="faq-intro" data-i18n="faq_intro">Tire suas dúvidas sobre o processo, prazos, pagamentos e o que está incluso no seu projeto.</p><a href="#contato" class="faq-more" data-i18n="faq_more">Ver todas as dúvidas →</a></div>
     <div class="faq-list">
       <details><summary data-i18n="faq_q1">O que está incluído no valor de R$ 497?</summary><p data-i18n="faq_a1">Uma landing page essencial com até 5 seções, design responsivo, publicação, duas rodadas de revisão e entrega em até 5 dias úteis.</p></details>
       <details><summary data-i18n="faq_q2">Quando começa a contar o prazo?</summary><p data-i18n="faq_a2">Depois da confirmação do sinal e do recebimento das informações, imagens e materiais necessários para produzir a página.</p></details>
@@ -371,269 +271,70 @@
   </div>
 </section>
 
-<section class="cta-final" id="contato">
+
+
+
+
+
+
+
+
+
+
+
+<section class="cta-final" id="contato"><img class="cta-leaf cta-leaf-left" src="img/folhagem-esquerda.webp" alt="" aria-hidden="true"><img class="cta-leaf cta-leaf-right" src="img/folhagem-direita.webp" alt="" aria-hidden="true"><i class="organic-leaf one"></i><i class="organic-leaf two"></i>
   <div class="wrap">
-    <h2 data-i18n="cta_h2">Vamos conversar sobre a sua página?</h2>
-    <p data-i18n="cta_p">Me conta o que você precisa e eu te retorno com um orçamento no mesmo dia.</p>
-    <a href="#" id="cta-final-link" class="btn-final" data-i18n="cta_btn" target="_blank" rel="noopener">Falar no WhatsApp</a>
+    <p class="cta-kicker" data-i18n="cta_kicker">VAMOS CONVERSAR?</p><h2 data-i18n="cta_h2">Vamos construir algo incrível juntos?</h2><p data-i18n="cta_p">Me conta o que você precisa e eu te mostro como um site profissional pode ajudar o seu negócio a crescer.</p>
+    <a href="#" id="cta-final-link" class="btn-final" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.7 7.1L4 20l1.4-4.1A8 8 0 1 1 20 11.5Z"/><path d="M8.8 8.7c.2 2.1 2.4 4.3 4.5 4.5"/></svg>
+      <span data-i18n="cta_btn">Falar no WhatsApp</span>
+    </a>
+    <div class="cta-trust">
+      <div class="cta-proof"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 5 13h6l-1 9 9-12h-6V2Z"/></svg><span data-i18n="cta_proof1">Resposta rápida</span></div>
+      <div class="cta-proof"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 20 6v5c0 5-3.5 8.3-8 10-4.5-1.7-8-5-8-10V6l8-3Z"/><path d="m9 12 2 2 4-4"/></svg><span data-i18n="cta_proof2">Sem compromisso</span></div>
+      <div class="cta-proof"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg><span data-i18n="cta_proof3">Atendimento humanizado</span></div>
+    </div>
+    <div class="cta-script" data-i18n="cta_script">Seu próximo<br>resultado começa<br>aqui.</div>
   </div>
 </section>
 
 <footer>
-  <div class="wrap footer-row">
-    <span>ConvertaStudio — Patrick Morais Ferreira · Atendimento remoto</span>
-    <span><a href="https://wa.me/5521988761259" target="_blank" rel="noopener">(21) 98876-1259</a></span>
+  <div class="wrap footer-main">
+    <div class="footer-brand">
+      <a class="footer-brand-lockup" href="#inicio" aria-label="Converta Studio">
+        <span class="brand-mark" aria-hidden="true"><span class="brand-c">C</span><span class="brand-s">S</span></span>
+        <span class="brand-name">Converta Studio</span>
+      </a>
+      <span class="footer-brand-tag" data-i18n="footer_tag">DO PLANEJAMENTO<br>AO RESULTADO</span>
+    </div>
+
+    <nav class="footer-nav" aria-label="Navegação do rodapé">
+      <a href="#inicio" data-i18n="nav_home">Início</a><a href="#portfolio" data-i18n="nav_work">Projetos</a><a href="#servicos" data-i18n="nav_services">Serviços</a><a href="#como-funciona" data-i18n="nav_process">Como funciona</a><a href="#faq" data-i18n="nav_faq">FAQ</a>
+    </nav>
+
+    <div class="footer-right">
+      <div class="footer-social">
+        <a href="https://www.instagram.com/convertastudio.rj/" target="_blank" rel="noopener" aria-label="Instagram da Converta Studio">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+        </a>
+        <a href="https://github.com/patrickmf97" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3.3-.4 6.8-1.6 6.8-7.4A5.8 5.8 0 0 0 19.3 3 5.4 5.4 0 0 0 19.1.1S17.9-.3 15 1.6a13.4 13.4 0 0 0-6 0C6.1-.3 4.9.1 4.9.1A5.4 5.4 0 0 0 4.7 3a5.8 5.8 0 0 0-1.5 4.1c0 5.8 3.5 7 6.8 7.4A4.8 4.8 0 0 0 9 18v4"/><path d="M9 19c-3 .9-3-1.5-4.2-2"/></svg>
+        </a>
+        <a href="https://wa.me/5521988761259" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.7 7.1L4 20l1.4-4.1A8 8 0 1 1 20 11.5Z"/><path d="M8.8 8.7c.2 2.1 2.4 4.3 4.5 4.5"/></svg>
+        </a>
+      </div>
+      <strong data-i18n="footer_tagline">SITES. MARCAS. NEGÓCIOS.<br>SEM COMPLICAÇÃO.</strong>
+    </div>
+  </div>
+
+  <div class="wrap footer-bottom">
+    <span data-i18n="footer_copy">© 2026 Converta Studio. Todos os direitos reservados.</span>
+    <span><a href="privacidade.html" data-i18n="footer_privacy">Política de Privacidade</a> <a href="termos.html" data-i18n="footer_terms">Termos de Uso</a></span>
   </div>
 </footer>
 
-<script>
-  // ---------- Translations ----------
-  const T = {
-    nav_cta: { pt:'Falar no WhatsApp', en:'Chat on WhatsApp', es:'Hablar por WhatsApp' },
-    nav_work: { pt:'Projetos', en:'Projects', es:'Proyectos' },
-    nav_price: { pt:'Investimento', en:'Pricing', es:'Inversión' },
-    hero_h1: {
-      pt:'Sua landing page pronta em <span class="accent">5 dias úteis</span>, com estimativa na hora',
-      en:'Your landing page ready in <span class="accent">5 business days</span>, with an instant estimate',
-      es:'Tu landing page lista en <span class="accent">5 días hábiles</span>, con estimación al instante'
-    },
-    hero_lead: {
-      pt:'Página sob medida, pensada para apresentar seu negócio e transformar visitas em oportunidades — sem template genérico.',
-      en:'A custom page designed to present your business and turn visits into opportunities — never a generic template.',
-      es:'Una página a medida, pensada para presentar tu negocio y transformar visitas en oportunidades — sin plantillas genéricas.'
-    },
-    badge1:{ pt:'Entrega em 5 dias úteis', en:'Delivered in 5 business days', es:'Entrega en 5 días hábiles' },
-    badge2:{ pt:'2 revisões incluídas', en:'2 revisions included', es:'2 revisiones incluidas' },
-    badge3:{ pt:'Orçamento fechado antes de começar', en:'Fixed quote before we start', es:'Presupuesto cerrado antes de empezar' },
-    calc_title:{ pt:'Monte uma estimativa rápida', en:'Build a quick estimate', es:'Armá una estimación rápida' },
-    calc_q1:{ pt:'Qual estrutura combina com seu projeto?', en:'Which structure fits your project?', es:'¿Qué estructura se adapta a tu proyecto?' },
-    calc_opt1a:{ pt:'Essencial (até 5 seções)', en:'Essential (up to 5 sections)', es:'Esencial (hasta 5 secciones)' },
-    calc_opt1b:{ pt:'Completa (até 8 seções)', en:'Complete (up to 8 sections)', es:'Completa (hasta 8 secciones)' },
-    calc_q2:{ pt:'Precisa de revisões extras (além das 2 inclusas)?', en:'Need extra revisions (beyond the 2 included)?', es:'¿Necesitás revisiones extra (además de las 2 incluidas)?' },
-    calc_opt2a:{ pt:'Não precisa', en:'Not needed', es:'No hace falta' },
-    calc_opt2b:{ pt:'+1 revisão', en:'+1 revision', es:'+1 revisión' },
-    calc_opt2c:{ pt:'+2 revisões', en:'+2 revisions', es:'+2 revisiones' },
-    calc_q3:{ pt:'Qual o prazo?', en:"What's the timeline?", es:'¿Cuál es el plazo?' },
-    calc_opt3a:{ pt:'Padrão (5 dias úteis)', en:'Standard (5 business days)', es:'Estándar (5 días hábiles)' },
-    calc_opt3b:{ pt:'Urgente (3 dias úteis)', en:'Rush (3 business days)', es:'Urgente (3 días hábiles)' },
-    calc_total_label:{ pt:'Estimativa inicial', en:'Initial estimate', es:'Estimación inicial' },
-    calc_note:{ pt:'Valor aproximado — o orçamento final é confirmado após entender seu projeto.', en:'Approximate value — the final quote is confirmed once we understand your project.', es:'Valor aproximado — el presupuesto final se confirma después de conocer tu proyecto.' },
-    calc_btn:{ pt:'Continuar no WhatsApp', en:'Continue on WhatsApp', es:'Continuar por WhatsApp' },
-    process_kicker:{ pt:'Como funciona', en:'How it works', es:'Cómo funciona' },
-    process_h2:{ pt:'Do primeiro contato à entrega, sem enrolação', en:'From first contact to delivery, no fuss', es:'Del primer contacto a la entrega, sin vueltas' },
-    step1_h:{ pt:'Você conta o que precisa', en:'You tell us what you need', es:'Nos contás qué necesitás' },
-    step1_p:{ pt:'Pela calculadora acima ou direto no WhatsApp.', en:'Using the calculator above or straight on WhatsApp.', es:'Con la calculadora de arriba o directo por WhatsApp.' },
-    step2_h:{ pt:'Orçamento e contrato', en:'Quote and contract', es:'Presupuesto y contrato' },
-    step2_p:{ pt:'Você recebe o valor fechado e o contrato para assinatura digital.', en:'You get the fixed price and a contract for digital signature.', es:'Recibís el valor cerrado y el contrato para firma digital.' },
-    step3_h:{ pt:'Sinal de 50%', en:'50% deposit', es:'Seña del 50%' },
-    step3_p:{ pt:'Pagamento via Pix ou link, e o projeto entra em produção.', en:'Payment via bank transfer or payment link, and the project goes into production.', es:'Pago por transferencia o link, y el proyecto entra en producción.' },
-    step4_h:{ pt:'Entrega em 5 dias úteis', en:'Delivery in 5 business days', es:'Entrega en 5 días hábiles' },
-    step4_p:{ pt:'Você aprova os ajustes e recebe a página publicada, pronta para divulgar.', en:'You approve the adjustments and receive the published page, ready to share.', es:'Aprobás los ajustes y recibís la página publicada, lista para difundir.' },
-    portfolio_kicker:{ pt:'Trabalhos', en:'Work', es:'Trabajos' },
-    portfolio_h2:{ pt:'Um pouco do que já foi feito', en:"A look at what's been done", es:'Un poco de lo que ya se hizo' },
-    tag_real:{ pt:'Projeto real', en:'Real project', es:'Proyecto real' },
-    tag_demo:{ pt:'Exemplo de estilo', en:'Style example', es:'Ejemplo de estilo' },
-    tag_concept:{ pt:'Conceito demonstrativo', en:'Demo concept', es:'Concepto demostrativo' },
-    yanina_title:{ pt:'Yanina — Psicologia online', en:'Yanina — Online psychology', es:'Yanina — Psicología online' },
-    yanina_desc:{ pt:'Plataforma bilíngue com apresentação profissional, cadastro, agenda, pagamentos e área do paciente.', en:'Bilingual platform with a professional website, accounts, scheduling, payments, and a patient area.', es:'Plataforma bilingüe con presentación profesional, cuentas, agenda, pagos y área del paciente.' },
-    yanina_link:{ pt:'Conhecer o projeto completo ↗', en:'Explore the full project ↗', es:'Conocer el proyecto completo ↗' },
-    feat_schedule:{ pt:'Agendamento', en:'Scheduling', es:'Agenda' },
-    feat_payment:{ pt:'Pagamentos', en:'Payments', es:'Pagos' },
-    feat_dashboard:{ pt:'Painel administrativo', en:'Admin dashboard', es:'Panel administrativo' },
-    feat_catalog:{ pt:'Catálogo', en:'Catalog', es:'Catálogo' },
-    feat_cart:{ pt:'Carrinho', en:'Cart', es:'Carrito' },
-    feat_services:{ pt:'Serviços', en:'Services', es:'Servicios' },
-    feat_booking:{ pt:'Pré-agendamento', en:'Pre-booking', es:'Pre-reserva' },
-    doceliz_desc:{ pt:'Catálogo digital, carrinho de compras e pedido finalizado direto no WhatsApp.', en:'Digital catalog, shopping cart, and orders completed straight through WhatsApp.', es:'Catálogo digital, carrito de compras y pedidos finalizados directo por WhatsApp.' },
-    doceliz_link:{ pt:'Ver projeto ↗', en:'View project ↗', es:'Ver proyecto ↗' },
-    barber_desc:{ pt:'Vitrine de serviços com visual premium e fluxo de pré-agendamento pelo WhatsApp.', en:'Premium service showcase with a WhatsApp pre-booking flow.', es:'Vitrina de servicios premium con flujo de pre-reserva por WhatsApp.' },
-    barber_link:{ pt:'Ver conceito ↗', en:'View concept ↗', es:'Ver concepto ↗' },
-    examples_kicker:{ pt:'Outros estilos', en:'Other styles', es:'Otros estilos' },
-    examples_title:{ pt:'Uma identidade para cada tipo de negócio', en:'An identity for every type of business', es:'Una identidad para cada tipo de negocio' },
-    examples_desc:{ pt:'Estudos visuais que demonstram diferentes direções de marca e comunicação.', en:'Visual studies demonstrating different brand and communication directions.', es:'Estudios visuales que muestran diferentes direcciones de marca y comunicación.' },
-    sorriso_title:{ pt:'Clínica odontológica', en:'Dental clinic', es:'Clínica odontológica' },
-    sorriso_desc:{ pt:'Visual acolhedor e direto, pensado pra negócios locais que vendem confiança.', en:'Warm, straightforward visuals, designed for local businesses that sell trust.', es:'Visual cálido y directo, pensado para negocios locales que venden confianza.' },
-    sorriso_link:{ pt:'Ver exemplo ↗', en:'View example ↗', es:'Ver ejemplo ↗' },
-    vantagem_title:{ pt:'Consultoria jurídica', en:'Legal consulting', es:'Consultoría jurídica' },
-    vantagem_desc:{ pt:'Tom sério e corporativo, para serviços B2B que precisam transmitir autoridade.', en:'Serious, corporate tone, for B2B services that need to convey authority.', es:'Tono serio y corporativo, para servicios B2B que necesitan transmitir autoridad.' },
-    vantagem_link:{ pt:'Ver exemplo ↗', en:'View example ↗', es:'Ver ejemplo ↗' },
-    fluencia_title:{ pt:'Curso online', en:'Online course', es:'Curso online' },
-    fluencia_desc:{ pt:'Visual moderno e energético, para infoprodutos e cursos digitais.', en:'Modern, energetic visuals, for digital products and online courses.', es:'Visual moderno y enérgico, para infoproductos y cursos digitales.' },
-    fluencia_link:{ pt:'Ver exemplo ↗', en:'View example ↗', es:'Ver ejemplo ↗' },
-    solutions_kicker:{ pt:'Projetos sob medida', en:'Custom projects', es:'Proyectos a medida' },
-    solutions_title:{ pt:'Precisa de algo além de uma landing page?', en:'Need more than a landing page?', es:'¿Necesitás algo más que una landing page?' },
-    solutions_desc:{ pt:'Também desenvolvemos experiências completas com recursos específicos para o seu atendimento ou operação. Esses projetos recebem escopo e orçamento personalizados.', en:'We also build complete experiences with features tailored to your service or operation. These projects receive a custom scope and quote.', es:'También desarrollamos experiencias completas con funciones específicas para tu atención u operación. Estos proyectos reciben alcance y presupuesto personalizados.' },
-    solution_1:{ pt:'Sites institucionais', en:'Business websites', es:'Sitios institucionales' },
-    solution_2:{ pt:'Catálogos digitais', en:'Digital catalogs', es:'Catálogos digitales' },
-    solution_3:{ pt:'Agendamento online', en:'Online scheduling', es:'Agenda online' },
-    solution_4:{ pt:'Áreas restritas e sistemas', en:'Private areas and systems', es:'Áreas privadas y sistemas' },
-    pricing_kicker:{ pt:'Investimento', en:'Investment', es:'Inversión' },
-    pricing_h2:{ pt:'Um ponto de partida claro para colocar sua página no ar', en:'A clear starting point to get your page online', es:'Un punto de partida claro para publicar tu página' },
-    price_tag:{ pt:'Plano Essencial — até 5 seções', en:'Essential plan — up to 5 sections', es:'Plan Esencial — hasta 5 secciones' },
-    price_suffix:{ pt:'à vista', en:'one-time', es:'de contado' },
-    price_li1:{ pt:'Até 5 seções com design responsivo', en:'Up to 5 sections with responsive design', es:'Hasta 5 secciones con diseño responsivo' },
-    price_li2:{ pt:'2 rodadas de revisão incluídas', en:'2 rounds of revisions included', es:'2 rondas de revisión incluidas' },
-    price_li3:{ pt:'Publicação em até 5 dias úteis*', en:'Published within 5 business days*', es:'Publicación en hasta 5 días hábiles*' },
-    price_li4:{ pt:'Sinal de 50% + saldo na entrega', en:'50% deposit + balance on delivery', es:'Seña del 50% + saldo en la entrega' },
-    price_btn:{ pt:'Quero orçar meu projeto', en:'I want a quote', es:'Quiero cotizar mi proyecto' },
-    price_note:{ pt:'*Prazo contado após briefing, materiais e pagamento do sinal.', en:'*Timeline starts after the brief, materials, and deposit.', es:'*El plazo comienza después del briefing, los materiales y la seña.' },
-    faq_kicker:{ pt:'Dúvidas frequentes', en:'Frequently asked questions', es:'Preguntas frecuentes' },
-    faq_title:{ pt:'Antes de começar', en:'Before we start', es:'Antes de empezar' },
-    faq_q1:{ pt:'O que está incluído no valor de R$ 497?', en:'What is included in the R$ 497 price?', es:'¿Qué incluye el valor de R$ 497?' },
-    faq_a1:{ pt:'Uma landing page essencial com até 5 seções, design responsivo, publicação, duas rodadas de revisão e entrega em até 5 dias úteis.', en:'An essential landing page with up to 5 sections, responsive design, publishing, two revision rounds, and delivery within 5 business days.', es:'Una landing page esencial de hasta 5 secciones, diseño responsivo, publicación, dos rondas de revisión y entrega en hasta 5 días hábiles.' },
-    faq_q2:{ pt:'Quando começa a contar o prazo?', en:'When does the timeline start?', es:'¿Cuándo empieza a contar el plazo?' },
-    faq_a2:{ pt:'Depois da confirmação do sinal e do recebimento das informações, imagens e materiais necessários para produzir a página.', en:'After the deposit is confirmed and we receive the information, images, and materials needed to produce the page.', es:'Después de confirmar la seña y recibir la información, imágenes y materiales necesarios para producir la página.' },
-    faq_q3:{ pt:'Domínio e hospedagem estão incluídos?', en:'Are domain and hosting included?', es:'¿El dominio y el hosting están incluidos?' },
-    faq_a3:{ pt:'A publicação em uma hospedagem compatível é alinhada no orçamento. Domínio próprio e serviços pagos de terceiros são contratados separadamente.', en:'Publishing on compatible hosting is agreed in the quote. A custom domain and paid third-party services are contracted separately.', es:'La publicación en un hosting compatible se acuerda en el presupuesto. El dominio propio y los servicios pagos de terceros se contratan por separado.' },
-    faq_q4:{ pt:'Vocês também fazem sistemas e lojas?', en:'Do you also build systems and stores?', es:'¿También hacen sistemas y tiendas?' },
-    faq_a4:{ pt:'Sim. Catálogos, agendamentos, áreas de cliente, pagamentos e sistemas recebem escopo, prazo e orçamento próprios.', en:'Yes. Catalogs, scheduling, client areas, payments, and systems receive their own scope, timeline, and quote.', es:'Sí. Catálogos, agendas, áreas de cliente, pagos y sistemas reciben su propio alcance, plazo y presupuesto.' },
-    cta_h2:{ pt:'Vamos conversar sobre a sua página?', en:"Let's talk about your page?", es:'¿Hablamos sobre tu página?' },
-    cta_p:{ pt:'Me conta o que você precisa e eu te retorno com um orçamento no mesmo dia.', en:"Tell me what you need and I'll get back to you with a quote the same day.", es:'Contame qué necesitás y te respondo con un presupuesto el mismo día.' },
-    cta_btn:{ pt:'Falar no WhatsApp', en:'Chat on WhatsApp', es:'Hablar por WhatsApp' }
-  };
-
-  const WA_NUMBER = '5521988761259';
-  const WA_STATIC_MSG = {
-    pt:'Olá! Vim pela página do Converta Studio e quero saber mais sobre uma landing page.',
-    en:"Hi! I came from the Converta Studio page and I'd like to know more about a landing page.",
-    es:'¡Hola! Llegué desde la página de Converta Studio y quiero saber más sobre una landing page.'
-  };
-  const FX_LABEL = {
-    en: (live) => live ? 'Live currency conversion (BRL → USD)' : 'Exchange rate unavailable — price shown in BRL',
-    es: (live) => live ? 'Conversión de moneda en vivo (BRL → ARS)' : 'Cotización no disponible — precio mostrado en BRL'
-  };
-
-  let lang = 'pt';
-  let rateUSD = 0.19;   // fallback, replaced by live fetch
-  let rateARS = 292;    // fallback, replaced by live fetch
-  let fxLive = false;
-
-  function applyTranslations(){
-    document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-      const key = el.getAttribute('data-i18n');
-      if(T[key] && T[key][lang] !== undefined){
-        el.innerHTML = T[key][lang];
-      }
-    });
-    document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
-
-    // fx notes
-    const fxNote = document.getElementById('fx-note');
-    const fxNotePrice = document.getElementById('fx-note-price');
-    const fxDot = document.getElementById('fx-dot');
-    const fxDotPrice = document.getElementById('fx-dot-price');
-    if(lang === 'pt'){
-      fxNote.classList.remove('show');
-      fxNotePrice.classList.remove('show');
-    } else {
-      const label = FX_LABEL[lang](fxLive);
-      document.getElementById('fx-text').textContent = label;
-      document.getElementById('fx-text-price').textContent = label;
-      fxDot.classList.toggle('stale', !fxLive);
-      fxDotPrice.classList.toggle('stale', !fxLive);
-      fxNote.classList.add('show');
-      fxNotePrice.classList.add('show');
-    }
-
-    document.getElementById('cta-final-link').href = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(WA_STATIC_MSG[lang]);
-    updateTotal();
-    updatePriceCard();
-  }
-
-  function formatPrice(brlValue){
-    if(lang === 'pt' || !fxLive){
-      return 'R$ ' + Math.round(brlValue).toLocaleString('pt-BR');
-    } else if(lang === 'en'){
-      const usd = brlValue * rateUSD;
-      return 'US$ ' + Math.round(usd).toLocaleString('en-US');
-    } else {
-      const ars = brlValue * rateARS;
-      return '$ ' + Math.round(ars).toLocaleString('es-AR') + ' ARS';
-    }
-  }
-
-  function updatePriceCard(){
-    document.getElementById('price-value').textContent = formatPrice(497);
-  }
-
-  // ---------- Calculator ----------
-  const state = { sections: 0, revisions: 0, prazo: 0 };
-  const base = 497;
-  const valueEl = document.getElementById('calc-value');
-  const ctaEl = document.getElementById('calc-cta');
-
-  const DETAIL_PARTS = {
-    pt: { sections:'estrutura completa (até 8 seções)', rev1:'+1 revisão extra', rev2:'+2 revisões extras', rush:'entrega urgente (3 dias úteis)', join:' com ' },
-    en: { sections:'complete structure (up to 8 sections)', rev1:'+1 extra revision', rev2:'+2 extra revisions', rush:'rush delivery (3 business days)', join:' with ' },
-    es: { sections:'estructura completa (hasta 8 secciones)', rev1:'+1 revisión extra', rev2:'+2 revisiones extra', rush:'entrega urgente (3 días hábiles)', join:' con ' }
-  };
-  const WA_CALC_TEMPLATE = {
-    pt: (detail, price) => `Olá! Vim pela página do Converta Studio. Fiz uma estimativa: landing page${detail}, valor aproximado de ${price}. Podemos conversar?`,
-    en: (detail, price) => `Hi! I came from the Converta Studio page. I made an estimate: landing page${detail}, approximate value of ${price}. Can we talk?`,
-    es: (detail, price) => `¡Hola! Llegué desde la página de Converta Studio. Hice una estimación: landing page${detail}, valor aproximado de ${price}. ¿Podemos hablar?`
-  };
-
-  function updateTotal(){
-    const totalBRL = base + state.sections + state.revisions + state.prazo;
-    const formatted = formatPrice(totalBRL);
-    valueEl.textContent = formatted;
-
-    const d = DETAIL_PARTS[lang];
-    const parts = [];
-    if(state.sections > 0) parts.push(d.sections);
-    if(state.revisions === 50) parts.push(d.rev1);
-    if(state.revisions === 100) parts.push(d.rev2);
-    if(state.prazo > 0) parts.push(d.rush);
-    const detail = parts.length ? d.join + parts.join(', ') : '';
-
-    const msg = WA_CALC_TEMPLATE[lang](detail, formatted);
-    ctaEl.href = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(msg);
-  }
-
-  document.querySelectorAll('.opts').forEach(group => {
-    const key = group.dataset.group;
-    group.querySelectorAll('.opt').forEach(btn => {
-      btn.addEventListener('click', () => {
-        group.querySelectorAll('.opt').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        state[key] = parseInt(btn.dataset.value, 10);
-        updateTotal();
-      });
-    });
-  });
-
-  // ---------- Language switcher ----------
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      lang = btn.dataset.lang;
-      applyTranslations();
-    });
-  });
-
-  // ---------- Live FX fetch ----------
-  fetch('https://open.er-api.com/v6/latest/BRL')
-    .then(r => r.json())
-    .then(data => {
-      if(data && data.rates && data.rates.USD && data.rates.ARS){
-        rateUSD = data.rates.USD;
-        rateARS = data.rates.ARS;
-        fxLive = true;
-      }
-    })
-    .catch(() => { fxLive = false; })
-    .finally(() => { applyTranslations(); });
-
-  // ---------- Sticky header shadow ----------
-  const headerEl = document.getElementById('site-header');
-  window.addEventListener('scroll', () => {
-    headerEl.classList.toggle('scrolled', window.scrollY > 8);
-  });
-
-
-  // Initial render (uses fallback rates until fetch resolves)
-  applyTranslations();
-</script>
+<script src="js/main.js"></script>
 
 </body>
 </html>
