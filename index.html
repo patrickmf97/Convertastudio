@@ -486,6 +486,25 @@ footer{padding:30px 0}
 .cta-final .btn{border-radius:999px;box-shadow:0 12px 28px rgba(18,223,154,.18)}
 @media(max-width:860px){.hero-showcase{min-height:330px}.screen-shell{width:95%;padding:18px}.screen-copy strong{font-size:27px}.phone-mock{width:68px;height:130px;right:0}.hero .trust{grid-template-columns:repeat(2,1fr)}}
 
+
+/* === Visual audit pass 12: fix screenshot regressions === */
+.solution-item{font-size:14px!important;color:#0a2430!important;padding:20px 20px 20px 76px!important}
+.solution-item .benefit-title{display:block!important;color:#0a2430!important;font-size:15px!important;font-weight:800!important;line-height:1.2!important}
+.solution-item .benefit-desc{display:block!important;color:#5b6d69!important;font-size:12px!important;line-height:1.45!important;margin-top:6px!important}
+.solution-item:before{display:grid!important;place-items:center;background:#063f35!important;color:#20dda1!important}
+.service-checks{display:grid!important;gap:7px!important}
+.portfolio .section-head{display:grid!important;grid-template-columns:1fr 420px!important;gap:40px!important;align-items:end!important}
+.portfolio .section-head>p:last-child{display:block!important;color:#d4e1df!important;font-size:13px!important;line-height:1.5!important}
+.process .section-head{display:grid!important;grid-template-columns:1.15fr .85fr!important;gap:70px!important;align-items:end!important}
+.process .section-head h2{font-size:40px!important;line-height:1.02!important;max-width:15ch!important}
+.process .section-head>p:last-child{font-size:13px!important;line-height:1.55!important;color:#536663!important}
+.steps{margin-top:28px!important}
+.cta-final{overflow:hidden}
+.cta-final .wrap{position:relative;z-index:2}
+.footer-row{min-height:92px}
+@media(max-width:860px){.portfolio .section-head,.process .section-head{display:block!important}.portfolio .section-head>p:last-child,.process .section-head>p:last-child{margin-top:14px}.solution-item{padding-left:70px!important}}
+
+.legal-preview{height:100%;display:flex;align-items:center;padding:22px;background:linear-gradient(120deg,#eef2ef 0 58%,#25323a 58%);color:#152a2d;font-family:'Space Grotesk';font-size:17px;line-height:1.05}.legal-preview strong{max-width:10ch}
 </style>
 </head>
 <body>
@@ -583,7 +602,7 @@ footer{padding:30px 0}
           <a href="https://patrickmf97.github.io/modern-barber/" class="port-link" target="_blank" rel="noopener" data-i18n="barber_link" data-track="portfolio-barber">Ver conceito ↗</a>
         </div>
       </article>
-    </div>
+    <article class="port-card"><div class="port-preview"><div class="preview-placeholder legal-preview"><strong>Cuidado jurídico.<br>Para o que importa.</strong></div></div><div class="port-body"><span class="port-tag tag-demo">MODELO PROFISSIONAL</span><h3>Modelo — Advocacia</h3><div class="feature-list"><span>Site institucional</span><span>Credibilidade</span><span>Geração de leads</span></div><p>Layout profissional para escritórios de advocacia, com foco em autoridade e captação de clientes.</p><a class="port-link" href="#contato">Ver projeto</a></div></article></div>
 
     <div class="examples-head">
       <div><p class="kicker" data-i18n="examples_kicker">Outros estilos</p><h3 data-i18n="examples_title">Uma identidade para cada tipo de negócio</h3></div>
