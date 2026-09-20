@@ -226,6 +226,34 @@ footer{background:#031923;color:#d4e0e2;border:0;padding:42px 0}.footer-row{colo
 .cta-final h2{font-size:48px}.cta-final p{font-size:16px;max-width:620px;margin-left:auto;margin-right:auto}
 @media(max-width:860px){.hero-grid{gap:34px}.hero .trust{grid-template-columns:repeat(2,1fr)}.pricing:before{left:24px}.faq-grid{grid-template-columns:1fr}.cta-final h2{font-size:38px}}
 
+
+/* === Approved mockup refinement pass 3: visual depth & services === */
+.hero{min-height:650px;display:flex;align-items:center}
+.hero .calc-card{position:relative;z-index:2;transform:perspective(1200px) rotateY(-2deg);border:1px solid rgba(255,255,255,.35)}
+.hero .calc-card:after{content:"Seu site trabalhando por você.";position:absolute;right:-155px;top:42px;width:130px;color:#fff;font-family:cursive;font-size:24px;line-height:1.05;transform:rotate(-7deg);text-align:center}
+.hero .calc-card:before{content:"";position:absolute;right:-132px;top:142px;width:92px;height:4px;background:var(--green);border-radius:99px;transform:rotate(-8deg)}
+.process{border-top:1px solid #edf2ef}
+.process .section-head{max-width:720px}
+.process-grid{grid-template-columns:repeat(4,1fr)}
+.step-card{background:transparent;border:0;padding:0}
+.solutions{position:relative;overflow:hidden}
+.solutions:after{content:"";position:absolute;right:-90px;bottom:-120px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(18,223,154,.12),rgba(18,223,154,0) 68%);pointer-events:none}
+.solutions-grid{grid-template-columns:1fr 1.25fr;gap:70px;align-items:center}
+.solution-list{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.solution-item{min-height:92px;display:flex;align-items:center;font-weight:700;color:var(--ink);box-shadow:0 10px 25px rgba(5,35,38,.04)}
+.solution-item:before{content:"✓";display:grid;place-items:center;min-width:38px;height:38px;margin-right:14px;border-radius:10px;background:#073c36;color:var(--green);font-size:18px}
+.portfolio{position:relative;overflow:hidden}
+.portfolio:before{content:"";position:absolute;left:-160px;top:15%;width:360px;height:360px;border-radius:50%;border:80px solid rgba(18,223,154,.035)}
+.port-grid{position:relative;z-index:1}
+.cta-final{position:relative;overflow:hidden}
+.cta-final:before,.cta-final:after{content:"";position:absolute;width:230px;height:230px;border-radius:50%;background:radial-gradient(circle,rgba(17,170,110,.15),transparent 65%);filter:blur(4px)}
+.cta-final:before{left:-80px;bottom:-90px}.cta-final:after{right:-70px;top:-100px}
+.cta-final .wrap{position:relative;z-index:1}
+footer .logo{color:#fff}
+@media(max-width:1100px){.hero .calc-card:after,.hero .calc-card:before{display:none}}
+@media(max-width:860px){.hero{min-height:auto}.hero .calc-card{transform:none}.process-grid{grid-template-columns:1fr 1fr}.solutions-grid{grid-template-columns:1fr}.solution-list{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.process-grid,.solution-list{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
@@ -386,7 +414,7 @@ footer{background:#031923;color:#d4e0e2;border:0;padding:42px 0}.footer-row{colo
 
 <section class="solutions">
   <div class="wrap solutions-grid">
-    <div><p class="kicker" data-i18n="solutions_kicker">Projetos sob medida</p><h2 data-i18n="solutions_title">Precisa de algo além de uma landing page?</h2><p data-i18n="solutions_desc">Também desenvolvemos experiências completas com recursos específicos para o seu atendimento ou operação. Esses projetos recebem escopo e orçamento personalizados.</p></div>
+    <div><p class="kicker" data-i18n="solutions_kicker">Nossos serviços</p><h2 data-i18n="solutions_title">Precisa de algo além de uma landing page?</h2><p data-i18n="solutions_desc">Também desenvolvemos experiências completas com recursos específicos para o seu atendimento ou operação. Esses projetos recebem escopo e orçamento personalizados.</p></div>
     <div class="solution-items"><div class="solution-item" data-i18n="solution_1">Sites institucionais</div><div class="solution-item" data-i18n="solution_2">Catálogos digitais</div><div class="solution-item" data-i18n="solution_3">Agendamento online</div><div class="solution-item" data-i18n="solution_4">Áreas restritas e sistemas</div></div>
   </div>
 </section>
