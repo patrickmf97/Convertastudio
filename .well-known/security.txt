@@ -1,0 +1,5 @@
+Contact: mailto:convertastudio.br@gmail.com
+Canonical: https://convertastudio.online/.well-known/security.txt
+Policy: https://convertastudio.online/privacidade.html
+Preferred-Languages: pt, en, es
+Expires: 2027-09-20T23:59:59Z
