@@ -192,7 +192,16 @@
         el.innerHTML = T[key][lang];
       }
     });
-    document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+    document.querySelectorAll('.lang-btn').forEach(b => {
+      const active = b.dataset.lang === lang;
+      b.classList.toggle('active', active);
+      b.setAttribute('aria-pressed', String(active));
+    });
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    if (menuToggle) {
+      const labels = {pt:'Abrir menu', en:'Open menu', es:'Abrir menú'};
+      if (menuToggle.getAttribute('aria-expanded') !== 'true') menuToggle.setAttribute('aria-label', labels[lang]);
+    }
 
     // fx notes
     const fxNote = document.getElementById('fx-note');
@@ -214,7 +223,8 @@
       fxNotePrice?.classList.add('show');
     }
 
-    document.getElementById('cta-final-link').href = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(WA_STATIC_MSG[lang]);
+    const finalCta = document.getElementById('cta-final-link');
+    if (finalCta) finalCta.href = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(WA_STATIC_MSG[lang]);
     updateTotal();
     updatePriceCard();
   }
@@ -256,7 +266,7 @@
   function updateTotal(){
     const totalBRL = base + state.sections + state.revisions + state.prazo;
     const formatted = formatPrice(totalBRL);
-    valueEl.textContent = formatted;
+    if (valueEl) valueEl.textContent = formatted;
 
     const d = DETAIL_PARTS[lang];
     const parts = [];
@@ -267,15 +277,19 @@
     const detail = parts.length ? d.join + parts.join(', ') : '';
 
     const msg = WA_CALC_TEMPLATE[lang](detail, formatted);
-    ctaEl.href = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(msg);
+    if (ctaEl) ctaEl.href = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(msg);
   }
 
   document.querySelectorAll('.opts').forEach(group => {
     const key = group.dataset.group;
     group.querySelectorAll('.opt').forEach(btn => {
       btn.addEventListener('click', () => {
-        group.querySelectorAll('.opt').forEach(b => b.classList.remove('active'));
+        group.querySelectorAll('.opt').forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-pressed','false');
+        });
         btn.classList.add('active');
+        btn.setAttribute('aria-pressed','true');
         state[key] = parseInt(btn.dataset.value, 10);
         updateTotal();
       });
@@ -291,8 +305,17 @@
   });
 
   // ---------- Live FX fetch ----------
-  fetch('https://open.er-api.com/v6/latest/BRL')
-    .then(r => r.json())
+  const fxController = new AbortController();
+  const fxTimer = setTimeout(() => fxController.abort(), 3000);
+  fetch('https://open.er-api.com/v6/latest/BRL', {
+    signal: fxController.signal,
+    cache: 'no-store',
+    referrerPolicy: 'no-referrer'
+  })
+    .then(r => {
+      if (!r.ok) throw new Error('FX request failed');
+      return r.json();
+    })
     .then(data => {
       if(data && data.rates && data.rates.USD && data.rates.ARS){
         rateUSD = data.rates.USD;
@@ -301,14 +324,49 @@
       }
     })
     .catch(() => { fxLive = false; })
-    .finally(() => { applyTranslations(); });
+    .finally(() => {
+      clearTimeout(fxTimer);
+      applyTranslations();
+    });
 
   // ---------- Sticky header shadow ----------
   const headerEl = document.getElementById('site-header');
-  window.addEventListener('scroll', () => {
-    headerEl.classList.toggle('scrolled', window.scrollY > 8);
-  });
+  if (headerEl) {
+    window.addEventListener('scroll', () => {
+      headerEl.classList.toggle('scrolled', window.scrollY > 8);
+    }, {passive:true});
+  }
 
+  // ---------- Mobile navigation ----------
+  const mobileToggle = document.querySelector('.mobile-menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  function closeMobileMenu(){
+    if (!mobileToggle || !mobileMenu) return;
+    mobileMenu.hidden = true;
+    mobileToggle.setAttribute('aria-expanded','false');
+    document.body.classList.remove('mobile-menu-open');
+    const labels = {pt:'Abrir menu', en:'Open menu', es:'Abrir menú'};
+    mobileToggle.setAttribute('aria-label', labels[lang]);
+  }
+  if (mobileToggle && mobileMenu) {
+    mobileToggle.addEventListener('click', () => {
+      const open = mobileToggle.getAttribute('aria-expanded') === 'true';
+      mobileMenu.hidden = open;
+      mobileToggle.setAttribute('aria-expanded', String(!open));
+      document.body.classList.toggle('mobile-menu-open', !open);
+      const labels = {
+        pt: open ? 'Abrir menu' : 'Fechar menu',
+        en: open ? 'Open menu' : 'Close menu',
+        es: open ? 'Abrir menú' : 'Cerrar menú'
+      };
+      mobileToggle.setAttribute('aria-label', labels[lang]);
+    });
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileMenu));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobileMenu(); });
+  }
+
+  // Initial option accessibility state
+  document.querySelectorAll('.opt').forEach(btn => btn.setAttribute('aria-pressed', String(btn.classList.contains('active'))));
 
   // Initial render (uses fallback rates until fetch resolves)
   applyTranslations();
