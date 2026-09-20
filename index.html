@@ -310,6 +310,37 @@ footer{padding:34px 0}
 .pricing .calc-card{transform:none;max-width:600px;margin-left:auto}.pricing .calc-card:before,.pricing .calc-card:after{display:none}.pricing .section-head{max-width:480px}.calc-trust{display:flex;gap:18px;flex-wrap:wrap;margin-top:26px;color:#d2e0e1;font-size:12px}.calc-trust span:before{content:"✓";color:var(--green);margin-right:6px}
 @media(max-width:860px){.hero-showcase{min-height:340px}.screen-shell{width:92%}.hero-script{display:none}.pricing .calc-card{max-width:none}.screen-copy{margin-top:30px}.screen-copy strong{font-size:24px}}
 
+
+/* === Mockup fidelity pass 6: services, portfolio, ambience === */
+.hero:before{content:"";position:absolute;right:-55px;bottom:-80px;width:210px;height:320px;background:radial-gradient(ellipse at 30% 60%,rgba(30,105,55,.38),transparent 55%);filter:blur(2px);transform:rotate(-18deg);pointer-events:none}
+.solutions{background:linear-gradient(120deg,#fff 0%,#f7fcf9 65%,#eef8f2 100%)}
+.solutions:before{content:"";position:absolute;left:-95px;bottom:-125px;width:260px;height:330px;background:radial-gradient(ellipse,rgba(31,128,69,.13),transparent 65%);transform:rotate(25deg)}
+.solutions .section-head{margin-bottom:0}.solutions .section-head .kicker{display:inline-block;background:#e7f5ed;border-radius:999px;padding:7px 14px;color:#17694f}
+.solutions .section-head h2{font-size:50px;line-height:.96;margin:14px 0 18px;max-width:8ch}
+.solutions .section-head p{max-width:38ch}
+.solution-items{position:relative;z-index:2}
+.solution-item{background:rgba(242,249,245,.95);border:1px solid #e5f0e9;box-shadow:0 14px 35px rgba(4,42,34,.05);font-size:14px}
+.portfolio .section-head p.kicker{font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.portfolio .port-card{border-radius:9px;background:#082b35}
+.portfolio .port-preview{border-bottom:1px solid rgba(255,255,255,.08)}
+.portfolio .port-link:after{content:"  →"}
+.pricing{background:radial-gradient(circle at 18% 20%,rgba(17,210,139,.13),transparent 25%),linear-gradient(135deg,#031b25,#06333b)}
+.pricing:after{content:"";position:absolute;right:-100px;bottom:-140px;width:300px;height:360px;background:radial-gradient(ellipse,rgba(36,133,73,.18),transparent 64%);transform:rotate(-20deg)}
+.pricing .wrap{position:relative;z-index:2}
+.process{background:linear-gradient(120deg,#fff,#f8fcf9)}
+.process .section-head .kicker,.faq .section-head .kicker{display:inline-block;background:#e8f6ef;border-radius:999px;padding:6px 12px;font-size:11px;text-transform:uppercase;letter-spacing:.08em}
+.step-card{position:relative}.step-num{font-size:11px}.step-card h4{font-size:14px}.step-card p{font-size:12px}
+.faq{background:linear-gradient(120deg,#031a24,#052f37)}
+.faq .section-head .kicker{background:rgba(18,223,154,.1);color:var(--green)}
+.faq details{padding:16px 0}.faq summary{font-size:14px}
+.cta-final{min-height:300px;display:flex;align-items:center}
+.cta-final:before{width:340px;height:420px;left:-150px;bottom:-170px;background:radial-gradient(ellipse,rgba(28,123,62,.18),transparent 62%);transform:rotate(25deg)}
+.cta-final:after{width:300px;height:380px;right:-120px;top:-130px;background:radial-gradient(ellipse,rgba(27,117,58,.15),transparent 62%);transform:rotate(-25deg)}
+footer .footer-row{align-items:center}
+@media(max-width:860px){.solutions .section-head h2{font-size:42px}.solution-items{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.solution-items{grid-template-columns:1fr}.solutions .section-head h2{font-size:38px}}
+
+.service-checks{display:grid;gap:7px;margin-top:20px;font-size:13px;font-weight:600}.service-checks span:before{content:"✓";display:inline-grid;place-items:center;width:21px;height:21px;border-radius:50%;background:#075443;color:#fff;margin-right:8px;font-size:11px}
 </style>
 </head>
 <body>
@@ -358,7 +389,7 @@ footer{padding:34px 0}
     </div>
   </div>
 </section>
-<section class="solutions">
+<section class="solutions" id="servicos">
   <div class="wrap solutions-grid">
     <div><p class="kicker" data-i18n="solutions_kicker">Nossos serviços</p><h2 data-i18n="solutions_title">Precisa de algo além de uma landing page?</h2><p data-i18n="solutions_desc">Também desenvolvemos experiências completas com recursos específicos para o seu atendimento ou operação. Esses projetos recebem escopo e orçamento personalizados.</p></div>
     <div class="solution-items"><div class="solution-item" data-i18n="solution_1">Sites institucionais</div><div class="solution-item" data-i18n="solution_2">Catálogos digitais</div><div class="solution-item" data-i18n="solution_3">Agendamento online</div><div class="solution-item" data-i18n="solution_4">Áreas restritas e sistemas</div></div>
