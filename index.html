@@ -12,7 +12,7 @@
 <meta property="og:image" content="https://convertastudio.vercel.app/img/yanina.jpg">
 <meta name="theme-color" content="#061923">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -76,7 +76,42 @@
     </div>
   </div>
 </section>
-<div class="client-strip"><div class="wrap"><span>NEGÓCIOS REAIS<br>QUE CONFIAM</span><b>Yanina<small>PSICOLOGIA ONLINE</small></b><b>Doceliz<small>CONFEITARIA ARTESANAL</small></b><b>Modern Barber<small>BARBEARIA</small></b><b>Vantagem<small>CONSULTORIA JURÍDICA</small></b><b>+ outros</b></div></div>
+<div class="client-strip" aria-label="Negócios reais que confiam">
+  <div class="wrap">
+    <div class="client-intro">NEGÓCIOS REAIS<br>QUE CONFIAM</div>
+
+    <div class="client-brand client-yanina">
+      <span class="client-icon yanina-icon">Y.</span>
+      <span class="client-copy"><strong>Yanina</strong><small>PSICOLOGIA ONLINE</small></span>
+    </div>
+
+    <div class="client-brand client-doceliz">
+      <svg class="client-svg" viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M8 14h16l-2 11H10L8 14Z"/>
+        <path d="M11 14c0-3 2-5 5-5s5 2 5 5"/>
+        <path d="M16 5v4M12 7l2 3M20 7l-2 3"/>
+      </svg>
+      <span class="client-copy"><strong>Doceliz</strong><small>CONFEITARIA ARTESANAL</small></span>
+    </div>
+
+    <div class="client-brand client-barber">
+      <svg class="client-svg scissors" viewBox="0 0 32 32" aria-hidden="true">
+        <circle cx="8" cy="23" r="4"/><circle cx="24" cy="23" r="4"/>
+        <path d="M11 20 24 6M21 20 8 6M14 17l4 0"/>
+      </svg>
+      <span class="client-copy"><strong>Modern Barber</strong><small>BARBEARIA</small></span>
+    </div>
+
+    <div class="client-brand client-vantagem">
+      <svg class="client-svg" viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M16 5v22M8 27h16M11 9h10M8 12l-4 8h8l-4-8Zm16 0-4 8h8l-4-8Z"/>
+      </svg>
+      <span class="client-copy"><strong>Vantagem</strong><small>CONSULTORIA JURÍDICA</small></span>
+    </div>
+
+    <div class="client-more">+ outros...</div>
+  </div>
+</div>
 
 <section class="solutions" id="servicos">
   <div class="wrap solutions-grid">
@@ -247,8 +282,15 @@
 <section class="cta-final" id="contato"><img class="cta-leaf cta-leaf-left" src="img/folhagem-esquerda.webp" alt="" aria-hidden="true"><img class="cta-leaf cta-leaf-right" src="img/folhagem-direita.webp" alt="" aria-hidden="true"><i class="organic-leaf one"></i><i class="organic-leaf two"></i>
   <div class="wrap">
     <p class="cta-kicker">VAMOS CONVERSAR?</p><h2 data-i18n="cta_h2">Vamos construir algo incrível juntos?</h2><p data-i18n="cta_p">Me conta o que você precisa e eu te mostro como um site profissional pode ajudar o seu negócio a crescer.</p>
-    <a href="#" id="cta-final-link" class="btn-final" data-i18n="cta_btn" target="_blank" rel="noopener">Falar no WhatsApp</a>
-    <div class="cta-trust"><span>Resposta rápida</span><span>Sem compromisso</span><span>Atendimento humanizado</span></div>
+    <a href="#" id="cta-final-link" class="btn-final" data-i18n="cta_btn" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.7 7.1L4 20l1.4-4.1A8 8 0 1 1 20 11.5Z"/><path d="M8.8 8.7c.2 2.1 2.4 4.3 4.5 4.5"/></svg>
+      <span>Falar no WhatsApp</span>
+    </a>
+    <div class="cta-trust">
+      <div class="cta-proof"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 5 13h6l-1 9 9-12h-6V2Z"/></svg><span>Resposta rápida</span></div>
+      <div class="cta-proof"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 20 6v5c0 5-3.5 8.3-8 10-4.5-1.7-8-5-8-10V6l8-3Z"/><path d="m9 12 2 2 4-4"/></svg><span>Sem compromisso</span></div>
+      <div class="cta-proof"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg><span>Atendimento humanizado</span></div>
+    </div>
     <div class="cta-script">Seu próximo<br>resultado começa<br>aqui.</div>
   </div>
 </section>
@@ -256,20 +298,36 @@
 <footer>
   <div class="wrap footer-main">
     <div class="footer-brand">
-      <img src="img/converta-logo.webp" alt="Converta Studio" class="footer-logo">
-      <span>DO PLANEJAMENTO<br>AO RESULTADO</span>
+      <a class="footer-brand-lockup" href="#inicio" aria-label="Converta Studio">
+        <span class="brand-mark" aria-hidden="true"><span class="brand-c">C</span><span class="brand-s">S</span></span>
+        <span class="brand-name">Converta Studio</span>
+      </a>
+      <span class="footer-brand-tag">DO PLANEJAMENTO<br>AO RESULTADO</span>
     </div>
+
     <nav class="footer-nav" aria-label="Navegação do rodapé">
       <a href="#inicio">Início</a><a href="#portfolio">Projetos</a><a href="#servicos">Serviços</a><a href="#como-funciona">Como funciona</a><a href="#faq">FAQ</a>
     </nav>
+
     <div class="footer-right">
-      <div class="footer-social"><a href="#" aria-label="Instagram">◎</a><a href="#" aria-label="LinkedIn">in</a><a href="https://wa.me/5521988761259" target="_blank" rel="noopener" aria-label="WhatsApp">◉</a></div>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/convertastudio.rj/" target="_blank" rel="noopener" aria-label="Instagram da Converta Studio">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+        </a>
+        <a href="https://github.com/patrickmf97" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3.3-.4 6.8-1.6 6.8-7.4A5.8 5.8 0 0 0 19.3 3 5.4 5.4 0 0 0 19.1.1S17.9-.3 15 1.6a13.4 13.4 0 0 0-6 0C6.1-.3 4.9.1 4.9.1A5.4 5.4 0 0 0 4.7 3a5.8 5.8 0 0 0-1.5 4.1c0 5.8 3.5 7 6.8 7.4A4.8 4.8 0 0 0 9 18v4"/><path d="M9 19c-3 .9-3-1.5-4.2-2"/></svg>
+        </a>
+        <a href="https://wa.me/5521988761259" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.7 7.1L4 20l1.4-4.1A8 8 0 1 1 20 11.5Z"/><path d="M8.8 8.7c.2 2.1 2.4 4.3 4.5 4.5"/></svg>
+        </a>
+      </div>
       <strong>SITES. MARCAS. NEGÓCIOS.<br>SEM COMPLICAÇÃO.</strong>
     </div>
   </div>
+
   <div class="wrap footer-bottom">
     <span>© 2026 Converta Studio. Todos os direitos reservados.</span>
-    <span><a href="#">Política de Privacidade</a> &nbsp; <a href="#">Termos de Uso</a></span>
+    <span><a href="privacidade.html">Política de Privacidade</a> <a href="termos.html">Termos de Uso</a></span>
   </div>
 </footer>
 
