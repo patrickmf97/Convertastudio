@@ -10,19 +10,19 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://convertastudio.vercel.app/">
 <meta property="og:image" content="https://convertastudio.vercel.app/img/yanina.jpg">
-<meta name="theme-color" content="#F6F4EF">
+<meta name="theme-color" content="#061923">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#14171A;
-    --ink-soft:#3C4248;
+    --ink:#061923;
+    --ink-soft:#33434A;
     --slate:#666E77;
-    --paper:#F6F4EF;
+    --paper:#F7F8F4;
     --panel:#FFFFFF;
     --line:#E4E1D8;
-    --green:#0FB37D;
-    --green-deep:#0A8F63;
+    --green:#11D28B;
+    --green-deep:#079968;
     --green-tint:#E4F6EE;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
@@ -33,30 +33,30 @@
   .wrap{ max-width:1120px; margin:0 auto; padding:0 24px; }
   button{ font-family:inherit; cursor:pointer; border:none; }
 
-  header{ padding:18px 0; position:sticky; top:0; z-index:50; background:rgba(246,244,239,0.82); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border-bottom:1px solid transparent; transition:border-color .2s; }
+  header{ padding:18px 0; position:sticky; top:0; z-index:50; background:rgba(5,24,34,0.88); color:#fff; backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border-bottom:1px solid transparent; transition:border-color .2s; }
   header.scrolled{ border-bottom-color:var(--line); }
   .nav{ display:flex; justify-content:space-between; align-items:center; gap:16px; }
-  .logo{ font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:20px; white-space:nowrap; }
+  .logo{ font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:20px; white-space:nowrap; color:#fff; }
   .logo span{ color:var(--green-deep); }
   .nav-right{ display:flex; align-items:center; gap:14px; }
   .nav-links{ display:flex; align-items:center; gap:18px; }
-  .nav-links a{ color:var(--ink-soft); font-size:13.5px; font-weight:500; text-decoration:none; }
-  .nav-links a:hover{ color:var(--green-deep); }
+  .nav-links a{ color:#D6E1E3; font-size:13.5px; font-weight:500; text-decoration:none; }
+  .nav-links a:hover{ color:var(--green); }
   .lang-switch{ display:flex; background:var(--panel); border:1px solid var(--line); border-radius:100px; padding:3px; gap:2px; }
   .lang-btn{ background:transparent; padding:6px 11px; border-radius:100px; font-size:12.5px; font-weight:600; color:var(--ink-soft); }
   .lang-btn.active{ background:var(--ink); color:#fff; }
-  .nav-cta{ background:var(--ink); color:#fff; padding:11px 20px; border-radius:6px; text-decoration:none; font-size:14px; font-weight:500; white-space:nowrap; }
+  .nav-cta{ background:var(--green); color:#04130F; padding:11px 20px; border-radius:6px; text-decoration:none; font-size:14px; font-weight:500; white-space:nowrap; }
 
   /* HERO with calculator */
-  .hero{ padding:48px 0 90px; }
+  .hero{ padding:76px 0 96px; background:radial-gradient(circle at 85% 15%,rgba(17,210,139,.16),transparent 34%),linear-gradient(145deg,#04141D 0%,#082634 55%,#041820 100%); color:#fff; position:relative; overflow:hidden; }
   .hero-grid{ display:grid; grid-template-columns:1fr 1fr; gap:52px; align-items:start; }
-  .hero h1{ font-size:44px; line-height:1.14; }
-  .hero h1 .accent{ color:var(--green-deep); }
-  .hero p.lead{ margin-top:18px; font-size:17px; color:var(--ink-soft); max-width:46ch; }
+  .hero h1{ font-size:56px; line-height:1.02; color:#fff; letter-spacing:-.045em; max-width:12ch; }
+  .hero h1 .accent{ color:var(--green); }
+  .hero p.lead{ margin-top:24px; font-size:18px; color:#C4D2D5; max-width:46ch; }
   .badges{ margin-top:28px; display:flex; gap:10px; flex-wrap:wrap; }
-  .badge{ font-size:13px; color:var(--ink-soft); background:var(--panel); border:1px solid var(--line); padding:7px 14px; border-radius:100px; }
+  .badge{ font-size:13px; color:#DDE8E9; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); padding:7px 14px; border-radius:100px; }
 
-  .calc-card{ background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:28px; box-shadow:0 20px 44px -28px rgba(20,23,26,0.25); }
+  .calc-card{ background:rgba(255,255,255,.97); border:1px solid rgba(255,255,255,.35); border-radius:14px; padding:28px; box-shadow:0 20px 44px -28px rgba(20,23,26,0.25); }
   .calc-card h3{ font-size:15px; text-transform:none; color:var(--ink-soft); font-weight:500; margin-bottom:20px; font-family:'Inter'; }
   .calc-row{ margin-bottom:20px; }
   .calc-row label{ display:block; font-size:14px; font-weight:500; margin-bottom:8px; }
@@ -78,16 +78,16 @@
   .process{ padding:80px 0; background:var(--panel); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
   .section-head{ max-width:56ch; margin-bottom:44px; }
   .section-head p.kicker{ color:var(--green-deep); font-weight:600; font-size:14px; margin-bottom:8px; }
-  .section-head h2{ font-size:30px; }
+  .section-head h2{ font-size:42px; line-height:1.08; letter-spacing:-.035em; }
   .steps{ display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
   .step-num{ font-family:'Space Grotesk', sans-serif; font-size:14px; color:var(--green-deep); font-weight:700; margin-bottom:10px; }
   .step-card h4{ font-size:16px; margin-bottom:8px; }
   .step-card p{ font-size:14px; color:var(--ink-soft); }
 
   /* Portfolio */
-  .portfolio{ padding:88px 0; }
+  .portfolio{ padding:96px 0; background:linear-gradient(145deg,#04141D,#072330); color:#fff; } .portfolio .section-head h2,.portfolio .port-card h3{color:#fff}.portfolio .section-head p.kicker{color:var(--green)} .portfolio .port-card{background:#0A2732;border-color:#173C47}.portfolio .port-card p{color:#C3D0D3}.portfolio .feature-list span{background:#0D303B;border-color:#214650;color:#D6E0E2}.portfolio .port-link{color:#46E5AD}.portfolio .examples-head h3{color:#fff}.portfolio .examples-head p{color:#AABBC0}.portfolio .example-card{background:#0A2732;border-color:#173C47}.portfolio .example-card strong{color:#fff}.portfolio .example-card a{color:#46E5AD}
   .port-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:24px; }
-  .port-card{ background:var(--panel); border:1px solid var(--line); border-radius:12px; overflow:hidden; }
+  .port-card{ background:var(--panel); border:1px solid var(--line); border-radius:18px; overflow:hidden; box-shadow:0 24px 60px rgba(0,0,0,.16); }
   .port-card.featured{ grid-column:1/-1; display:grid; grid-template-columns:1.35fr 1fr; }
   .port-card.featured .port-preview{ height:100%; min-height:320px; }
   .port-card.featured .port-body{ padding:36px; display:flex; flex-direction:column; justify-content:center; }
@@ -138,8 +138,8 @@
   .fx-note-dark.show{ display:flex; }
 
   /* Final CTA */
-  .cta-final{ padding:90px 0; text-align:center; }
-  .cta-final h2{ font-size:32px; max-width:22ch; margin:0 auto 14px; }
+  .cta-final{ padding:110px 0; text-align:center; background:radial-gradient(circle at 50% 0,rgba(17,210,139,.13),transparent 45%),#F7F8F4; }
+  .cta-final h2{ font-size:46px; line-height:1.05; letter-spacing:-.04em; max-width:22ch; margin:0 auto 14px; }
   .cta-final p{ color:var(--ink-soft); margin-bottom:28px; }
   .btn-final{ display:inline-block; background:var(--green); color:#fff; padding:16px 34px; border-radius:8px; text-decoration:none; font-weight:600; font-size:15.5px; }
 
@@ -169,7 +169,7 @@
     .example-card img{ height:100%; min-height:100px; }
     .solutions-grid,.faq-grid{ grid-template-columns:1fr; gap:32px; }
     .nav-links{ display:none; }
-    .hero h1{ font-size:34px; }
+    .hero h1{ font-size:42px; max-width:13ch; }
     .nav-cta{ display:none; }
   }
 </style>
@@ -197,8 +197,8 @@
 <section class="hero">
   <div class="wrap hero-grid">
     <div >
-      <h1 data-i18n="hero_h1">Sua landing page pronta em <span class="accent">5 dias úteis</span>, com estimativa na hora</h1>
-      <p class="lead" data-i18n="hero_lead">Página sob medida, pensada para apresentar seu negócio e transformar visitas em oportunidades — sem template genérico.</p>
+      <h1 data-i18n="hero_h1">Sites que convertem <span class="accent">ideias em resultados.</span></h1>
+      <p class="lead" data-i18n="hero_lead">Design, estratégia e tecnologia para transformar a presença digital do seu negócio em uma experiência profissional que gera oportunidades.</p>
       <div class="badges">
         <span class="badge" data-i18n="badge1">Entrega em 5 dias úteis</span>
         <span class="badge" data-i18n="badge2">2 revisões incluídas</span>
@@ -280,8 +280,8 @@
 <section class="portfolio" id="portfolio">
   <div class="wrap">
     <div class="section-head">
-      <p class="kicker" data-i18n="portfolio_kicker">Trabalhos</p>
-      <h2 data-i18n="portfolio_h2">Um pouco do que já foi feito</h2>
+      <p class="kicker" data-i18n="portfolio_kicker">Projetos reais</p>
+      <h2 data-i18n="portfolio_h2">Sites que viram resultados.</h2>
     </div>
     <div class="port-grid">
       <article class="port-card featured">
@@ -429,8 +429,8 @@
     step3_p:{ pt:'Pagamento via Pix ou link, e o projeto entra em produção.', en:'Payment via bank transfer or payment link, and the project goes into production.', es:'Pago por transferencia o link, y el proyecto entra en producción.' },
     step4_h:{ pt:'Entrega em 5 dias úteis', en:'Delivery in 5 business days', es:'Entrega en 5 días hábiles' },
     step4_p:{ pt:'Você aprova os ajustes e recebe a página publicada, pronta para divulgar.', en:'You approve the adjustments and receive the published page, ready to share.', es:'Aprobás los ajustes y recibís la página publicada, lista para difundir.' },
-    portfolio_kicker:{ pt:'Trabalhos', en:'Work', es:'Trabajos' },
-    portfolio_h2:{ pt:'Um pouco do que já foi feito', en:"A look at what's been done", es:'Un poco de lo que ya se hizo' },
+    portfolio_kicker:{ pt:'Projetos reais', en:'Work', es:'Trabajos' },
+    portfolio_h2:{ pt:'Sites que viram resultados.', en:"A look at what's been done", es:'Un poco de lo que ya se hizo' },
     tag_real:{ pt:'Projeto real', en:'Real project', es:'Proyecto real' },
     tag_demo:{ pt:'Exemplo de estilo', en:'Style example', es:'Ejemplo de estilo' },
     tag_concept:{ pt:'Conceito demonstrativo', en:'Demo concept', es:'Concepto demostrativo' },
