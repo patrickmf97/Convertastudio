@@ -9,7 +9,7 @@
       es:'Sitios que se convierten en <span class="accent">resultados.</span>'
     },
     hero_lead: {
-      pt:'Página sob medida, pensada para apresentar seu negócio e transformar visitas em oportunidades — sem template genérico.',
+      pt:'Vamos transformar sua ideia em um site profissional, moderno e focado em resultados.',
       en:'A custom page designed to present your business and turn visits into opportunities — never a generic template.',
       es:'Una página a medida, pensada para presentar tu negocio y transformar visitas en oportunidades — sin plantillas genéricas.'
     },
@@ -98,8 +98,8 @@
     faq_a3:{ pt:'A publicação em uma hospedagem compatível é alinhada no orçamento. Domínio próprio e serviços pagos de terceiros são contratados separadamente.', en:'Publishing on compatible hosting is agreed in the quote. A custom domain and paid third-party services are contracted separately.', es:'La publicación en un hosting compatible se acuerda en el presupuesto. El dominio propio y los servicios pagos de terceros se contratan por separado.' },
     faq_q4:{ pt:'Vocês também fazem sistemas e lojas?', en:'Do you also build systems and stores?', es:'¿También hacen sistemas y tiendas?' },
     faq_a4:{ pt:'Sim. Catálogos, agendamentos, áreas de cliente, pagamentos e sistemas recebem escopo, prazo e orçamento próprios.', en:'Yes. Catalogs, scheduling, client areas, payments, and systems receive their own scope, timeline, and quote.', es:'Sí. Catálogos, agendas, áreas de cliente, pagos y sistemas reciben su propio alcance, plazo y presupuesto.' },
-    cta_h2:{ pt:'Vamos conversar sobre a sua página?', en:"Let's talk about your page?", es:'¿Hablamos sobre tu página?' },
-    cta_p:{ pt:'Me conta o que você precisa e eu te retorno com um orçamento no mesmo dia.', en:"Tell me what you need and I'll get back to you with a quote the same day.", es:'Contame qué necesitás y te respondo con un presupuesto el mismo día.' },
+    cta_h2:{ pt:'Vamos construir algo incrível juntos?', en:"Let's build something amazing together?", es:'¿Construimos algo increíble juntos?' },
+    cta_p:{ pt:'Me conta o que você precisa e eu te mostro como um site profissional pode ajudar o seu negócio a crescer.', en:"Tell me what you need and I'll show you how a professional site can help your business grow.", es:'Contame qué necesitás y te muestro cómo un sitio profesional puede ayudar a crecer tu negocio.' },
     cta_btn:{ pt:'Falar no WhatsApp', en:'Chat on WhatsApp', es:'Hablar por WhatsApp' }
   };
 
