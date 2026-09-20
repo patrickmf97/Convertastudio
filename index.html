@@ -19,13 +19,17 @@
 
 <header id="site-header">
   <div class="wrap nav">
-    <a class="brand-logo" href="#inicio" aria-label="Converta Studio"><img src="img/converta-logo.webp" alt="Converta Studio"></a>
+    <a class="brand-logo" href="#inicio" aria-label="Converta Studio">
+    <span class="brand-mark" aria-hidden="true"><span class="brand-c">C</span><span class="brand-s">S</span></span>
+    <span class="brand-name">Converta Studio</span>
+  </a>
     <div class="nav-right">
       <nav class="nav-links" aria-label="Navegação da página">
-        <a href="#inicio">Início</a>
+        <a href="#inicio" class="active">Início</a>
         <a href="#portfolio">Projetos</a>
         <a href="#servicos">Serviços</a>
         <a href="#como-funciona">Como funciona</a>
+        <a href="#portfolio">Depoimentos</a>
         <a href="#faq">FAQ</a>
       </nav>
       <div class="lang-switch">
@@ -33,7 +37,7 @@
         <button type="button" class="lang-btn" data-lang="en">🇺🇸 EN</button>
         <button type="button" class="lang-btn" data-lang="es">🇦🇷 ES</button>
       </div>
-      <a href="#contato" class="nav-cta" data-i18n="nav_cta">Falar no WhatsApp</a>
+      <a href="#contato" class="nav-cta"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 11H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span>Quero meu site</span></a>
     </div>
   </div>
 </header>
@@ -44,15 +48,27 @@
       <h1 data-i18n="hero_h1">Sites que viram <span class="accent">resultados.</span></h1>
       <p class="lead" data-i18n="hero_lead">Vamos transformar sua ideia em um site profissional, moderno e focado em resultados.</p>
       <div class="hero-actions">
-        <a href="#investimento" class="btn hero-primary">Quero um orçamento →</a>
+        <a href="#investimento" class="btn hero-primary"><span>Quero um orçamento</span><span class="btn-arrow">→</span></a>
         <a href="#portfolio" class="btn hero-secondary">Ver projetos</a>
       </div>
       <div class="trust">
- <span class="badge">Mais visibilidade</span>
- <span class="badge">Mais oportunidades</span>
- <span class="badge">Mais clientes</span>
- <span class="badge">Mais resultados</span>
- </div>
+        <div class="hero-benefit">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4.8 13H11l-1 9L19.2 11H13l0-9Z"/></svg>
+          <span>Mais<br>visibilidade</span>
+        </div>
+        <div class="hero-benefit">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V13h3v7H4Zm6 0V9h3v11h-3Zm6 0V4h3v16h-3Z"/></svg>
+          <span>Mais<br>oportunidades</span>
+        </div>
+        <div class="hero-benefit">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span>Mais<br>clientes</span>
+        </div>
+        <div class="hero-benefit">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4Z"/><path d="M7 6H4v2a4 4 0 0 0 4 4M17 6h3v2a4 4 0 0 1-4 4"/></svg>
+          <span>Mais<br>resultados</span>
+        </div>
+      </div>
     </div>
     <div class="hero-showcase hero-asset-stage" aria-label="Converta Studio em diferentes dispositivos">
       <img class="hero-device-asset" src="img/converta-hero-laptop.webp" alt="Notebook exibindo o site da Converta Studio" width="1536" height="1024">
