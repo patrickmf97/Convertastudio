@@ -579,6 +579,39 @@ footer{padding:45px 0!important}
 @media(max-width:1050px){.hero h1{font-size:54px!important}.hero-device-asset{width:730px!important}.solutions-grid{gap:40px!important}.pricing>.wrap{gap:35px!important}}
 @media(max-width:860px){.hero{min-height:auto}.hero-grid,.solutions-grid,.pricing>.wrap,.process .section-head{grid-template-columns:1fr!important}.hero h1{font-size:44px!important}.trust{grid-template-columns:repeat(2,1fr)!important}.solutions h2,.pricing .section-head h2{font-size:38px!important}.solution-items{grid-template-columns:1fr!important}.steps{grid-template-columns:1fr 1fr!important}}
 
+
+/* === Reference convergence pass 15 === */
+header .wrap{min-height:62px!important}
+.brand-logo{width:145px!important;height:40px!important}.brand-logo img{width:140px!important;max-height:36px!important;object-fit:contain!important}
+.hero{min-height:0!important;padding:52px 0 58px!important}
+.hero-grid{grid-template-columns:.88fr 1.12fr!important;gap:12px!important}
+.hero h1{font-size:58px!important;line-height:.94!important}
+.hero .lead{font-size:15px!important}
+.hero-asset-stage{min-height:430px!important}
+.hero-device-asset{width:790px!important;right:-145px!important}
+.hero-script{display:none!important}
+.hero-actions{margin-top:25px!important}
+.client-strip .wrap{min-height:74px!important}
+.solutions{padding:68px 0!important}
+.solutions-grid{grid-template-columns:.82fr 1.18fr!important;gap:70px!important}
+.services-copy h2{font-size:48px!important;line-height:.88!important;margin:8px 0 18px!important}
+.services-copy>p:not(.kicker){font-size:14px!important;max-width:43ch!important}
+.service-checks{list-style:none!important;margin-top:15px!important;gap:4px!important}
+.service-checks li{font-size:13px!important;font-weight:600!important;color:#17312e!important}
+.service-checks li:before{content:"✓";display:inline-grid;place-items:center;width:18px;height:18px;border-radius:50%;margin-right:8px;background:#064b40;color:#20dda1;font-size:11px}
+.solution-item{position:relative!important;padding:22px 18px 18px 76px!important;min-height:100px!important}
+.solution-item:before{display:none!important}.benefit-icon{position:absolute;left:18px;top:20px;width:42px;height:42px;border-radius:9px;background:#073f36;color:#22e2a3;display:grid;place-items:center;font-size:25px}
+.portfolio{padding:62px 0 66px!important}
+.portfolio .section-head{grid-template-columns:1fr 1fr!important;margin-bottom:25px!important}
+.portfolio .section-head h2{font-size:34px!important}
+.port-grid{gap:10px!important}.port-preview,.port-card.featured .port-preview{height:150px!important}.port-body,.port-card.featured .port-body{padding:13px!important}
+.pricing{padding:66px 0!important}.pricing>.wrap{grid-template-columns:.72fr 1.28fr!important}.pricing .section-head h2{font-size:43px!important}
+.process{padding:58px 0!important}.process .section-head h2{font-size:35px!important}
+.faq{padding:48px 0!important}
+.cta-final{padding:68px 0!important;min-height:290px!important}.cta-final h2{font-size:37px!important}
+.footer-row{min-height:100px!important;align-items:center!important}
+@media(max-width:860px){.hero-grid,.solutions-grid{grid-template-columns:1fr!important}.hero h1{font-size:44px!important}.hero-device-asset{width:120%!important;right:auto!important}.services-copy h2{font-size:39px!important}}
+
 </style>
 </head>
 <body>
@@ -627,8 +660,20 @@ footer{padding:45px 0!important}
 
 <section class="solutions" id="servicos">
   <div class="wrap solutions-grid">
-    <div><p class="kicker" data-i18n="solutions_kicker">Nossos serviços</p><h2 data-i18n="solutions_h2">Sites Profissionais</h2><p data-i18n="solutions_desc">Também desenvolvemos experiências completas com recursos específicos para o seu atendimento ou operação. Esses projetos recebem escopo e orçamento personalizados.</p></div>
-    <div class="solution-items"><div class="solution-item" data-i18n="solution_1">Sites institucionais</div><div class="solution-item" data-i18n="solution_2">Catálogos digitais</div><div class="solution-item" data-i18n="solution_3">Agendamento online</div><div class="solution-item" data-i18n="solution_4">Áreas restritas e sistemas</div></div>
+    <div class="services-copy">
+      <p class="kicker">NOSSOS SERVIÇOS</p>
+      <h2>Sites<br>Profissionais</h2>
+      <p>Sites modernos, rápidos e responsivos, feitos para atrair, engajar e converter visitantes em clientes.</p>
+      <ul class="service-checks">
+        <li>Design exclusivo</li><li>Otimizado para Google (SEO)</li><li>Adaptado para celular</li><li>Integração com WhatsApp</li><li>Foco em resultados</li>
+      </ul>
+    </div>
+    <div class="solution-items">
+      <div class="solution-item"><span class="benefit-icon">ϟ</span><span class="benefit-title">Mais visibilidade</span><span class="benefit-desc">Seja encontrado por mais pessoas.</span></div>
+      <div class="solution-item"><span class="benefit-icon">♙</span><span class="benefit-title">Mais clientes</span><span class="benefit-desc">Transforme visitantes em oportunidades.</span></div>
+      <div class="solution-item"><span class="benefit-icon">▥</span><span class="benefit-title">Mais credibilidade</span><span class="benefit-desc">Fortaleça a sua marca no digital.</span></div>
+      <div class="solution-item"><span class="benefit-icon">♡</span><span class="benefit-title">Mais resultados</span><span class="benefit-desc">Um site que trabalha por você.</span></div>
+    </div>
   </div>
 </section>
 <section class="portfolio" id="portfolio">
