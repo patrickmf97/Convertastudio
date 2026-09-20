@@ -341,6 +341,35 @@ footer .footer-row{align-items:center}
 @media(max-width:560px){.solution-items{grid-template-columns:1fr}.solutions .section-head h2{font-size:38px}}
 
 .service-checks{display:grid;gap:7px;margin-top:20px;font-size:13px;font-weight:600}.service-checks span:before{content:"✓";display:inline-grid;place-items:center;width:21px;height:21px;border-radius:50%;background:#075443;color:#fff;margin-right:8px;font-size:11px}
+
+/* === Screenshot comparison pass 7: close reference gaps === */
+/* Current render was too narrow/sparse and services heading was still old. */
+.wrap{max-width:1240px;padding-left:30px;padding-right:30px}
+.hero{min-height:520px;padding:48px 0 54px}
+.hero-grid{grid-template-columns:.92fr 1.08fr;gap:54px}
+.hero h1{font-size:62px}
+.hero-showcase{min-height:360px}
+.screen-shell{width:94%}
+.solutions{padding:52px 0}
+.solutions-grid{grid-template-columns:.82fr 1.18fr;gap:56px}
+.solutions .section-head h2{font-size:48px}
+.solution-items{grid-template-columns:1fr 1fr}
+.portfolio{padding:58px 0}
+.portfolio .section-head{align-items:center}
+.port-grid{grid-template-columns:repeat(4,1fr)}
+.port-preview,.port-card.featured .port-preview{height:145px}
+.port-body,.port-card.featured .port-body{padding:14px}
+.port-card p{min-height:54px}
+.pricing{padding:72px 0 62px}
+.pricing .wrap{grid-template-columns:.82fr 1.18fr}
+.pricing .calc-card{max-width:650px;width:100%}
+.process{padding:52px 0}.steps{grid-template-columns:repeat(4,1fr)}
+.faq{padding:52px 0}.faq-grid{grid-template-columns:.78fr 1.22fr}
+.cta-final{padding:62px 0;min-height:270px}
+@media(max-width:1000px){.port-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:860px){.wrap{padding-left:22px;padding-right:22px}.hero-grid,.solutions-grid,.pricing .wrap{grid-template-columns:1fr}.port-grid{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}}
+
+.client-strip{background:#fff;border-bottom:1px solid #edf1ee}.client-strip .wrap{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}.client-strip span{font-size:10px;font-weight:800;letter-spacing:.1em;color:#42635b}.client-strip b{font:600 18px 'Space Grotesk';text-align:center}.client-strip small{display:block;font:500 8px Inter;letter-spacing:.12em;color:#788984;margin-top:2px}@media(max-width:860px){.client-strip{display:none}}
 </style>
 </head>
 <body>
@@ -389,9 +418,11 @@ footer .footer-row{align-items:center}
     </div>
   </div>
 </section>
+<div class="client-strip"><div class="wrap"><span>NEGÓCIOS REAIS<br>QUE CONFIAM</span><b>Yanina<small>PSICOLOGIA ONLINE</small></b><b>Doceliz<small>CONFEITARIA ARTESANAL</small></b><b>Modern Barber<small>BARBEARIA</small></b><b>Modelo<small>ADVOCACIA</small></b><b>+ outros</b></div></div>
+
 <section class="solutions" id="servicos">
   <div class="wrap solutions-grid">
-    <div><p class="kicker" data-i18n="solutions_kicker">Nossos serviços</p><h2 data-i18n="solutions_title">Precisa de algo além de uma landing page?</h2><p data-i18n="solutions_desc">Também desenvolvemos experiências completas com recursos específicos para o seu atendimento ou operação. Esses projetos recebem escopo e orçamento personalizados.</p></div>
+    <div><p class="kicker" data-i18n="solutions_kicker">Nossos serviços</p><h2 data-i18n="solutions_h2">Sites Profissionais</h2><p data-i18n="solutions_desc">Também desenvolvemos experiências completas com recursos específicos para o seu atendimento ou operação. Esses projetos recebem escopo e orçamento personalizados.</p></div>
     <div class="solution-items"><div class="solution-item" data-i18n="solution_1">Sites institucionais</div><div class="solution-item" data-i18n="solution_2">Catálogos digitais</div><div class="solution-item" data-i18n="solution_3">Agendamento online</div><div class="solution-item" data-i18n="solution_4">Áreas restritas e sistemas</div></div>
   </div>
 </section>
