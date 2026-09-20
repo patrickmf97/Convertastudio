@@ -666,3 +666,16 @@ footer{padding:38px 0 20px!important;background:#031c27!important}
   .cta-script{display:none!important}
   .footer-main{grid-template-columns:1fr!important}.footer-brand{justify-content:center}.footer-right{text-align:center}
 }
+
+/* === Translation-safe finishing pass === */
+.hero-copy:before{content:none!important;display:none!important}
+.hero-kicker{
+  margin:0 0 20px!important;max-width:300px!important;
+  color:var(--green)!important;font-family:'Inter',sans-serif!important;
+  font-size:10px!important;line-height:1.45!important;font-weight:700!important;
+  letter-spacing:.14em!important;
+}
+.footer-bottom a+ a{margin-left:0!important}
+@media(max-width:900px){
+  .hero-kicker{margin-bottom:14px!important}
+}
