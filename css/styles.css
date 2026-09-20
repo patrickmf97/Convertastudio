@@ -224,3 +224,16 @@ footer{padding:40px 0;background:#031b25;color:#fff}.footer-row{min-height:100px
 .cta-kicker{color:var(--green-deep)!important;font-size:11px!important;font-weight:700;letter-spacing:.08em;margin-bottom:8px!important}.cta-final .wrap{position:relative;z-index:2}.cta-leaf{position:absolute;display:block;object-fit:contain;z-index:1}
 @media(max-width:1050px){.hero-device-asset{width:610px;right:-45px}.client-strip .wrap{gap:12px}}
 @media(max-width:860px){.hero-device-asset{width:108%;margin-left:-4%;right:auto}.client-strip .wrap{grid-template-columns:repeat(2,1fr);padding-top:16px;padding-bottom:16px}.client-strip .wrap>span{grid-column:1/-1}.examples-grid{grid-template-columns:1fr}}
+
+/* === Approved mockup fidelity pass === */
+.brand-logo{width:170px;height:46px;overflow:visible}.brand-logo img{width:168px;height:44px;object-fit:contain;object-position:left center}
+.hero{padding:44px 0 38px;min-height:500px}.hero-grid{grid-template-columns:.82fr 1.18fr;gap:20px}.hero h1{font-size:60px;line-height:.96}.hero p.lead{font-size:17px;line-height:1.42}
+.hero-asset-stage{min-height:430px}.hero-device-asset{width:760px;right:-88px;top:51%;filter:drop-shadow(0 24px 28px rgba(0,0,0,.24))}
+.client-strip .wrap{min-height:82px;grid-template-columns:1.1fr repeat(5,1fr);gap:18px}.client-strip .wrap>span{font-size:10px;line-height:1.3;letter-spacing:.08em}.client-strip b{font-size:20px}.client-strip small{font-size:7px}
+.solutions{padding:76px 0}.solutions-grid{grid-template-columns:.8fr 1.2fr}.services-copy h2{font-size:52px}.services-copy>p:not(.kicker){font-size:15px;line-height:1.45}.solution-item{min-height:108px;padding-left:78px}.benefit-title{font-size:15px}.benefit-desc{font-size:12px}
+.portfolio{padding-top:72px}.portfolio .section-head h2{font-size:38px}.port-preview,.port-card.featured .port-preview{height:168px}.port-card h3{font-size:15px}.port-card p{line-height:1.45}
+.pricing{padding:78px 0}.pricing>.wrap{grid-template-columns:.82fr 1.18fr}.pricing .section-head h2{font-size:46px}.calc-card{padding:32px}
+.process{padding:72px 0}.process .section-head h2{font-size:38px;max-width:18ch}.step-card h4{font-size:14px}.step-card p{line-height:1.45}
+.faq{padding:60px 0}.faq h2{font-size:34px}.cta-final{padding:78px 0;min-height:315px}.cta-final h2{font-size:40px}.cta-leaf-left{left:-45px;bottom:-70px;width:300px}.cta-leaf-right{right:-35px;top:-55px;width:300px}
+@media(max-width:1050px){.hero-device-asset{width:670px;right:-100px}}
+@media(max-width:860px){.brand-logo{width:140px}.brand-logo img{width:138px}.hero{min-height:0}.hero-device-asset{width:112%;right:auto;margin-left:-6%}.client-strip b{font-size:17px}}
