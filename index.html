@@ -294,6 +294,22 @@ footer{padding:34px 0}
  .process{padding:52px 0}.solutions{padding:52px 0}
 }
 
+
+/* === Hero device composition + calculator relocation pass 5 === */
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero-actions .btn{padding:14px 22px;text-decoration:none;font-weight:700;border-radius:999px}
+.hero-primary{background:var(--green);color:#03251d}.hero-secondary{border:1px solid rgba(255,255,255,.42);color:#fff}
+.hero-showcase{position:relative;min-height:410px;display:flex;align-items:center;justify-content:center}
+.screen-shell{position:relative;width:88%;aspect-ratio:1.55;background:linear-gradient(145deg,#03141c,#052c31);border:9px solid #111a1d;border-radius:15px;box-shadow:0 32px 55px rgba(0,0,0,.4);transform:perspective(1100px) rotateY(-7deg) rotateX(2deg);padding:22px;color:#fff;z-index:2}
+.screen-top{display:flex;align-items:center;gap:8px;font-size:9px}.screen-top b{margin-left:auto;background:var(--green);color:#063229;padding:6px 9px;border-radius:999px}.mini-logo{font-weight:900;color:var(--green);font-size:18px}
+.screen-copy{margin-top:45px;display:flex;flex-direction:column;gap:8px}.screen-copy small{font-size:8px;letter-spacing:.15em;color:#a9c5c5}.screen-copy strong{font:700 30px/1 'Space Grotesk';}.screen-copy em{font-style:normal;color:var(--green)}.screen-copy span{font-size:9px;color:#b9c8ca}
+.screen-actions{display:flex;gap:8px;margin-top:18px}.screen-actions i{font-style:normal;font-size:8px;border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:7px 10px}.screen-actions i:first-child{background:var(--green);color:#052b24;border:0}
+.laptop-base{position:absolute;width:98%;height:22px;background:linear-gradient(#c8cdd0,#7f898e);bottom:39px;border-radius:3px 3px 40% 40%;transform:perspective(600px) rotateX(58deg);z-index:1;box-shadow:0 15px 22px rgba(0,0,0,.35)}
+.phone-mock{position:absolute;right:3%;bottom:70px;width:80px;height:145px;border:6px solid #101719;border-radius:14px;background:linear-gradient(#07313a,#041b22);z-index:3;color:#fff;padding:18px 8px;font-size:9px;box-shadow:0 18px 30px rgba(0,0,0,.35)}.phone-mock span{color:var(--green);font-weight:900}.phone-mock b{display:block;margin-top:18px;font-size:11px}
+.hero-script{position:absolute;right:-5px;top:5px;font-family:cursive;font-size:22px;line-height:1.05;transform:rotate(-8deg);z-index:4}.hero-script:after{content:"";display:block;width:78px;height:4px;background:var(--green);margin-top:8px;transform:rotate(-5deg);border-radius:9px}
+.pricing .calc-card{transform:none;max-width:600px;margin-left:auto}.pricing .calc-card:before,.pricing .calc-card:after{display:none}.pricing .section-head{max-width:480px}.calc-trust{display:flex;gap:18px;flex-wrap:wrap;margin-top:26px;color:#d2e0e1;font-size:12px}.calc-trust span:before{content:"✓";color:var(--green);margin-right:6px}
+@media(max-width:860px){.hero-showcase{min-height:340px}.screen-shell{width:92%}.hero-script{display:none}.pricing .calc-card{max-width:none}.screen-copy{margin-top:30px}.screen-copy strong{font-size:24px}}
+
 </style>
 </head>
 <body>
@@ -318,52 +334,27 @@ footer{padding:34px 0}
 
 <section class="hero">
   <div class="wrap hero-grid">
-    <div >
+    <div class="hero-copy">
       <h1 data-i18n="hero_h1">Sites que viram <span class="accent">resultados.</span></h1>
       <p class="lead" data-i18n="hero_lead">Vamos transformar sua ideia em um site profissional, moderno e focado em resultados.</p>
-      <div class="badges">
-        <span class="badge" data-i18n="badge1">Entrega em 5 dias úteis</span>
-        <span class="badge" data-i18n="badge2">2 revisões incluídas</span>
-        <span class="badge" data-i18n="badge3">Orçamento fechado antes de começar</span>
+      <div class="hero-actions">
+        <a href="#investimento" class="btn hero-primary">Quero um orçamento →</a>
+        <a href="#projetos" class="btn hero-secondary">Ver projetos</a>
+      </div>
+      <div class="trust">
+        <span class="badge">Mais visibilidade</span><span class="badge">Mais oportunidades</span>
+        <span class="badge">Mais clientes</span><span class="badge">Mais resultados</span>
       </div>
     </div>
-
-    <div class="calc-card">
-      <h3 data-i18n="calc_title">Monte uma estimativa rápida</h3>
-
-      <div class="calc-row">
-        <label data-i18n="calc_q1">Qual estrutura combina com seu projeto?</label>
-        <div class="opts" data-group="sections">
-          <button type="button" class="opt active" data-value="0" data-i18n="calc_opt1a">Essencial (até 5 seções)</button>
-          <button type="button" class="opt" data-value="150" data-i18n="calc_opt1b">Completa (até 8 seções)</button>
-        </div>
+    <div class="hero-showcase" aria-label="Converta Studio em diferentes dispositivos">
+      <div class="screen-shell">
+        <div class="screen-top"><span class="mini-logo">CS</span><span>Converta Studio</span><b>Quero meu site</b></div>
+        <div class="screen-copy"><small>SITES • MARCAS • RESULTADOS</small><strong>Seu negócio<br><em>em boas mãos.</em></strong><span>Design que converte. Resultados que ficam.</span></div>
+        <div class="screen-actions"><i>Quero um orçamento →</i><i>Ver projetos</i></div>
       </div>
-
-      <div class="calc-row">
-        <label data-i18n="calc_q2">Precisa de revisões extras (além das 2 inclusas)?</label>
-        <div class="opts" data-group="revisions">
-          <button type="button" class="opt active" data-value="0" data-i18n="calc_opt2a">Não precisa</button>
-          <button type="button" class="opt" data-value="50" data-i18n="calc_opt2b">+1 revisão</button>
-          <button type="button" class="opt" data-value="100" data-i18n="calc_opt2c">+2 revisões</button>
-        </div>
-      </div>
-
-      <div class="calc-row">
-        <label data-i18n="calc_q3">Qual o prazo?</label>
-        <div class="opts" data-group="prazo">
-          <button type="button" class="opt active" data-value="0" data-i18n="calc_opt3a">Padrão (5 dias úteis)</button>
-          <button type="button" class="opt" data-value="150" data-i18n="calc_opt3b">Urgente (3 dias úteis)</button>
-        </div>
-      </div>
-
-      <div class="calc-total">
-        <span class="lbl" data-i18n="calc_total_label">Estimativa inicial</span>
-        <span class="val" id="calc-value">R$ 497</span>
-      </div>
-      <p class="calc-note" data-i18n="calc_note">Valor aproximado — o orçamento final é confirmado após entender seu projeto.</p>
-      <p class="fx-note" id="fx-note"><span class="fx-dot" id="fx-dot"></span><span id="fx-text"></span></p>
-
-      <a href="#" id="calc-cta" class="btn-calc" data-i18n="calc_btn" target="_blank" rel="noopener">Continuar no WhatsApp</a>
+      <div class="laptop-base"></div>
+      <div class="phone-mock"><span>CS</span><b>Sites que<br>convertem.</b></div>
+      <div class="hero-script">Seu site<br>trabalhando<br>por você.</div>
     </div>
   </div>
 </section>
@@ -428,21 +419,47 @@ footer{padding:34px 0}
 <section class="pricing" id="investimento">
   <div class="wrap">
     <div class="section-head">
-      <p class="kicker" data-i18n="pricing_kicker">Investimento</p>
-      <h2 data-i18n="pricing_h2">Um ponto de partida claro para colocar sua página no ar</h2>
+      <p class="kicker">CALCULE SEU PROJETO</p>
+      <h2>Monte uma estimativa rápida</h2>
+      <p>Preencha as opções e veja um valor aproximado para o seu site. É simples, rápido e sem compromisso.</p>
+      <div class="calc-trust"><span>Sem compromisso</span><span>Resposta na hora</span><span>Seus dados seguros</span></div>
     </div>
-    <div class="price-card">
-      <div class="tag" data-i18n="price_tag">Plano Essencial — até 5 seções</div>
-      <div class="amount"><span id="price-value">R$ 497</span> <span data-i18n="price_suffix">à vista</span></div>
-      <ul class="price-list">
-        <li data-i18n="price_li1">Até 5 seções com design responsivo</li>
-        <li data-i18n="price_li2">2 rodadas de revisão incluídas</li>
-        <li data-i18n="price_li3">Publicação em até 5 dias úteis*</li>
-        <li data-i18n="price_li4">Sinal de 50% + saldo na entrega</li>
-      </ul>
-      <p class="calc-note" data-i18n="price_note">*Prazo contado após briefing, materiais e pagamento do sinal.</p>
-      <p class="fx-note-dark" id="fx-note-price"><span class="fx-dot" id="fx-dot-price"></span><span id="fx-text-price"></span></p>
-      <a href="#contato" class="btn-price" data-i18n="price_btn">Quero orçar meu projeto</a>
+    <div class="calc-card">
+      <h3 data-i18n="calc_title">Monte uma estimativa rápida</h3>
+
+      <div class="calc-row">
+        <label data-i18n="calc_q1">Qual estrutura combina com seu projeto?</label>
+        <div class="opts" data-group="sections">
+          <button type="button" class="opt active" data-value="0" data-i18n="calc_opt1a">Essencial (até 5 seções)</button>
+          <button type="button" class="opt" data-value="150" data-i18n="calc_opt1b">Completa (até 8 seções)</button>
+        </div>
+      </div>
+
+      <div class="calc-row">
+        <label data-i18n="calc_q2">Precisa de revisões extras (além das 2 inclusas)?</label>
+        <div class="opts" data-group="revisions">
+          <button type="button" class="opt active" data-value="0" data-i18n="calc_opt2a">Não precisa</button>
+          <button type="button" class="opt" data-value="50" data-i18n="calc_opt2b">+1 revisão</button>
+          <button type="button" class="opt" data-value="100" data-i18n="calc_opt2c">+2 revisões</button>
+        </div>
+      </div>
+
+      <div class="calc-row">
+        <label data-i18n="calc_q3">Qual o prazo?</label>
+        <div class="opts" data-group="prazo">
+          <button type="button" class="opt active" data-value="0" data-i18n="calc_opt3a">Padrão (5 dias úteis)</button>
+          <button type="button" class="opt" data-value="150" data-i18n="calc_opt3b">Urgente (3 dias úteis)</button>
+        </div>
+      </div>
+
+      <div class="calc-total">
+        <span class="lbl" data-i18n="calc_total_label">Estimativa inicial</span>
+        <span class="val" id="calc-value">R$ 497</span>
+      </div>
+      <p class="calc-note" data-i18n="calc_note">Valor aproximado — o orçamento final é confirmado após entender seu projeto.</p>
+      <p class="fx-note" id="fx-note"><span class="fx-dot" id="fx-dot"></span><span id="fx-text"></span></p>
+
+      <a href="#" id="calc-cta" class="btn-calc" data-i18n="calc_btn" target="_blank" rel="noopener">Continuar no WhatsApp</a>
     </div>
   </div>
 </section>
