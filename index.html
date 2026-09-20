@@ -3,19 +3,75 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Converta Studio — Landing pages sob medida</title>
-<meta name="description" content="Landing pages sob medida a partir de R$ 497. Sites, catálogos, agendamentos e sistemas web desenvolvidos pela ConvertaStudio.">
-<meta property="og:title" content="ConvertaStudio — páginas que transformam visitas em oportunidades">
-<meta property="og:description" content="Landing pages prontas em até 5 dias úteis, com preço transparente e atendimento direto.">
+<title>Converta Studio — Sites profissionais e landing pages</title>
+<meta name="description" content="Sites profissionais e landing pages sob medida a partir de R$ 497. Design responsivo, SEO, WhatsApp e entrega rápida pela Converta Studio.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="author" content="Converta Studio">
+<link rel="canonical" href="https://convertastudio.online/">
+
+<meta property="og:site_name" content="Converta Studio">
+<meta property="og:title" content="Converta Studio — Sites que viram resultados">
+<meta property="og:description" content="Sites profissionais, modernos e responsivos com foco em visibilidade, oportunidades e conversão.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://convertastudio.vercel.app/">
-<meta property="og:image" content="https://convertastudio.vercel.app/img/yanina.jpg">
-<meta name="theme-color" content="#061923">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://convertastudio.online/">
+<meta property="og:image" content="https://convertastudio.online/img/converta-hero-laptop.webp">
+<meta property="og:image:type" content="image/webp">
+<meta property="og:image:width" content="1536">
+<meta property="og:image:height" content="1024">
+<meta property="og:image:alt" content="Converta Studio apresentada em notebook e smartphone">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Converta Studio — Sites que viram resultados">
+<meta name="twitter:description" content="Sites profissionais, modernos e responsivos com foco em resultados.">
+<meta name="twitter:image" content="https://convertastudio.online/img/converta-hero-laptop.webp">
+
+<meta name="theme-color" content="#021b24">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"Organization",
+      "@id":"https://convertastudio.online/#organization",
+      "name":"Converta Studio",
+      "url":"https://convertastudio.online/",
+      "logo":"https://convertastudio.online/img/converta-logo.webp",
+      "email":"convertastudio.br@gmail.com",
+      "telephone":"+55 21 98876-1259",
+      "sameAs":[
+        "https://www.instagram.com/convertastudio.rj/",
+        "https://github.com/patrickmf97"
+      ]
+    },
+    {
+      "@type":"WebSite",
+      "@id":"https://convertastudio.online/#website",
+      "url":"https://convertastudio.online/",
+      "name":"Converta Studio",
+      "publisher":{"@id":"https://convertastudio.online/#organization"},
+      "inLanguage":["pt-BR","en","es"]
+    },
+    {
+      "@type":"Service",
+      "@id":"https://convertastudio.online/#service",
+      "name":"Criação de sites e landing pages",
+      "serviceType":"Design e desenvolvimento de sites, landing pages, catálogos e sistemas web",
+      "provider":{"@id":"https://convertastudio.online/#organization"},
+      "areaServed":{"@type":"Country","name":"Brasil"},
+      "url":"https://convertastudio.online/#servicos"
+    }
+  ]
+}
+</script>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Pular para o conteúdo</a>
 
 <header id="site-header">
   <div class="wrap nav">
@@ -29,19 +85,30 @@
         <a href="#portfolio" data-i18n="nav_work">Projetos</a>
         <a href="#servicos" data-i18n="nav_services">Serviços</a>
         <a href="#como-funciona" data-i18n="nav_process">Como funciona</a>
-        <a href="#portfolio" data-i18n="nav_testimonials">Depoimentos</a>
         <a href="#faq" data-i18n="nav_faq">FAQ</a>
       </nav>
-      <div class="lang-switch">
-        <button type="button" class="lang-btn active" data-lang="pt">🇧🇷 PT</button>
-        <button type="button" class="lang-btn" data-lang="en">🇺🇸 EN</button>
-        <button type="button" class="lang-btn" data-lang="es">🇦🇷 ES</button>
+      <div class="lang-switch" role="group" aria-label="Idioma">
+        <button type="button" class="lang-btn active" data-lang="pt" aria-label="Português" aria-pressed="true"><span aria-hidden="true">🇧🇷</span><span class="lang-code">PT</span></button>
+        <button type="button" class="lang-btn" data-lang="en" aria-label="English" aria-pressed="false"><span aria-hidden="true">🇺🇸</span><span class="lang-code">EN</span></button>
+        <button type="button" class="lang-btn" data-lang="es" aria-label="Español" aria-pressed="false"><span aria-hidden="true">🇦🇷</span><span class="lang-code">ES</span></button>
       </div>
+      <button type="button" class="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
       <a href="#contato" class="nav-cta"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 11H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span data-i18n="nav_site_cta">Quero meu site</span></a>
     </div>
   </div>
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Navegação móvel" hidden>
+    <a href="#inicio" data-i18n="nav_home">Início</a>
+    <a href="#portfolio" data-i18n="nav_work">Projetos</a>
+    <a href="#servicos" data-i18n="nav_services">Serviços</a>
+    <a href="#como-funciona" data-i18n="nav_process">Como funciona</a>
+    <a href="#faq" data-i18n="nav_faq">FAQ</a>
+    <a href="#contato" class="mobile-menu-cta" data-i18n="nav_site_cta">Quero meu site</a>
+  </nav>
 </header>
 
+<main id="main-content">
 <section class="hero" id="inicio">
   <div class="wrap hero-grid">
     <div class="hero-copy">
@@ -72,7 +139,7 @@
       </div>
     </div>
     <div class="hero-showcase hero-asset-stage" aria-label="Converta Studio em diferentes dispositivos">
-      <img class="hero-device-asset" src="img/converta-hero-laptop.webp" alt="Notebook exibindo o site da Converta Studio" width="1536" height="1024">
+      <img class="hero-device-asset" src="img/converta-hero-laptop.webp" alt="Notebook exibindo o site da Converta Studio" width="1536" height="1024" fetchpriority="high" decoding="async">
       <div class="hero-script">Seu site<br>trabalhando<br>por você.</div>
     </div>
   </div>
@@ -141,7 +208,7 @@
     </div>
     <div class="port-grid">
       <article class="port-card featured">
-        <a href="https://yaniterapia.vercel.app" target="_blank" rel="noopener" class="port-preview" data-track="portfolio-yanina"><img src="img/project-yanina.webp" alt="Página inicial do projeto Yanina Psicologia" width="880" height="550"></a>
+        <a href="https://yaniterapia.vercel.app" target="_blank" rel="noopener" class="port-preview" data-track="portfolio-yanina"><img src="img/project-yanina.webp" alt="Página inicial do projeto Yanina Psicologia" width="880" height="550" loading="lazy" decoding="async"></a>
         <div class="port-body">
           <span class="port-tag tag-real" data-i18n="tag_real">Projeto real</span>
           <h3 data-i18n="yanina_title">Yanina — Psicologia online</h3>
@@ -152,7 +219,7 @@
       </article>
 
       <article class="port-card">
-        <a href="https://doceliz-site.vercel.app" target="_blank" rel="noopener" class="port-preview" data-track="portfolio-doceliz"><img src="img/project-doceliz.webp" alt="Página inicial do projeto DoceLiz" width="880" height="550" loading="lazy"></a>
+        <a href="https://doceliz-site.vercel.app" target="_blank" rel="noopener" class="port-preview" data-track="portfolio-doceliz"><img src="img/project-doceliz.webp" alt="Página inicial do projeto DoceLiz" width="880" height="550" loading="lazy" decoding="async"></a>
         <div class="port-body">
           <span class="port-tag tag-real" data-i18n="tag_real">Projeto real</span>
           <h3 data-i18n="doceliz_title">DoceLiz — Confeitaria artesanal</h3>
@@ -163,7 +230,7 @@
       </article>
 
       <article class="port-card">
-        <a href="https://patrickmf97.github.io/modern-barber/" target="_blank" rel="noopener" class="port-preview" data-track="portfolio-barber"><img src="img/modern-barber.jpg" alt="Página inicial do conceito Modern Barber" width="880" height="550" loading="lazy"></a>
+        <a href="https://patrickmf97.github.io/modern-barber/" target="_blank" rel="noopener" class="port-preview" data-track="portfolio-barber"><img src="img/modern-barber.jpg" alt="Página inicial do conceito Modern Barber" width="880" height="550" loading="lazy" decoding="async"></a>
         <div class="port-body">
           <span class="port-tag tag-demo" data-i18n="tag_concept">Conceito demonstrativo</span>
           <h3 data-i18n="barber_title">Modern Barber — Barbearia</h3>
@@ -173,7 +240,7 @@
         </div>
       </article>
     <article class="port-card">
-  <a href="https://poetic-beignet-407ffc.netlify.app" target="_blank" rel="noopener" class="port-preview" data-track="portfolio-vantagem"><img src="img/project-vantagem.webp" alt="Página inicial do projeto Vantagem Consultoria" width="1536" height="960" loading="lazy"></a>
+  <a href="https://poetic-beignet-407ffc.netlify.app" target="_blank" rel="noopener" class="port-preview" data-track="portfolio-vantagem"><img src="img/project-vantagem.webp" alt="Página inicial do projeto Vantagem Consultoria" width="1536" height="960" loading="lazy" decoding="async"></a>
   <div class="port-body"><span class="port-tag tag-real">Projeto real</span><h3 data-i18n="vantagem_project_title">Vantagem — Consultoria jurídica</h3><p data-i18n="vantagem_project_desc">Presença institucional premium para consultoria jurídica e tributária, com foco em autoridade, clareza e geração de oportunidades.</p><div class="feature-list"><span data-i18n="feat_institutional">Site institucional</span><span data-i18n="feat_credibility">Credibilidade</span><span data-i18n="feat_conversion">Conversão</span></div><a class="port-link" href="https://poetic-beignet-407ffc.netlify.app" target="_blank" rel="noopener" data-i18n="vantagem_project_link">Ver projeto ↗</a></div>
 </article></div>
     <div class="portfolio-more">
@@ -219,12 +286,12 @@
 
       <div class="calc-total">
         <span class="lbl" data-i18n="calc_total_label">Estimativa inicial</span>
-        <span class="val" id="calc-value">R$ 497</span>
+        <span class="val" id="calc-value" aria-live="polite">R$ 497</span>
       </div>
       <p class="calc-note" data-i18n="calc_note">Valor aproximado — o orçamento final é confirmado após entender seu projeto.</p>
       <p class="fx-note" id="fx-note"><span class="fx-dot" id="fx-dot"></span><span id="fx-text"></span></p>
 
-      <a href="#" id="calc-cta" class="btn-calc" data-i18n="calc_btn" target="_blank" rel="noopener">Continuar no WhatsApp</a>
+      <a href="https://wa.me/5521988761259" id="calc-cta" class="btn-calc" data-i18n="calc_btn" target="_blank" rel="noopener">Continuar no WhatsApp</a>
     </div>
   </div>
 </section>
@@ -282,10 +349,10 @@
 
 
 
-<section class="cta-final" id="contato"><img class="cta-leaf cta-leaf-left" src="img/folhagem-esquerda.webp" alt="" aria-hidden="true"><img class="cta-leaf cta-leaf-right" src="img/folhagem-direita.webp" alt="" aria-hidden="true"><i class="organic-leaf one"></i><i class="organic-leaf two"></i>
+<section class="cta-final" id="contato"><img class="cta-leaf cta-leaf-left" src="img/folhagem-esquerda.webp" alt="" aria-hidden="true" loading="lazy" decoding="async"><img class="cta-leaf cta-leaf-right" src="img/folhagem-direita.webp" alt="" aria-hidden="true" loading="lazy" decoding="async"><i class="organic-leaf one"></i><i class="organic-leaf two"></i>
   <div class="wrap">
     <p class="cta-kicker" data-i18n="cta_kicker">VAMOS CONVERSAR?</p><h2 data-i18n="cta_h2">Vamos construir algo incrível juntos?</h2><p data-i18n="cta_p">Me conta o que você precisa e eu te mostro como um site profissional pode ajudar o seu negócio a crescer.</p>
-    <a href="#" id="cta-final-link" class="btn-final" target="_blank" rel="noopener">
+    <a href="https://wa.me/5521988761259" id="cta-final-link" class="btn-final" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.7 7.1L4 20l1.4-4.1A8 8 0 1 1 20 11.5Z"/><path d="M8.8 8.7c.2 2.1 2.4 4.3 4.5 4.5"/></svg>
       <span data-i18n="cta_btn">Falar no WhatsApp</span>
     </a>
@@ -297,6 +364,8 @@
     <div class="cta-script" data-i18n="cta_script">Seu próximo<br>resultado começa<br>aqui.</div>
   </div>
 </section>
+
+</main>
 
 <footer>
   <div class="wrap footer-main">
