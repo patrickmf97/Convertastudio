@@ -42,9 +42,9 @@
   .nav-links{ display:flex; align-items:center; gap:18px; }
   .nav-links a{ color:#D6E1E3; font-size:13.5px; font-weight:500; text-decoration:none; }
   .nav-links a:hover{ color:var(--green); }
-  .lang-switch{ display:flex; background:var(--panel); border:1px solid var(--line); border-radius:100px; padding:3px; gap:2px; }
-  .lang-btn{ background:transparent; padding:6px 11px; border-radius:100px; font-size:12.5px; font-weight:600; color:var(--ink-soft); }
-  .lang-btn.active{ background:var(--ink); color:#fff; }
+  .lang-switch{ display:flex; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2); border-radius:100px; padding:3px; gap:2px; }
+  .lang-btn{ background:transparent; padding:6px 11px; border-radius:100px; font-size:12.5px; font-weight:600; color:#DDE8E9; }
+  .lang-btn.active{ background:#fff; color:var(--ink); }
   .nav-cta{ background:var(--green); color:#04130F; padding:11px 20px; border-radius:6px; text-decoration:none; font-size:14px; font-weight:500; white-space:nowrap; }
 
   /* HERO with calculator */
@@ -76,7 +76,7 @@
 
   /* Process */
   .process{ padding:80px 0; background:var(--panel); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
-  .section-head{ max-width:56ch; margin-bottom:44px; }
+  .section-head{ max-width:60ch; margin-bottom:38px; }
   .section-head p.kicker{ color:var(--green-deep); font-weight:600; font-size:14px; margin-bottom:8px; }
   .section-head h2{ font-size:42px; line-height:1.08; letter-spacing:-.035em; }
   .steps{ display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
@@ -85,13 +85,13 @@
   .step-card p{ font-size:14px; color:var(--ink-soft); }
 
   /* Portfolio */
-  .portfolio{ padding:96px 0; background:linear-gradient(145deg,#04141D,#072330); color:#fff; } .portfolio .section-head h2,.portfolio .port-card h3{color:#fff}.portfolio .section-head p.kicker{color:var(--green)} .portfolio .port-card{background:#0A2732;border-color:#173C47}.portfolio .port-card p{color:#C3D0D3}.portfolio .feature-list span{background:#0D303B;border-color:#214650;color:#D6E0E2}.portfolio .port-link{color:#46E5AD}.portfolio .examples-head h3{color:#fff}.portfolio .examples-head p{color:#AABBC0}.portfolio .example-card{background:#0A2732;border-color:#173C47}.portfolio .example-card strong{color:#fff}.portfolio .example-card a{color:#46E5AD}
-  .port-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:24px; }
-  .port-card{ background:var(--panel); border:1px solid var(--line); border-radius:18px; overflow:hidden; box-shadow:0 24px 60px rgba(0,0,0,.16); }
-  .port-card.featured{ grid-column:1/-1; display:grid; grid-template-columns:1.35fr 1fr; }
-  .port-card.featured .port-preview{ height:100%; min-height:320px; }
-  .port-card.featured .port-body{ padding:36px; display:flex; flex-direction:column; justify-content:center; }
-  .port-preview{ height:170px; overflow:hidden; display:block; }
+  .portfolio{ padding:88px 0; background:linear-gradient(145deg,#04141D,#072330); color:#fff; } .portfolio .section-head h2,.portfolio .port-card h3{color:#fff}.portfolio .section-head p.kicker{color:var(--green)} .portfolio .port-card{background:#0A2732;border-color:#173C47}.portfolio .port-card p{color:#C3D0D3}.portfolio .feature-list span{background:#0D303B;border-color:#214650;color:#D6E0E2}.portfolio .port-link{color:#46E5AD}.portfolio .examples-head h3{color:#fff}.portfolio .examples-head p{color:#AABBC0}.portfolio .example-card{background:#0A2732;border-color:#173C47}.portfolio .example-card strong{color:#fff}.portfolio .example-card a{color:#46E5AD}
+  .port-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
+  .port-card{ background:var(--panel); border:1px solid var(--line); border-radius:14px; overflow:hidden; box-shadow:0 20px 48px rgba(0,0,0,.14); }
+  .port-card.featured{ grid-column:auto; display:block; }
+  .port-card.featured .port-preview{ height:190px; min-height:0; }
+  .port-card.featured .port-body{ padding:22px; display:block; }
+  .port-preview{ height:190px; overflow:hidden; display:block; }
   .port-preview img{ width:100%; height:100%; object-fit:cover; object-position:left top; display:block; transition:transform .3s; }
   .port-card:hover .port-preview img{ transform:scale(1.04); }
   .port-body{ padding:22px; }
@@ -161,7 +161,7 @@
     .hero-grid{ grid-template-columns:1fr; }
     .steps{ grid-template-columns:1fr 1fr; }
     .port-grid{ grid-template-columns:1fr; }
-    .port-card.featured{ grid-column:auto; display:block; }
+     .port-card.featured{ grid-column:auto; display:block; }
     .port-card.featured .port-preview{ height:210px; min-height:0; }
     .port-card.featured .port-body{ padding:22px; }
     .examples-grid{ grid-template-columns:1fr; }
@@ -197,8 +197,8 @@
 <section class="hero">
   <div class="wrap hero-grid">
     <div >
-      <h1 data-i18n="hero_h1">Sites que convertem <span class="accent">ideias em resultados.</span></h1>
-      <p class="lead" data-i18n="hero_lead">Design, estratégia e tecnologia para transformar a presença digital do seu negócio em uma experiência profissional que gera oportunidades.</p>
+      <h1 data-i18n="hero_h1">Sua landing page pronta em <span class="accent">5 dias úteis</span>, com estimativa na hora</h1>
+      <p class="lead" data-i18n="hero_lead">Página sob medida, pensada para apresentar seu negócio e transformar visitas em oportunidades — sem template genérico.</p>
       <div class="badges">
         <span class="badge" data-i18n="badge1">Entrega em 5 dias úteis</span>
         <span class="badge" data-i18n="badge2">2 revisões incluídas</span>
