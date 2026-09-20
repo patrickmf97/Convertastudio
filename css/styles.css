@@ -781,3 +781,68 @@ header,
   .pricing::before{width:520px;height:520px;left:-260px;top:-180px;border-width:64px}
   .pricing::after{width:330px;height:330px;right:-120px;bottom:-110px;opacity:.10}
 }
+
+/* === Continuous portfolio + pricing backdrop === */
+.projects-pricing-wrap{
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+  background:
+    radial-gradient(circle at 78% 26%,rgba(18,223,154,.08),transparent 29%),
+    radial-gradient(circle at 18% 80%,rgba(12,156,122,.08),transparent 34%),
+    linear-gradient(145deg,#031c26 0%,#04383a 58%,#04413e 100%);
+}
+.projects-pricing-wrap::before{
+  content:"";
+  position:absolute;
+  z-index:0;
+  width:900px;
+  height:900px;
+  left:-310px;
+  top:41%;
+  transform:translateY(-50%) rotate(22deg);
+  border-radius:48% 52% 58% 42% / 58% 42% 58% 42%;
+  border:96px solid rgba(18,223,154,.072);
+  pointer-events:none;
+}
+.projects-pricing-wrap::after{
+  content:"";
+  position:absolute;
+  z-index:0;
+  width:640px;
+  height:640px;
+  right:-185px;
+  bottom:-160px;
+  background:url('img/folhagem-desfocada.webp') center/contain no-repeat;
+  opacity:.12;
+  transform:rotate(-10deg);
+  pointer-events:none;
+}
+.projects-pricing-wrap .portfolio,
+.projects-pricing-wrap .pricing{
+  position:relative!important;
+  z-index:1;
+  background:transparent!important;
+}
+.projects-pricing-wrap .portfolio::before,
+.projects-pricing-wrap .portfolio::after,
+.projects-pricing-wrap .pricing::before,
+.projects-pricing-wrap .pricing::after{
+  content:none!important;
+  display:none!important;
+}
+.projects-pricing-wrap .portfolio{
+  padding-bottom:74px!important;
+}
+.projects-pricing-wrap .pricing{
+  padding-top:78px!important;
+  border-top:1px solid rgba(255,255,255,.025);
+}
+@media(max-width:900px){
+  .projects-pricing-wrap::before{
+    width:620px;height:620px;left:-320px;top:46%;border-width:66px;
+  }
+  .projects-pricing-wrap::after{
+    width:360px;height:360px;right:-140px;bottom:-70px;opacity:.08;
+  }
+}
