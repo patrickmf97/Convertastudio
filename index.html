@@ -254,6 +254,46 @@ footer .logo{color:#fff}
 @media(max-width:860px){.hero{min-height:auto}.hero .calc-card{transform:none}.process-grid{grid-template-columns:1fr 1fr}.solutions-grid{grid-template-columns:1fr}.solution-list{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.process-grid,.solution-list{grid-template-columns:1fr}}
 
+
+/* === Screenshot comparison pass 4 === */
+/* Reference is wider, denser and less vertically stretched than current render. */
+.hero{padding:58px 0 62px;min-height:560px}
+.hero-grid{grid-template-columns:1.08fr .92fr;gap:46px}
+.hero h1{font-size:58px;max-width:9.5ch}
+.hero p.lead{margin-top:16px}
+.hero .trust{margin-top:24px}
+.calc-card{padding:24px}
+.process{padding:58px 0}
+.process .section-head{margin-bottom:30px}
+.process .section-head h2{font-size:36px}
+.steps{gap:18px}
+.portfolio{padding:64px 0}
+.portfolio .section-head{margin-bottom:28px}
+.portfolio .section-head h2{font-size:38px}
+.port-grid{grid-template-columns:repeat(4,1fr);gap:14px}
+.port-preview,.port-card.featured .port-preview{height:135px}
+.port-body,.port-card.featured .port-body{padding:15px}
+.port-card h3{font-size:14px}
+.port-card p{font-size:12px;line-height:1.45}
+.feature-list{margin-bottom:12px}
+.examples-head,.examples-grid{display:none}
+.solutions{padding:58px 0}
+.solutions-grid{grid-template-columns:.9fr 1.1fr;gap:52px}
+.solutions h2{font-size:38px}
+.solution-items{grid-template-columns:1fr 1fr;gap:14px}
+.pricing{padding:84px 0 64px}
+.pricing .section-head h2{font-size:42px}
+.faq{padding:62px 0}
+.cta-final{padding:70px 0}
+.cta-final h2{font-size:42px}
+footer{padding:34px 0}
+@media(max-width:1000px){.port-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:860px){
+ .hero{padding:48px 0}.hero-grid{grid-template-columns:1fr}.hero h1{font-size:44px}
+ .port-grid{grid-template-columns:1fr}.port-preview,.port-card.featured .port-preview{height:190px}
+ .process{padding:52px 0}.solutions{padding:52px 0}
+}
+
 </style>
 </head>
 <body>
@@ -327,38 +367,12 @@ footer .logo{color:#fff}
     </div>
   </div>
 </section>
-
-<section class="process">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="kicker" data-i18n="process_kicker">Como funciona</p>
-      <h2 data-i18n="process_h2">Do primeiro contato à entrega, sem enrolação</h2>
-    </div>
-    <div class="steps">
-      <div class="step-card">
-        <div class="step-num">01</div>
-        <h4 data-i18n="step1_h">Você conta o que precisa</h4>
-        <p data-i18n="step1_p">Pela calculadora acima ou direto no WhatsApp.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num">02</div>
-        <h4 data-i18n="step2_h">Orçamento e contrato</h4>
-        <p data-i18n="step2_p">Você recebe o valor fechado e o contrato para assinatura digital.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num">03</div>
-        <h4 data-i18n="step3_h">Sinal de 50%</h4>
-        <p data-i18n="step3_p">Pagamento via Pix ou link, e o projeto entra em produção.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num">04</div>
-        <h4 data-i18n="step4_h">Entrega em 5 dias úteis</h4>
-        <p data-i18n="step4_p">Você aprova, ajusta o que precisar e recebe os arquivos finais.</p>
-      </div>
-    </div>
+<section class="solutions">
+  <div class="wrap solutions-grid">
+    <div><p class="kicker" data-i18n="solutions_kicker">Nossos serviços</p><h2 data-i18n="solutions_title">Precisa de algo além de uma landing page?</h2><p data-i18n="solutions_desc">Também desenvolvemos experiências completas com recursos específicos para o seu atendimento ou operação. Esses projetos recebem escopo e orçamento personalizados.</p></div>
+    <div class="solution-items"><div class="solution-item" data-i18n="solution_1">Sites institucionais</div><div class="solution-item" data-i18n="solution_2">Catálogos digitais</div><div class="solution-item" data-i18n="solution_3">Agendamento online</div><div class="solution-item" data-i18n="solution_4">Áreas restritas e sistemas</div></div>
   </div>
 </section>
-
 <section class="portfolio" id="portfolio">
   <div class="wrap">
     <div class="section-head">
@@ -411,14 +425,6 @@ footer .logo{color:#fff}
     </div>
   </div>
 </section>
-
-<section class="solutions">
-  <div class="wrap solutions-grid">
-    <div><p class="kicker" data-i18n="solutions_kicker">Nossos serviços</p><h2 data-i18n="solutions_title">Precisa de algo além de uma landing page?</h2><p data-i18n="solutions_desc">Também desenvolvemos experiências completas com recursos específicos para o seu atendimento ou operação. Esses projetos recebem escopo e orçamento personalizados.</p></div>
-    <div class="solution-items"><div class="solution-item" data-i18n="solution_1">Sites institucionais</div><div class="solution-item" data-i18n="solution_2">Catálogos digitais</div><div class="solution-item" data-i18n="solution_3">Agendamento online</div><div class="solution-item" data-i18n="solution_4">Áreas restritas e sistemas</div></div>
-  </div>
-</section>
-
 <section class="pricing" id="investimento">
   <div class="wrap">
     <div class="section-head">
@@ -440,7 +446,36 @@ footer .logo{color:#fff}
     </div>
   </div>
 </section>
-
+<section class="process">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker" data-i18n="process_kicker">Como funciona</p>
+      <h2 data-i18n="process_h2">Do primeiro contato à entrega, sem enrolação</h2>
+    </div>
+    <div class="steps">
+      <div class="step-card">
+        <div class="step-num">01</div>
+        <h4 data-i18n="step1_h">Você conta o que precisa</h4>
+        <p data-i18n="step1_p">Pela calculadora acima ou direto no WhatsApp.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">02</div>
+        <h4 data-i18n="step2_h">Orçamento e contrato</h4>
+        <p data-i18n="step2_p">Você recebe o valor fechado e o contrato para assinatura digital.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">03</div>
+        <h4 data-i18n="step3_h">Sinal de 50%</h4>
+        <p data-i18n="step3_p">Pagamento via Pix ou link, e o projeto entra em produção.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">04</div>
+        <h4 data-i18n="step4_h">Entrega em 5 dias úteis</h4>
+        <p data-i18n="step4_p">Você aprova, ajusta o que precisar e recebe os arquivos finais.</p>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="faq">
   <div class="wrap faq-grid">
     <div><p class="kicker" data-i18n="faq_kicker">Dúvidas frequentes</p><h2 data-i18n="faq_title">Antes de começar</h2></div>
@@ -452,6 +487,17 @@ footer .logo{color:#fff}
     </div>
   </div>
 </section>
+
+
+
+
+
+
+
+
+
+
+
 
 <section class="cta-final" id="contato">
   <div class="wrap">
