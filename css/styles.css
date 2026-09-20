@@ -679,3 +679,105 @@ footer{padding:38px 0 20px!important;background:#031c27!important}
 @media(max-width:900px){
   .hero-kicker{margin-bottom:14px!important}
 }
+
+/* === First-fold + pricing background refinement === */
+
+/* Nav: closer to the approved deep-navy glass treatment */
+header,
+#site-header{
+  background:rgba(2,27,36,.96)!important;
+  border-bottom:1px solid rgba(255,255,255,.07)!important;
+  backdrop-filter:blur(12px) saturate(118%)!important;
+  -webkit-backdrop-filter:blur(12px) saturate(118%)!important;
+}
+#site-header.scrolled{
+  background:rgba(2,27,36,.985)!important;
+  box-shadow:0 10px 28px rgba(0,0,0,.12)!important;
+}
+
+/* Hero + trusted brands fill the complete first viewport */
+.hero{
+  min-height:calc(100svh - 160px)!important;
+  display:flex!important;
+  align-items:center!important;
+  padding-top:44px!important;
+  padding-bottom:44px!important;
+}
+.hero>.wrap{width:100%!important}
+.client-strip .wrap{min-height:92px!important}
+@supports not (height:100svh){
+  .hero{min-height:calc(100vh - 160px)!important}
+}
+
+/* Pricing background: organic visual language from the reference */
+.pricing{
+  position:relative!important;
+  overflow:hidden!important;
+  isolation:isolate!important;
+  background:
+    radial-gradient(circle at 83% 36%,rgba(14,222,151,.12),transparent 28%),
+    radial-gradient(circle at 18% 88%,rgba(13,173,130,.10),transparent 35%),
+    linear-gradient(145deg,#03232d 0%,#04413e 100%)!important;
+}
+.pricing::before{
+  content:"";
+  position:absolute;
+  z-index:-2;
+  width:760px;
+  height:760px;
+  left:-250px;
+  top:-330px;
+  border-radius:48% 52% 58% 42% / 58% 42% 58% 42%;
+  border:92px solid rgba(19,221,151,.075);
+  transform:rotate(24deg);
+  filter:blur(.1px);
+}
+.pricing::after{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  width:520px;
+  height:520px;
+  right:-110px;
+  bottom:-180px;
+  background:url('img/folhagem-desfocada.webp') center/contain no-repeat;
+  opacity:.14;
+  transform:rotate(-8deg);
+  pointer-events:none;
+}
+.pricing>.wrap{position:relative;z-index:2}
+.pricing .section-head::after{
+  content:"";
+  display:block;
+  width:74px;
+  height:4px;
+  margin-top:22px;
+  border-radius:999px;
+  background:linear-gradient(90deg,var(--green),rgba(18,223,154,0));
+  opacity:.8;
+}
+.calc-card{
+  position:relative!important;
+  overflow:hidden!important;
+}
+.calc-card::before{
+  content:"";
+  position:absolute;
+  width:170px;
+  height:170px;
+  right:-80px;
+  top:-85px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(18,223,154,.09),rgba(18,223,154,0) 68%);
+  pointer-events:none;
+}
+
+/* Keep first fold practical on shorter/phone viewports */
+@media(max-height:760px) and (min-width:901px){
+  .hero{min-height:600px!important}
+}
+@media(max-width:900px){
+  .hero{min-height:auto!important;padding-top:42px!important;padding-bottom:42px!important}
+  .pricing::before{width:520px;height:520px;left:-260px;top:-180px;border-width:64px}
+  .pricing::after{width:330px;height:330px;right:-120px;bottom:-110px;opacity:.10}
+}
