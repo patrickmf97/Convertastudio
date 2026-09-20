@@ -505,13 +505,42 @@ footer{padding:30px 0}
 @media(max-width:860px){.portfolio .section-head,.process .section-head{display:block!important}.portfolio .section-head>p:last-child,.process .section-head>p:last-child{margin-top:14px}.solution-item{padding-left:70px!important}}
 
 .legal-preview{height:100%;display:flex;align-items:center;padding:22px;background:linear-gradient(120deg,#eef2ef 0 58%,#25323a 58%);color:#152a2d;font-family:'Space Grotesk';font-size:17px;line-height:1.05}.legal-preview strong{max-width:10ch}
+
+/* === Asset integration pass 13 === */
+.brand-logo{display:flex;align-items:center;width:158px;height:42px;overflow:hidden;text-decoration:none}
+.brand-logo img{width:150px;height:auto;display:block;filter:brightness(0) invert(1);object-fit:contain}
+.hero{overflow:hidden}
+.hero-grid{grid-template-columns:minmax(0,.9fr) minmax(520px,1.1fr)!important;gap:18px!important;align-items:center}
+.hero-copy{position:relative;z-index:5}
+.hero-asset-stage{position:relative!important;min-height:500px!important;display:flex!important;align-items:center!important;justify-content:center!important;transform:none!important}
+.hero-device-asset{position:absolute;width:760px;max-width:none;height:auto;right:-115px;top:50%;transform:translateY(-49%);object-fit:contain;z-index:2;filter:drop-shadow(0 30px 45px rgba(0,0,0,.35))}
+.hero-asset-stage:after{content:"";position:absolute;inset:auto -160px -120px 10%;height:360px;background:url('img/folhagem-desfocada.webp') left bottom/cover no-repeat;opacity:.24;pointer-events:none;z-index:1}
+.hero-script{z-index:4!important;right:-4px!important;top:55px!important}
+.client-strip{position:relative;z-index:6}
+.port-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:14px!important}
+.port-card,.port-card.featured{grid-column:auto!important}
+.port-preview,.port-card.featured .port-preview{height:170px!important}
+.port-body,.port-card.featured .port-body{padding:16px!important}
+.port-card h3{font-size:15px!important;line-height:1.25}
+.port-card p{font-size:12px!important;line-height:1.5}
+.feature-list{gap:5px!important;margin:8px 0 13px!important}.feature-list span{font-size:10px!important;padding:4px 7px!important}
+.port-tag{font-size:9px!important;padding:3px 8px!important}
+.cta-final{position:relative!important;isolation:isolate;background:#effbf6!important}
+.cta-leaf{position:absolute;z-index:-1;pointer-events:none;width:390px;height:auto}
+.cta-leaf-left{left:-115px;bottom:-100px}
+.cta-leaf-right{right:-110px;top:-95px}
+.cta-final:after{content:"Seu próximo resultado começa aqui.";position:absolute;right:9%;top:35%;max-width:180px;font-family:cursive;font-size:25px;line-height:1.05;color:#073f36;transform:rotate(-8deg)}
+footer{background:#031c26!important;color:#dce8e7!important;border-top:0!important}.footer-row{color:#aebfbe!important}
+@media(max-width:1050px){.hero-grid{grid-template-columns:1fr 1fr!important}.hero-device-asset{width:650px;right:-190px}.port-grid{grid-template-columns:repeat(2,1fr)!important}}
+@media(max-width:860px){.brand-logo{width:120px}.brand-logo img{width:116px}.hero-grid{grid-template-columns:1fr!important}.hero-asset-stage{min-height:330px!important}.hero-device-asset{position:relative;width:125%;right:auto;top:auto;transform:none}.hero-script{display:none!important}.port-grid{grid-template-columns:1fr!important}.cta-final:after{display:none}.cta-leaf{width:250px;opacity:.45}}
+
 </style>
 </head>
 <body>
 
 <header id="site-header">
   <div class="wrap nav">
-    <div class="logo">Converta<span>Studio</span></div>
+    <a class="brand-logo" href="#inicio" aria-label="Converta Studio"><img src="img/converta-logo.webp" alt="Converta Studio"></a>
     <div class="nav-right">
       <nav class="nav-links" aria-label="Navegação da página">
         <a href="#portfolio" data-i18n="nav_work">Projetos</a>
@@ -543,19 +572,13 @@ footer{padding:30px 0}
  <span class="badge">Mais resultados</span>
  </div>
     </div>
-    <div class="hero-showcase" aria-label="Converta Studio em diferentes dispositivos">
-      <div class="screen-shell">
-        <div class="screen-top"><span class="mini-logo">CS</span><span>Converta Studio</span><b>Quero meu site</b></div>
-        <div class="screen-copy"><small>SITES QUE CONECTAM</small><strong>Seu negócio<br><em>em boas mãos.</em></strong><span>SITES &nbsp;•&nbsp; MARCAS &nbsp;•&nbsp; RESULTADOS</span></div>
-<div class="screen-actions"><i>Quero um orçamento →</i><i>Ver projetos</i></div>
-      </div>
-      <div class="laptop-base"></div>
-      <div class="phone-mock"><span>CS</span><b>Sites que<br>convertem.</b></div>
+    <div class="hero-showcase hero-asset-stage" aria-label="Converta Studio em diferentes dispositivos">
+      <img class="hero-device-asset" src="img/converta-hero-laptop.webp" alt="Notebook exibindo o site da Converta Studio" width="1536" height="1024">
       <div class="hero-script">Seu site<br>trabalhando<br>por você.</div>
     </div>
   </div>
 </section>
-<div class="client-strip"><div class="wrap"><span>NEGÓCIOS REAIS<br>QUE CONFIAM</span><b>Yanina<small>PSICOLOGIA ONLINE</small></b><b>Doceliz<small>CONFEITARIA ARTESANAL</small></b><b>Modern Barber<small>BARBEARIA</small></b><b>Modelo<small>ADVOCACIA</small></b><b>+ outros</b></div></div>
+<div class="client-strip"><div class="wrap"><span>NEGÓCIOS REAIS<br>QUE CONFIAM</span><b>Yanina<small>PSICOLOGIA ONLINE</small></b><b>Doceliz<small>CONFEITARIA ARTESANAL</small></b><b>Modern Barber<small>BARBEARIA</small></b><b>Vantagem<small>CONSULTORIA JURÍDICA</small></b><b>+ outros</b></div></div>
 
 <section class="solutions" id="servicos">
   <div class="wrap solutions-grid">
@@ -571,7 +594,7 @@ footer{padding:30px 0}
     </div>
     <div class="port-grid">
       <article class="port-card featured">
-        <a href="https://yaniterapia.vercel.app" target="_blank" rel="noopener" class="port-preview" data-track="portfolio-yanina"><img src="img/yanina.jpg" alt="Página inicial do projeto Yanina Psicologia" width="880" height="550"></a>
+        <a href="https://yaniterapia.vercel.app" target="_blank" rel="noopener" class="port-preview" data-track="portfolio-yanina"><img src="img/project-yanina.webp" alt="Página inicial do projeto Yanina Psicologia" width="880" height="550"></a>
         <div class="port-body">
           <span class="port-tag tag-real" data-i18n="tag_real">Projeto real</span>
           <h3 data-i18n="yanina_title">Yanina — Psicologia online</h3>
@@ -582,7 +605,7 @@ footer{padding:30px 0}
       </article>
 
       <article class="port-card">
-        <a href="https://doceliz-site.vercel.app" target="_blank" rel="noopener" class="port-preview" data-track="portfolio-doceliz"><img src="img/doceliz.jpg" alt="Página inicial do projeto DoceLiz" width="880" height="550" loading="lazy"></a>
+        <a href="https://doceliz-site.vercel.app" target="_blank" rel="noopener" class="port-preview" data-track="portfolio-doceliz"><img src="img/project-doceliz.webp" alt="Página inicial do projeto DoceLiz" width="880" height="550" loading="lazy"></a>
         <div class="port-body">
           <span class="port-tag tag-real" data-i18n="tag_real">Projeto real</span>
           <h3>DoceLiz — Confeitaria artesanal</h3>
@@ -602,7 +625,10 @@ footer{padding:30px 0}
           <a href="https://patrickmf97.github.io/modern-barber/" class="port-link" target="_blank" rel="noopener" data-i18n="barber_link" data-track="portfolio-barber">Ver conceito ↗</a>
         </div>
       </article>
-    <article class="port-card"><div class="port-preview"><div class="preview-placeholder legal-preview"><strong>Cuidado jurídico.<br>Para o que importa.</strong></div></div><div class="port-body"><span class="port-tag tag-demo">MODELO PROFISSIONAL</span><h3>Modelo — Advocacia</h3><div class="feature-list"><span>Site institucional</span><span>Credibilidade</span><span>Geração de leads</span></div><p>Layout profissional para escritórios de advocacia, com foco em autoridade e captação de clientes.</p><a class="port-link" href="#contato">Ver projeto</a></div></article></div>
+    <article class="port-card">
+  <a href="https://poetic-beignet-407ffc.netlify.app" target="_blank" rel="noopener" class="port-preview" data-track="portfolio-vantagem"><img src="img/project-vantagem.webp" alt="Página inicial do projeto Vantagem Consultoria" width="1536" height="960" loading="lazy"></a>
+  <div class="port-body"><span class="port-tag tag-real">Projeto real</span><h3>Vantagem — Consultoria jurídica</h3><p>Presença institucional premium para consultoria jurídica e tributária, com foco em autoridade, clareza e geração de oportunidades.</p><div class="feature-list"><span>Site institucional</span><span>Credibilidade</span><span>Conversão</span></div><a class="port-link" href="https://poetic-beignet-407ffc.netlify.app" target="_blank" rel="noopener">Ver projeto ↗</a></div>
+</article></div>
 
     <div class="examples-head">
       <div><p class="kicker" data-i18n="examples_kicker">Outros estilos</p><h3 data-i18n="examples_title">Uma identidade para cada tipo de negócio</h3></div>
@@ -715,7 +741,7 @@ footer{padding:30px 0}
 
 
 
-<section class="cta-final" id="contato"><i class="organic-leaf one"></i><i class="organic-leaf two"></i>
+<section class="cta-final" id="contato"><img class="cta-leaf cta-leaf-left" src="img/folhagem-esquerda.webp" alt="" aria-hidden="true"><img class="cta-leaf cta-leaf-right" src="img/folhagem-direita.webp" alt="" aria-hidden="true"><i class="organic-leaf one"></i><i class="organic-leaf two"></i>
   <div class="wrap">
     <h2 data-i18n="cta_h2">Vamos construir algo incrível juntos?</h2>
     <p data-i18n="cta_p">Me conta o que você precisa e eu te retorno com um orçamento no mesmo dia.</p>
