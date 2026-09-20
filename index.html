@@ -400,6 +400,41 @@ footer{padding:30px 0}
 @media(max-width:1000px){.port-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:860px){.hero h1{font-size:46px}.portfolio .section-head,.process .section-head{display:block}.pricing .wrap{grid-template-columns:1fr}.port-grid{grid-template-columns:1fr}}
 
+
+/* === Mockup fidelity pass 9: visual cards, organic ambience, footer === */
+.solution-items{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.solution-item{position:relative;min-height:108px;padding:22px 22px 22px 76px;display:block}
+.solution-item:before{position:absolute;left:20px;top:22px;width:42px;height:42px;border-radius:12px;font-size:20px}
+.solution-item:nth-child(1):after{content:"Seja encontrado por mais pessoas."}
+.solution-item:nth-child(2):after{content:"Transforme visitantes em oportunidades."}
+.solution-item:nth-child(3):after{content:"Fortaleça a sua marca no digital."}
+.solution-item:nth-child(4):after{content:"Um site que trabalha por você."}
+.solution-item:after{display:block;margin-top:7px;font-size:12px;line-height:1.45;font-weight:400;color:#5b6d69}
+.solution-item:nth-child(1){font-size:0}.solution-item:nth-child(1):first-letter{font-size:0}
+.solution-item:nth-child(1)::before{content:"⚡"}.solution-item:nth-child(2)::before{content:"♙"}.solution-item:nth-child(3)::before{content:"▥"}.solution-item:nth-child(4)::before{content:"♡"}
+.solution-item:nth-child(1){color:transparent}.solution-item:nth-child(1):after{color:#5b6d69}
+.solution-item:nth-child(1)::first-line{color:transparent}
+.solution-item:nth-child(2),.solution-item:nth-child(3),.solution-item:nth-child(4){color:transparent}
+.solution-item:nth-child(1)::after,.solution-item:nth-child(2)::after,.solution-item:nth-child(3)::after,.solution-item:nth-child(4)::after{color:#5b6d69}
+.solution-item:nth-child(1){--label:"Mais visibilidade"}.solution-item:nth-child(2){--label:"Mais clientes"}.solution-item:nth-child(3){--label:"Mais credibilidade"}.solution-item:nth-child(4){--label:"Mais resultados"}
+.solution-item span{color:var(--ink)}
+.solution-item{font-size:0}
+.solution-item::marker{display:none}
+.solution-item > *{font-size:14px}
+.solution-item:before{color:var(--green)}
+.solution-item{background:linear-gradient(145deg,#f7fbf8,#edf6f1)}
+.solution-item{box-shadow:0 12px 30px rgba(4,42,34,.06)}
+.solution-item{border-color:#e2eee7}
+.solution-item{overflow:hidden}
+.solution-item .benefit-title{display:block;font-size:15px;font-weight:800;color:#0a2430;margin-bottom:5px}
+.portfolio:after{content:"";position:absolute;right:-80px;top:-80px;width:260px;height:420px;background:radial-gradient(ellipse at 50% 50%,rgba(36,139,75,.16),transparent 62%);transform:rotate(-28deg);pointer-events:none}
+.organic-leaf{position:absolute;pointer-events:none;z-index:0;opacity:.55;filter:blur(.3px)}
+.cta-final .organic-leaf.one{left:-45px;bottom:-65px;width:170px;height:270px;background:radial-gradient(ellipse at 70% 30%,#3f8b54 0 14%,transparent 15%),radial-gradient(ellipse at 40% 55%,#246d43 0 16%,transparent 17%),radial-gradient(ellipse at 68% 78%,#3a8150 0 15%,transparent 16%);transform:rotate(22deg)}
+.cta-final .organic-leaf.two{right:-50px;top:-80px;width:170px;height:260px;background:radial-gradient(ellipse at 35% 30%,#317849 0 15%,transparent 16%),radial-gradient(ellipse at 70% 55%,#438d58 0 16%,transparent 17%),radial-gradient(ellipse at 40% 80%,#276a42 0 15%,transparent 16%);transform:rotate(-24deg)}
+.footer-brandline{display:flex;align-items:center;gap:14px}.footer-tagline{font-size:10px;line-height:1.4;letter-spacing:.12em;text-transform:uppercase;color:#7fa29e}
+.footer-social{display:flex;gap:12px}.footer-social a{width:30px;height:30px;border:1px solid rgba(255,255,255,.2);border-radius:50%;display:grid;place-items:center;color:#fff;text-decoration:none;font-size:12px}
+@media(max-width:860px){.solution-items{grid-template-columns:1fr}.solution-item{min-height:96px}}
+
 </style>
 </head>
 <body>
@@ -608,7 +643,7 @@ footer{padding:30px 0}
 
 
 
-<section class="cta-final" id="contato">
+<section class="cta-final" id="contato"><i class="organic-leaf one"></i><i class="organic-leaf two"></i>
   <div class="wrap">
     <h2 data-i18n="cta_h2">Vamos construir algo incrível juntos?</h2>
     <p data-i18n="cta_p">Me conta o que você precisa e eu te retorno com um orçamento no mesmo dia.</p>
@@ -620,8 +655,7 @@ footer{padding:30px 0}
   <div class="wrap footer-row">
     <span>ConvertaStudio — Patrick Morais Ferreira · Atendimento remoto</span>
     <span><a href="https://wa.me/5521988761259" target="_blank" rel="noopener">(21) 98876-1259</a></span>
-  </div>
-</footer>
+  <div class="footer-social"><a href="#" aria-label="Instagram">◎</a><a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="WhatsApp">◉</a></div></div></footer>
 
 <script>
   // ---------- Translations ----------
