@@ -1,6 +1,8 @@
 // ---------- Translations ----------
   const T = {
-    portfolio_intro:{"pt": "Projetos desenvolvidos, estudos demonstrativos e projetos próprios em desenvolvimento, identificados em cada card. Abra as páginas para conhecer cada proposta.", "en": "Developed projects, demo studies and our own projects in development, identified on each card. Open the pages to explore each proposal.", "es": "Proyectos desarrollados, estudios demostrativos y proyectos propios en desarrollo, identificados en cada ficha. Abrí las páginas para conocer cada propuesta."},
+    client_medhelp_sub:{"pt": "EDUCAÇÃO MÉDICA", "en": "MEDICAL EDUCATION", "es": "EDUCACIÓN MÉDICA"},
+    client_checkpoint_sub:{"pt": "PORTAL DE GAMES", "en": "GAMING PORTAL", "es": "PORTAL DE VIDEOJUEGOS"},
+    portfolio_intro:{"pt": "Projetos desenvolvidos e projetos próprios em desenvolvimento, identificados em cada card. Abra as páginas para conhecer cada proposta.", "en": "Developed projects and our own projects in development, identified on each card. Open the pages to explore each proposal.", "es": "Proyectos desarrollados y proyectos propios en desarrollo, identificados en cada ficha. Abrí las páginas para conocer cada propuesta."},
     tag_in_progress:{"pt": "Projeto próprio · Em desenvolvimento", "en": "Own project · In development", "es": "Proyecto propio · En desarrollo"},
     medhelp_title:{"pt": "MEDHELP — Educação médica", "en": "MEDHELP — Medical education", "es": "MEDHELP — Educación médica"},
     medhelp_desc:{"pt": "Página de apresentação de uma plataforma de estudos médicos, com materiais de estudo e uma prévia demonstrativa do painel. Projeto próprio em desenvolvimento.", "en": "Presentation page for a medical study platform, with study materials and a demo preview of the dashboard. Our own project in development.", "es": "Página de presentación de una plataforma de estudios médicos, con materiales de estudio y una vista demostrativa del panel. Proyecto propio en desarrollo."},
@@ -103,7 +105,7 @@
     step3_p:{ pt:"Organizamos textos e imagens autorizadas; você avalia a direção visual antes da finalização.", en:"We organize copy and authorized images; you review the visual direction before completion.", es:"Organizamos textos e imágenes autorizadas; revisás la dirección visual antes de finalizar." },
     step4_h:{ pt:"Revisão e publicação", en:"Review and publication", es:"Revisión y publicación" },
     step4_p:{ pt:"Duas rodadas de revisão no escopo. Conferimos navegação, links e contato; prazo confirmado após materiais e disponibilidade.", en:"Two revision rounds within scope. We check navigation, links and contact; timeline is confirmed after materials and availability.", es:"Dos rondas de revisión dentro del alcance. Revisamos navegación, enlaces y contacto; el plazo se confirma según materiales y disponibilidad." },
-    portfolio_kicker:{ pt:"PORTFÓLIO E CONCEITOS", en:"PORTFOLIO AND CONCEPTS", es:"PORTAFOLIO Y CONCEPTOS" },
+    portfolio_kicker:{ pt:"PORTFÓLIO", en:"PORTFOLIO", es:"PORTAFOLIO" },
     portfolio_h2:{ pt:"O que cada projeto resolve.", en:"What each project addresses.", es:"Qué resuelve cada proyecto." },
     tag_developed:{ pt:"Projeto desenvolvido", en:"Developed project", es:"Proyecto desarrollado" },
     tag_real:{ pt:'Projeto real', en:'Real project', es:'Proyecto real' },
