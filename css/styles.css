@@ -1044,6 +1044,22 @@ body.mobile-menu-open{overflow:hidden}
   .hero{padding-top:28px!important;padding-bottom:30px!important}
   .hero-device-asset{width:88%!important;left:6%!important}
 }
+/* Keep navigation labels centered inside their touch targets. */
+#site-header .nav-links a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:44px;
+  line-height:1.25;
+}
+#site-header .lang-btn{
+  min-height:44px!important;
+  height:44px!important;
+  line-height:1;
+}
+#site-header .nav-cta{
+  min-height:44px!important;
+}
 @media(pointer:coarse){
   a,button,summary{min-height:44px}
 }
