@@ -1,5 +1,12 @@
 // ---------- Translations ----------
   const T = {
+    portfolio_intro:{"pt": "Projetos desenvolvidos, estudos demonstrativos e projetos próprios em desenvolvimento, identificados em cada card. Abra as páginas para conhecer cada proposta.", "en": "Developed projects, demo studies and our own projects in development, identified on each card. Open the pages to explore each proposal.", "es": "Proyectos desarrollados, estudios demostrativos y proyectos propios en desarrollo, identificados en cada ficha. Abrí las páginas para conocer cada propuesta."},
+    tag_in_progress:{"pt": "Projeto próprio · Em desenvolvimento", "en": "Own project · In development", "es": "Proyecto propio · En desarrollo"},
+    medhelp_title:{"pt": "MEDHELP — Educação médica", "en": "MEDHELP — Medical education", "es": "MEDHELP — Educación médica"},
+    medhelp_desc:{"pt": "Página de apresentação de uma plataforma de estudos médicos, com materiais de estudo e uma prévia demonstrativa do painel. Projeto próprio em desenvolvimento.", "en": "Presentation page for a medical study platform, with study materials and a demo preview of the dashboard. Our own project in development.", "es": "Página de presentación de una plataforma de estudios médicos, con materiales de estudio y una vista demostrativa del panel. Proyecto propio en desarrollo."},
+    checkpoint_title:{"pt": "Checkpoint N — Portal de games", "en": "Checkpoint N — Gaming portal", "es": "Checkpoint N — Portal de videojuegos"},
+    checkpoint_desc:{"pt": "Portal independente sobre games, com notícias, guias e ofertas organizados por tema. Projeto próprio em desenvolvimento, sem vínculo com a Nintendo.", "en": "Independent gaming portal with news, guides and offers organized by topic. Our own project in development, with no affiliation to Nintendo.", "es": "Portal independiente de videojuegos, con noticias, guías y ofertas organizadas por tema. Proyecto propio en desarrollo, sin vínculo con Nintendo."},
+    project_preview_link:{"pt": "Conhecer a prévia pública ↗", "en": "Explore the public preview ↗", "es": "Conocer la vista previa pública ↗"},
     nav_home:{ pt:'Início', en:'Home', es:'Inicio' },
     nav_services:{ pt:'Serviços', en:'Services', es:'Servicios' },
     nav_process:{ pt:'Como funciona', en:'How it works', es:'Cómo funciona' },
@@ -35,7 +42,6 @@
     benefit3_desc:{ pt:"Texto e apresentação alinhados à marca.", en:"Copy and presentation aligned with your brand.", es:"Texto y presentación alineados con tu marca." },
     benefit4_title:{ pt:"Entrega verificável", en:"Verifiable delivery", es:"Entrega verificable" },
     benefit4_desc:{ pt:"Links, navegação e contato revisados.", en:"Links, navigation and contact reviewed.", es:"Enlaces, navegación y contacto revisados." },
-    portfolio_intro:{ pt:"Projetos desenvolvidos e estudos demonstrativos, identificados em cada card. Veja as funcionalidades e abra a página para conhecer a experiência.", en:"Developed projects and demo studies, identified on each card. Explore the features and open the page to see the experience.", es:"Proyectos desarrollados y estudios demostrativos, identificados en cada ficha. Mirá las funciones y abrí la página para conocer la experiencia." },
     doceliz_title:{ pt:'DoceLiz — Confeitaria artesanal', en:'DoceLiz — Artisan bakery', es:'DoceLiz — Pastelería artesanal' },
     barber_title:{ pt:'Modern Barber — Barbearia', en:'Modern Barber — Barbershop', es:'Modern Barber — Barbería' },
     vantagem_project_title:{ pt:'Vantagem — Consultoria jurídica', en:'Vantagem — Legal consulting', es:'Vantagem — Consultoría jurídica' },
@@ -328,3 +334,4 @@
 
   // Initial render (uses fallback rates until fetch resolves)
   applyTranslations();
+
