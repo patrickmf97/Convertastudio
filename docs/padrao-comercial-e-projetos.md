@@ -39,10 +39,10 @@ Perguntar apenas o necessário: serviço prioritário, ação desejada, canal at
 2. **Estrutura:** seções, ordem e função de cada uma.
 3. **Funcionalidades:** diferenciar link para WhatsApp de agenda com disponibilidade; diferenciar formulário de CRM; diferenciar catálogo de loja com pagamento.
 4. **Materiais:** textos, identidade, fotos autorizadas, dados comerciais e responsáveis pela aprovação.
-5. **Revisões:** duas rodadas consolidadas dentro do escopo; recursos novos recebem avaliação separada.
+5. **Revisões:** uma rodada consolidada dentro do escopo; recursos novos recebem avaliação separada.
 6. **Exclusões:** anúncios, produção de fotos, manutenção contínua, domínio, serviços pagos e integrações não listadas.
 7. **Prazo:** referência de até cinco dias úteis para landing page essencial, após materiais e escopo completos e disponibilidade confirmada por Patrick.
-8. **Investimento:** a partir de R$497 como referência brasileira, sujeito ao escopo; sem mensalidade obrigatória da Converta. Terceiros podem gerar custos recorrentes.
+8. **Investimento:** a partir de R$197 (Página Express) como referência brasileira, sujeito ao escopo; sem mensalidade obrigatória da Converta. Terceiros podem gerar custos recorrentes.
 9. **Próximo passo:** confirmar estrutura e materiais; contratação, contrato e pagamento ficam com Patrick.
 
 Para Argentina: não inventar ARS, taxa de câmbio ou meios de pagamento. Confirmar escopo e encaminhar condições comerciais a Patrick. Não usar reais como âncora no primeiro contato.
