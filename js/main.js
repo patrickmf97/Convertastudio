@@ -85,7 +85,7 @@
     calc_q1:{ pt:'Qual estrutura combina com seu projeto?', en:'Which structure fits your project?', es:'¿Qué estructura se adapta a tu proyecto?' },
     calc_opt1a:{ pt:'Essencial (até 5 seções)', en:'Essential (up to 5 sections)', es:'Esencial (hasta 5 secciones)' },
     calc_opt1b:{ pt:'Completa (até 8 seções)', en:'Complete (up to 8 sections)', es:'Completa (hasta 8 secciones)' },
-    calc_q2:{ pt:'Precisa de revisões extras (além das 2 inclusas)?', en:'Need extra revisions (beyond the 2 included)?', es:'¿Necesitás revisiones extra (además de las 2 incluidas)?' },
+    calc_q2:{ pt:'Precisa de revisões extras (além da 1 inclusa)?', en:'Need extra revisions (beyond the 1 included)?', es:'¿Necesitás revisiones extra (además de la 1 incluida)?' },
     calc_opt2a:{ pt:'Não precisa', en:'Not needed', es:'No hace falta' },
     calc_opt2b:{ pt:'+1 revisão', en:'+1 revision', es:'+1 revisión' },
     calc_opt2c:{ pt:'+2 revisões', en:'+2 revisions', es:'+2 revisiones' },
@@ -104,7 +104,7 @@
     step3_h:{ pt:"Conteúdo e prévia", en:"Content and preview", es:"Contenido y vista previa" },
     step3_p:{ pt:"Organizamos textos e imagens autorizadas; você avalia a direção visual antes da finalização.", en:"We organize copy and authorized images; you review the visual direction before completion.", es:"Organizamos textos e imágenes autorizadas; revisás la dirección visual antes de finalizar." },
     step4_h:{ pt:"Revisão e publicação", en:"Review and publication", es:"Revisión y publicación" },
-    step4_p:{ pt:"Duas rodadas de revisão no escopo. Conferimos navegação, links e contato; prazo confirmado após materiais e disponibilidade.", en:"Two revision rounds within scope. We check navigation, links and contact; timeline is confirmed after materials and availability.", es:"Dos rondas de revisión dentro del alcance. Revisamos navegación, enlaces y contacto; el plazo se confirma según materiales y disponibilidad." },
+    step4_p:{ pt:"Uma rodada de revisão no escopo. Conferimos navegação, links e contato; prazo confirmado após materiais e disponibilidade.", en:"One revision round within scope. We check navigation, links and contact; timeline is confirmed after materials and availability.", es:"Una ronda de revisión dentro del alcance. Revisamos navegación, enlaces y contacto; el plazo se confirma según materiales y disponibilidad." },
     portfolio_kicker:{ pt:"PORTFÓLIO", en:"PORTFOLIO", es:"PORTAFOLIO" },
     portfolio_h2:{ pt:"O que cada projeto resolve.", en:"What each project addresses.", es:"Qué resuelve cada proyecto." },
     tag_developed:{ pt:"Projeto desenvolvido", en:"Developed project", es:"Proyecto desarrollado" },
@@ -156,8 +156,8 @@
     price_note:{ pt:'*Prazo contado após briefing, materiais e pagamento do sinal.', en:'*Timeline starts after the brief, materials, and deposit.', es:'*El plazo comienza después del briefing, los materiales y la seña.' },
     faq_kicker:{ pt:'Dúvidas frequentes', en:'Frequently asked questions', es:'Preguntas frecuentes' },
     faq_title:{ pt:'Antes de começar', en:'Before we start', es:'Antes de empezar' },
-    faq_q1:{ pt:'O que está incluído no valor de R$ 497?', en:'What is included in the R$ 497 price?', es:'¿Qué incluye el valor de R$ 497?' },
-    faq_a1:{ pt:"Referência para uma landing page de até 5 seções, adaptada ao celular, com publicação e duas rodadas de revisão no escopo. O orçamento final e a hospedagem são definidos antes do início. Sistemas, lojas e integrações adicionais recebem orçamento próprio.", en:"Reference for a landing page with up to 5 sections, mobile layout, publication and two revision rounds within scope. Final quote and hosting are defined before work starts. Systems, stores and additional integrations require a separate quote.", es:"Referencia para una landing page de hasta 5 secciones, adaptada al móvil, con publicación y dos rondas de revisión dentro del alcance. Presupuesto final y hosting se definen antes de empezar. Sistemas, tiendas e integraciones adicionales se cotizan aparte." },
+    faq_q1:{ pt:'O que está incluído no valor de R$ 197?', en:'What is included in the R$ 197 price?', es:'¿Qué incluye el valor de R$ 197?' },
+    faq_a1:{ pt:"Referência para uma landing page de até 5 seções, adaptada ao celular, com publicação e uma rodada de revisão no escopo. O orçamento final e a hospedagem são definidos antes do início. Sistemas, lojas e integrações adicionais recebem orçamento próprio.", en:"Reference for a landing page with up to 5 sections, mobile layout, publication and one revision round within scope. Final quote and hosting are defined before work starts. Systems, stores and additional integrations require a separate quote.", es:"Referencia para una landing page de hasta 5 secciones, adaptada al móvil, con publicación y una ronda de revisión dentro del alcance. Presupuesto final y hosting se definen antes de empezar. Sistemas, tiendas e integraciones adicionales se cotizan aparte." },
     faq_q2:{ pt:'Quando começa a contar o prazo?', en:'When does the timeline start?', es:'¿Cuándo empieza a contar el plazo?' },
     faq_a2:{ pt:"O prazo de referência de até 5 dias úteis depende de escopo aprovado, materiais completos, condições comerciais alinhadas e disponibilidade confirmada por Patrick. Projetos maiores têm cronograma próprio.", en:"The reference timeline of up to 5 business days depends on approved scope, complete materials, agreed commercial terms and availability confirmed by Patrick. Larger projects have a separate schedule.", es:"El plazo de referencia de hasta 5 días hábiles depende del alcance aprobado, materiales completos, condiciones comerciales acordadas y disponibilidad confirmada por Patrick. Proyectos mayores tienen su propio cronograma." },
     faq_q3:{ pt:'Domínio e hospedagem estão incluídos?', en:'Are domain and hosting included?', es:'¿El dominio y el hosting están incluidos?' },
@@ -234,12 +234,12 @@
 
   function updatePriceCard(){
     const priceValue = document.getElementById('price-value');
-    if (priceValue) priceValue.textContent = formatPrice(497);
+    if (priceValue) priceValue.textContent = formatPrice(197);
   }
 
   // ---------- Calculator ----------
   const state = { sections: 0, revisions: 0, prazo: 0 };
-  const base = 497;
+  const base = 197;
   const valueEl = document.getElementById('calc-value');
   const ctaEl = document.getElementById('calc-cta');
 
